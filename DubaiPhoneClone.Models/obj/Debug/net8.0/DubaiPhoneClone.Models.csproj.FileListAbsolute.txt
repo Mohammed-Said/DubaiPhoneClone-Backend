@@ -1,0 +1,5 @@
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.AssemblyInfoInputs.cache
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.AssemblyInfo.cs
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.csproj.CoreCompileInputs.cache
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.sourcelink.json

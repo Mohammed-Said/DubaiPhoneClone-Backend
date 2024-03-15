@@ -1,11 +1,46 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "DubaiPhone.DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/DubaiPhone.DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DubaiPhone.DTOs.dll": {}
+        }
+      },
+      "DubaiPhoneClone.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/DubaiPhoneClone.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DubaiPhoneClone.Models.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DubaiPhone.DTOs/1.0.0": {
+      "type": "project",
+      "path": "../DubaiPhone.DTOs/DubaiPhone.DTOs.csproj",
+      "msbuildProject": "../DubaiPhone.DTOs/DubaiPhone.DTOs.csproj"
+    },
+    "DubaiPhoneClone.Models/1.0.0": {
+      "type": "project",
+      "path": "../DubaiPhoneClone.Models/DubaiPhoneClone.Models.csproj",
+      "msbuildProject": "../DubaiPhoneClone.Models/DubaiPhoneClone.Models.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "DubaiPhone.DTOs >= 1.0.0",
+      "DubaiPhoneClone.Models >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Mohamed\\.nuget\\packages\\": {}
@@ -33,7 +68,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj": {
+              "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj"
+            },
+            "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
+              "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
