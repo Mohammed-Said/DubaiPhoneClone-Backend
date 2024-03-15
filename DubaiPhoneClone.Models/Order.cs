@@ -11,7 +11,7 @@
         public string City { get; set; } = string.Empty ;
 
         //User-Order one to many
-        public int CustomerID { get; set; }
+        public int UserId { get; set; }
 
         public User? User { get; set; }
         public List<OrderItem>? OrderItems { get; set; }

@@ -5,6 +5,7 @@ namespace DubaiPhoneClone.Application.Contracts
     public interface IUserRepository : IRepository<User, int>
     {
         IQueryable<Order> GetCustomerOrders(int userId);
-        void AddCartItem(int bookId, int customerId, int quantity);
+        void AddCartItem(int prodId, int userId, int quantity);
+        void AddWishlistItem(int prodId, int userId, int quantity);
     }
 }

@@ -48,11 +48,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
       "projectName": "DubaiPhoneClone.Application",
-      "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
+      "projectPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
       "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhoneClone.Application\\obj\\",
+      "outputPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,11 +69,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj": {
-              "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj"
+            "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj": {
+              "projectPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj"
             },
-            "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
-              "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj"
+            "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
+              "projectPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj"
             }
           }
         }

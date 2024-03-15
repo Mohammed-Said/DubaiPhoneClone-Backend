@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DubaiPhoneClone.API.props" />
+</Project>

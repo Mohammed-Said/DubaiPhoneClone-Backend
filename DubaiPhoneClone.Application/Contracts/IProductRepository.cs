@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Application.Contracts
 {
-    internal interface IProductRepository : IRepository<Product, int>
+    public interface IProductRepository : IRepository<Product, int>
     {
         IQueryable<Product> SearchName(string name);
-        IQueryable<Product> GetByCategory(string name);
-        IQueryable<Product> GetByBrand(string name);
-        IQueryable<Product> GetByBrandAndCategory(string name);
+        IQueryable<Product> GetByCategory(int categoryId);
+        IQueryable<Product> GetByBrand(int brand);
+        IQueryable<Product> GetByBrandAndCategory(int categoryId, int brand);
         bool ChangeStockQuantity(Product product, int quantity);
-        bool CheckStockQuantity(Product product);
-        int GetCountByCategory(string name);
-        int GetCountByBrand(string name);
+        int GetCountByCategory(int categoryId);
+        int GetCountByBrand(int brand);
     }
 }

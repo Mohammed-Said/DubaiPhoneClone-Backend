@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DubaiPhone.DTOs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef37e03d6581bf86be3d7781712018bd72adaef4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27d58e50008696bf1aed64d3884c4c762bea8e4c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DubaiPhone.DTOs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DubaiPhone.DTOs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

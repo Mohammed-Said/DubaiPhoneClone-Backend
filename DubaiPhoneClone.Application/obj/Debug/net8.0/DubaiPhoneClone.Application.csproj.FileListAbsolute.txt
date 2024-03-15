@@ -1,0 +1,36 @@
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.deps.json
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.dll
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.pdb
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhone.DTOs.dll
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Models.dll
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhone.DTOs.pdb
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Models.pdb
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.csproj.AssemblyReference.cache
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.AssemblyInfoInputs.cache
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.AssemblyInfo.cs
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.csproj.CoreCompileInputs.cache
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.sourcelink.json
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPho.11C7C159.Up2Date
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.dll
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\refint\DubaiPhoneClone.Application.dll
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.pdb
+C:\Users\Mohamed\Desktop\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\ref\DubaiPhoneClone.Application.dll
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.csproj.AssemblyReference.cache
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.AssemblyInfoInputs.cache
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.AssemblyInfo.cs
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.csproj.CoreCompileInputs.cache
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.sourcelink.json
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.dll
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\refint\DubaiPhoneClone.Application.dll
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.pdb
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.deps.json
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.dll
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.pdb
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhone.DTOs.dll
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Models.dll
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhone.DTOs.pdb
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Models.pdb
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPho.11C7C159.Up2Date
+C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhoneClone.Application\obj\Debug\net8.0\ref\DubaiPhoneClone.Application.dll

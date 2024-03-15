@@ -4,9 +4,9 @@
     {
         public int Id { get; set; }
 
-        public int CustomerID { get; set; }
+        public int UserId { get; set; }
 
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
 
         public Product? Product { get; set; }
 

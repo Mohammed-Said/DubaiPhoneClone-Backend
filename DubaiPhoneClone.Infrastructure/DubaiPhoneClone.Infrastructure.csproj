@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DubaiPhoneClone.Application\DubaiPhoneClone.Application.csproj" />
+    <ProjectReference Include="..\DubaiPhoneClone.Context\DubaiPhoneClone.Context.csproj" />
+  </ItemGroup>
+
 </Project>
