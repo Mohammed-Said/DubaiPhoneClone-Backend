@@ -29,7 +29,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
                 return false;
 
             if (quantity == 0)
-                Delete(item);
+                Delete(item.Id);
             else
             {
                 item.Quantity = quantity;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Application.Contracts
 {
-    internal interface IProductImageRepository : IRepository<ProductImage, int>
+    public interface IProductImageRepository : IRepository<ProductImage, int>
     {
     }
 }

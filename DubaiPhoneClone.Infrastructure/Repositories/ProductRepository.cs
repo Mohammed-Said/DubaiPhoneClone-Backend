@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Infrastructure.Repositories
 {
-    internal class ProductRepository : Repository<Product, int> , IProductRepository
+    public class ProductRepository : Repository<Product, int> , IProductRepository
     {
         private readonly ApplicationContext applicationContext;
 
@@ -36,8 +36,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             return true;
         }
 
-       
-
+  
         public IQueryable<Product> GetByBrand(int brandId)=>
             applicationContext.Products.Where(p=>p.BrandId == brandId);
 
@@ -57,5 +56,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
         public IQueryable<Product> SearchName(string name)=>
             applicationContext.Products.Where(p => p.Name.ToLower().Contains(name.ToLower()));
+
+        
     }
 }

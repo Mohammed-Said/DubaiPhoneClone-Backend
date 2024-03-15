@@ -11,39 +11,31 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
 
         public Repository(ApplicationContext applicationContext)
-        {     
+        {
             this._appContext = applicationContext;
             DbSetEntity = _appContext.Set<T>();
         }
 
-        public bool Create(T entity)
+        public T Create(T entity)
         {
-            try
-            {
-                DbSetEntity.Add(entity);
-                _appContext.SaveChanges();
 
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            DbSetEntity.Add(entity);
+            _appContext.SaveChanges();
+
+            return entity;
+
+
         }
 
-        public bool Delete(T entity)
+        public T Delete(TId id)
         {
-            try
-            {
-                DbSetEntity.Remove(entity);
-                _appContext.SaveChanges();
+            var entity = DbSetEntity.Find(id);
+            DbSetEntity.Remove(entity);
+            _appContext.SaveChanges();
 
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            return entity;
+
+
         }
 
         public IQueryable<T> GetAll()
@@ -53,6 +45,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
         public T GetById(TId id)
         {
+
             return DbSetEntity.Find(id);
         }
 
@@ -61,19 +54,14 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             return _appContext.SaveChanges();
         }
 
-        public bool Update(T entity)
+        public T Update(T entity)
         {
-            try
-            {
-                DbSetEntity.Update(entity);
-                _appContext.SaveChanges();
 
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            DbSetEntity.Update(entity);
+            _appContext.SaveChanges();
+
+            return entity;
+
         }
     }
 }

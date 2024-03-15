@@ -5,9 +5,9 @@
         IQueryable<T> GetAll();
         T GetById(TId id);
 
-        bool Create(T entity);
-        bool Update(T entity);
-        bool Delete(T entity);
+        T Create(T entity);
+        T Update(T entity);
+        T Delete(TId id);
         int Save();
     }
 }
