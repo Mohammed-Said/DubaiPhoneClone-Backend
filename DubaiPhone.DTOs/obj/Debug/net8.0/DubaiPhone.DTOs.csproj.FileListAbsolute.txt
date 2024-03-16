@@ -22,3 +22,15 @@ C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\ne
 C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\refint\DubaiPhone.DTOs.dll
 C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.pdb
 C:\Users\Mohamed\Desktop\New folder\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\ref\DubaiPhone.DTOs.dll
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhone.DTOs.deps.json
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhone.DTOs.dll
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhone.DTOs.pdb
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.AssemblyInfoInputs.cache
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.AssemblyInfo.cs
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.csproj.CoreCompileInputs.cache
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.sourcelink.json
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.dll
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\refint\DubaiPhone.DTOs.dll
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.pdb
+D:\Graduation project\DubaiPhoneClone\DubaiPhoneClone\DubaiPhone.DTOs\obj\Debug\net8.0\ref\DubaiPhone.DTOs.dll

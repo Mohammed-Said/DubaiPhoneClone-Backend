@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DubaiPhoneClone.Context")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27d58e50008696bf1aed64d3884c4c762bea8e4c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+872c420364552843e35871070826117c917e08d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("DubaiPhoneClone.Context")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DubaiPhoneClone.Context")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

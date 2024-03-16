@@ -1,0 +1,237 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2937F0-6308-405A-A000-40851798C49C}|DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj|d:\\graduation project\\dubaiphoneclone\\dubaiphoneclone\\dubaiphoneclone.infrastructure\\repositories\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D2937F0-6308-405A-A000-40851798C49C}|DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj|solutionrelative:dubaiphoneclone.infrastructure\\repositories\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2937F0-6308-405A-A000-40851798C49C}|DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D2937F0-6308-405A-A000-40851798C49C}|DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj|solutionrelative:dubaiphoneclone.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\services\\product\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\services\\product\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\services\\orderservices\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\services\\orderservices\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\services\\orderservices\\iorderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\services\\orderservices\\iorderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\contracts\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\contracts\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\contracts\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\contracts\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\services\\productimageservices\\productimageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\services\\productimageservices\\productimageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\services\\productimageservices\\iproductimageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\services\\productimageservices\\iproductimageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2937F0-6308-405A-A000-40851798C49C}|DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.infrastructure\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D2937F0-6308-405A-A000-40851798C49C}|DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj|solutionrelative:dubaiphoneclone.infrastructure\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\services\\product\\iprouductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\services\\product\\iprouductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\services\\brands\\ibrandservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\services\\brands\\ibrandservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\dubaiphoneclone.application\\services\\brands\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E86112A-FA6E-41FD-92F7-E745E67C60B9}|DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj|solutionrelative:dubaiphoneclone.application\\services\\brands\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartItemRepository.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Infrastructure\\Repositories\\CartItemRepository.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Infrastructure\\Repositories\\CartItemRepository.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Infrastructure\\Repositories\\CartItemRepository.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Infrastructure\\Repositories\\CartItemRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T22:13:27.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IOrderServices.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\orderServices\\IOrderServices.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\services\\orderServices\\IOrderServices.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\orderServices\\IOrderServices.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\services\\orderServices\\IOrderServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T22:07:26.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderServices.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\orderServices\\OrderServices.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\services\\orderServices\\OrderServices.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\orderServices\\OrderServices.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\services\\orderServices\\OrderServices.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T22:06:57.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IProductImageRepository.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\Contracts\\IProductImageRepository.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\Contracts\\IProductImageRepository.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\Contracts\\IProductImageRepository.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\Contracts\\IProductImageRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T22:06:23.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IproductImageServices.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\ProductImageServices\\IproductImageServices.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\services\\ProductImageServices\\IproductImageServices.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\ProductImageServices\\IproductImageServices.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\services\\ProductImageServices\\IproductImageServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T22:04:51.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "productImageServices.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\ProductImageServices\\productImageServices.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\services\\ProductImageServices\\productImageServices.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\ProductImageServices\\productImageServices.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\services\\ProductImageServices\\productImageServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T22:02:06.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Infrastructure\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Infrastructure\\Repositories\\ProductRepository.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Infrastructure\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Infrastructure\\Repositories\\ProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T22:00:04.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "productServices.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\product\\productServices.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\services\\product\\productServices.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\product\\productServices.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\services\\product\\productServices.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T21:48:35.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IProuductService.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\product\\IProuductService.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\services\\product\\IProuductService.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\product\\IProuductService.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\services\\product\\IProuductService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T21:48:12.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\Contracts\\IRepository.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\Contracts\\IRepository.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\Contracts\\IRepository.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\Contracts\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwkAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T21:43:42.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Infrastructure\\Repositories\\Repository.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Infrastructure\\Repositories\\Repository.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwCAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T21:41:34.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BrandService.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\Brands\\BrandService.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\services\\Brands\\BrandService.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\Brands\\BrandService.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\services\\Brands\\BrandService.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAADwvxUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T21:39:53.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IBrandServices.cs",
+              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\Brands\\IBrandServices.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Application\\services\\Brands\\IBrandServices.cs",
+              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\services\\Brands\\IBrandServices.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Application\\services\\Brands\\IBrandServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T21:38:43.3Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

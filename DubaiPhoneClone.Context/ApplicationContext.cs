@@ -1,5 +1,6 @@
 ﻿using DubaiPhoneClone.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 
 namespace DubaiPhoneClone.Context
@@ -18,8 +19,9 @@ namespace DubaiPhoneClone.Context
         public DbSet<ProductImage>? ProductImages { get; set; }
         public DbSet<WishlistItem>? WishlistItems { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)=>
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DubaiPhone;Integrated Security=True;TrustServerCertificate=True");
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
+        {
+        }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

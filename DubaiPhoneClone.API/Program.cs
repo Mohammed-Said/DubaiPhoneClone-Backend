@@ -1,4 +1,8 @@
 
+using DubaiPhoneClone.Context;
+using Microsoft.EntityFrameworkCore;
+using System;
+
 namespace DubaiPhoneClone.API
 {
     public class Program
@@ -8,6 +12,11 @@ namespace DubaiPhoneClone.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            var connection = builder.Configuration.GetConnectionString("Connection");
+
+            builder.Services.AddDbContext<ApplicationContext>(option =>
+                option.UseSqlServer(connection));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj": {}
+    "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj": {
+    "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj",
+        "projectUniqueName": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj",
         "projectName": "DubaiPhone.DTOs",
-        "projectPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj",
+        "projectPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj",
         "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhone.DTOs\\obj\\",
+        "outputPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhone.DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj": {
+    "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
+        "projectUniqueName": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
         "projectName": "DubaiPhoneClone.Application",
-        "projectPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
+        "projectPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
         "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Application\\obj\\",
+        "outputPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,11 +88,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj": {
-                "projectPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj"
+              "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj": {
+                "projectPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj"
               },
-              "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
-                "projectPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj"
+              "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
+                "projectPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj"
               }
             }
           }
@@ -131,14 +131,14 @@
         }
       }
     },
-    "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
+    "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj",
+        "projectUniqueName": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj",
         "projectName": "DubaiPhoneClone.Models",
-        "projectPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj",
+        "projectPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj",
         "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohamed\\Desktop\\New folder\\DubaiPhoneClone\\DubaiPhoneClone.Models\\obj\\",
+        "outputPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
