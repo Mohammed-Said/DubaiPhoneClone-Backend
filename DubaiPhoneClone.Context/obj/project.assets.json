@@ -2770,11 +2770,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Context\\DubaiPhoneClone.Context.csproj",
+      "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Context\\DubaiPhoneClone.Context.csproj",
       "projectName": "DubaiPhoneClone.Context",
-      "projectPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Context\\DubaiPhoneClone.Context.csproj",
+      "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Context\\DubaiPhoneClone.Context.csproj",
       "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
-      "outputPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Context\\obj\\",
+      "outputPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Context\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2791,8 +2791,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
-              "projectPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj"
+            "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
+              "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj"
             }
           }
         }

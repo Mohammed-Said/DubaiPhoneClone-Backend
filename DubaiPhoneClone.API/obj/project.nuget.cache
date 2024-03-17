@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ezqn8Cni+sWE2avdTGjMh+zyY8Ed324bECMVlReLY9JLPLtPxFg/rKZnkXlhtgUWbDtEkTutgtCa1Q5pcLuYlQ==",
+  "dgSpecHash": "I+/rMv4FdF40gtoCdN6/3qD3POvZSAcCdmCArryNUauG0Xm6nQ2/1TFZy8zgtd6/M9BwoZBq/TqrQ+NjdNQOyQ==",
   "success": true,
-  "projectFilePath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj",
+  "projectFilePath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mohamed\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Mohamed\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
