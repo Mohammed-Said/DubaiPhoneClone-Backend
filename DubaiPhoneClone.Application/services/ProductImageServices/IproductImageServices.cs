@@ -9,14 +9,14 @@ namespace DubaiPhoneClone.Application.services.ProductImageServices
 {
     public interface IProductImageServices
     {
-         IQueryable<ProductImage> GetAllProductImage();
+        Task<IQueryable<ProductImage>> GetAllProductImage();
 
-         ProductImage GetProductImageByID(int ProductImage);
+         Task<ProductImage> GetProductImageByID(int ProductImage);
 
-         ProductImage CreateProductImage(ProductImage ProductImage);
+        Task<ProductImage> CreateProductImage(ProductImage ProductImage);
 
-         ProductImage UpdateProductImage(ProductImage ProductImage);
+        Task<ProductImage> UpdateProductImage(ProductImage ProductImage);
 
-         ProductImage DeleteProductImage(int ProductImageId);
+        Task<ProductImage> DeleteProductImage(int ProductImageId);
     }
 }

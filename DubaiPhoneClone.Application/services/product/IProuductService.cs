@@ -9,30 +9,30 @@ namespace DubaiPhoneClone.Application.services.product
 {
     public interface IProuductService
     {
-         List<Product> GetAllProduct();
+         Task<List<Product>> GetAllProduct();
 
-         Product GetProductByID(int Product);
+        Task<Product> GetProductByID(int Product);
 
-         Product CreateProduct(Product Product);
+        Task<Product> CreateProduct(Product Product);
 
-         Product UpdateProduct(Product Product);
+        Task<Product> UpdateProduct(Product Product);
 
-         Product DeleteProduct(int ProductId);
-        
-        List<Product> SearchName(string name);
+        Task<Product> DeleteProduct(int ProductId);
 
-        List<Product> GetByCategory(int cId);
-        
-        List<Product> GetByBrand(int bId);
-        
-        List<Product> GetByBrandAndCategory(int bId,int cId);
-        
-        bool ChangeStockQuantity(Product product, int quantity);
+        Task<List<Product>> SearchName(string name);
 
-        int GetCountByCategory(int cId);
-        
-        int GetCountByBrand(int bId);
+        Task<List<Product>> GetByCategory(int cId);
 
-        List<Product> GetAllPagination(int Productnums, int PageNumber);
+        Task<List<Product>> GetByBrand(int bId);
+
+        Task<List<Product>> GetByBrandAndCategory(int bId,int cId);
+
+        Task<bool> ChangeStockQuantity(Product product, int quantity);
+
+        Task<int> GetCountByCategory(int cId);
+
+        Task<int> GetCountByBrand(int bId);
+
+        Task<List<Product>> GetAllPagination(int Productnums, int PageNumber);
     }
 }

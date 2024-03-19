@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DubaiPhoneClone.Application
-build_property.ProjectDir = C:\Users\Mohamed\Desktop\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\
+build_property.ProjectDir = D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

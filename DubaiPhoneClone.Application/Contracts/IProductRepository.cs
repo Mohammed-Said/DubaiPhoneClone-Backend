@@ -9,12 +9,12 @@ namespace DubaiPhoneClone.Application.Contracts
 {
     public interface IProductRepository : IRepository<Product, int>
     {
-        IQueryable<Product> SearchName(string name);
-        IQueryable<Product> GetByCategory(int categoryId);
-        IQueryable<Product> GetByBrand(int brand);
-        IQueryable<Product> GetByBrandAndCategory(int categoryId, int brand);
-        bool ChangeStockQuantity(Product product, int quantity);
-        int GetCountByCategory(int categoryId);
-        int GetCountByBrand(int brand);
+        Task<IQueryable<Product>>  SearchName(string name);
+        Task<IQueryable<Product>> GetByCategory(int categoryId);
+        Task<IQueryable<Product>> GetByBrand(int brand);
+        Task<IQueryable<Product>> GetByBrandAndCategory(int categoryId, int brand);
+        Task<bool> ChangeStockQuantity(Product product, int quantity);
+        Task<int> GetCountByCategory(int categoryId);
+        Task<int> GetCountByBrand(int brand);
     }
 }

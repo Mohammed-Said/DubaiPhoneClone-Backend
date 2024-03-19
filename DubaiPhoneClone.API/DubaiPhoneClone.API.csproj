@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DubaiPhoneClone.Application\DubaiPhoneClone.Application.csproj" />
     <ProjectReference Include="..\DubaiPhoneClone.Context\DubaiPhoneClone.Context.csproj" />
+    <ProjectReference Include="..\DubaiPhoneClone.Infrastructure\DubaiPhoneClone.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

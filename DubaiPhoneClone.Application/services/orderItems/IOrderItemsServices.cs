@@ -9,14 +9,14 @@ namespace DubaiPhoneClone.Application.services.orderItems
 {
     public interface IOrderItemsServices
     {
-        public IQueryable<OrderItem> GetAllOrderItem();
+        public Task<IQueryable<OrderItem>> GetAllOrderItem();
 
-        public OrderItem GetOrderItemByID(int OrderItem);
+        public Task<OrderItem> GetOrderItemByID(int OrderItem);
 
-        public OrderItem CreateOrderItem(OrderItem OrderItem);
+        public Task<OrderItem> CreateOrderItem(OrderItem OrderItem);
 
-        public OrderItem UpdateOrderItem(OrderItem OrderItem);
+        public Task<OrderItem> UpdateOrderItem(OrderItem OrderItem);
 
-        public OrderItem DeleteOrderItem(int OrderItemId);
+        public Task<OrderItem> DeleteOrderItem(int OrderItemId);
     }
 }

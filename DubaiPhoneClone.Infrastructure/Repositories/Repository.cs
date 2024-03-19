@@ -16,51 +16,51 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             DbSetEntity = _appContext.Set<T>();
         }
 
-        public T Create(T entity)
+        public async Task<T> Create(T entity)
         {
 
-            DbSetEntity.Add(entity);
-            _appContext.SaveChanges();
+           var ent=await DbSetEntity.AddAsync(entity);
+           await _appContext.SaveChangesAsync();
 
-            return entity;
+            return ent.Entity;
 
 
         }
 
-        public T Delete(TId id)
+        public async Task<T> Delete(TId id)
         {
-            var entity = DbSetEntity.Find(id);
-            DbSetEntity.Remove(entity);
-            _appContext.SaveChanges();
+            var entity = await DbSetEntity.FindAsync(id);
+            var  y=DbSetEntity.Remove(entity);
+            await _appContext.SaveChangesAsync();
 
-            return entity;
+            return y.Entity;
 
 
         }
 
-        public IQueryable<T> GetAll()
+         public async Task<IQueryable<T>> GetAll()
         {
             return DbSetEntity;
         }
 
-        public T GetById(TId id)
+        public async Task<T> GetById(TId id)
         {
 
-            return DbSetEntity.Find(id);
+            return await DbSetEntity.FindAsync(id);
         }
 
-        public int Save()
+        public async Task<int> Save()
         {
-            return _appContext.SaveChanges();
+            return await _appContext.SaveChangesAsync();
         }
 
-        public T Update(T entity)
+        public async Task<T> Update(T entity)
         {
 
-            DbSetEntity.Update(entity);
-            _appContext.SaveChanges();
+            var x=DbSetEntity.Update(entity);
+            await _appContext.SaveChangesAsync();
 
-            return entity;
+            return x.Entity;
 
         }
     }

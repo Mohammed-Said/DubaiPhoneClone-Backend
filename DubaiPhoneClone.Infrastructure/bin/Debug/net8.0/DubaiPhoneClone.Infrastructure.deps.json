@@ -568,7 +568,8 @@
       "DubaiPhoneClone.Application/1.0.0": {
         "dependencies": {
           "DubaiPhone.DTOs": "1.0.0",
-          "DubaiPhoneClone.Models": "1.0.0"
+          "DubaiPhoneClone.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.3"
         },
         "runtime": {
           "DubaiPhoneClone.Application.dll": {}

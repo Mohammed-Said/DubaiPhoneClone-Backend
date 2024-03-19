@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {}
+    "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
+    "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj",
+        "projectUniqueName": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj",
         "projectName": "DubaiPhoneClone.Models",
-        "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj",
-        "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\obj\\",
+        "projectPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj",
+        "packagesPath": "C:\\Users\\Office\\.nuget\\packages\\",
+        "outputPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Office\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

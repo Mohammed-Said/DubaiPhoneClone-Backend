@@ -10,6 +10,7 @@
         "dependencies": {
           "DubaiPhoneClone.Application": "1.0.0",
           "DubaiPhoneClone.Context": "1.0.0",
+          "DubaiPhoneClone.Infrastructure": "1.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.3",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
@@ -913,7 +914,8 @@
       "DubaiPhoneClone.Application/1.0.0": {
         "dependencies": {
           "DubaiPhone.DTOs": "1.0.0",
-          "DubaiPhoneClone.Models": "1.0.0"
+          "DubaiPhoneClone.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.3"
         },
         "runtime": {
           "DubaiPhoneClone.Application.dll": {}
@@ -927,6 +929,15 @@
         },
         "runtime": {
           "DubaiPhoneClone.Context.dll": {}
+        }
+      },
+      "DubaiPhoneClone.Infrastructure/1.0.0": {
+        "dependencies": {
+          "DubaiPhoneClone.Application": "1.0.0",
+          "DubaiPhoneClone.Context": "1.0.0"
+        },
+        "runtime": {
+          "DubaiPhoneClone.Infrastructure.dll": {}
         }
       },
       "DubaiPhoneClone.Models/1.0.0": {
@@ -1527,6 +1538,11 @@
       "sha512": ""
     },
     "DubaiPhoneClone.Context/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DubaiPhoneClone.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

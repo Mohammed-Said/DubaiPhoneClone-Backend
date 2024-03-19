@@ -1605,7 +1605,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "DubaiPhone.DTOs": "1.0.0",
-          "DubaiPhoneClone.Models": "1.0.0"
+          "DubaiPhoneClone.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.3"
         },
         "compile": {
           "bin/placeholder/DubaiPhoneClone.Application.dll": {}
@@ -1627,6 +1628,20 @@
         },
         "runtime": {
           "bin/placeholder/DubaiPhoneClone.Context.dll": {}
+        }
+      },
+      "DubaiPhoneClone.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DubaiPhoneClone.Application": "1.0.0",
+          "DubaiPhoneClone.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DubaiPhoneClone.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DubaiPhoneClone.Infrastructure.dll": {}
         }
       },
       "DubaiPhoneClone.Models/1.0.0": {
@@ -4577,6 +4592,11 @@
       "path": "../DubaiPhoneClone.Context/DubaiPhoneClone.Context.csproj",
       "msbuildProject": "../DubaiPhoneClone.Context/DubaiPhoneClone.Context.csproj"
     },
+    "DubaiPhoneClone.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../DubaiPhoneClone.Infrastructure/DubaiPhoneClone.Infrastructure.csproj",
+      "msbuildProject": "../DubaiPhoneClone.Infrastructure/DubaiPhoneClone.Infrastructure.csproj"
+    },
     "DubaiPhoneClone.Models/1.0.0": {
       "type": "project",
       "path": "../DubaiPhoneClone.Models/DubaiPhoneClone.Models.csproj",
@@ -4587,24 +4607,25 @@
     "net8.0": [
       "DubaiPhoneClone.Application >= 1.0.0",
       "DubaiPhoneClone.Context >= 1.0.0",
+      "DubaiPhoneClone.Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.3",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mohamed\\.nuget\\packages\\": {}
+    "C:\\Users\\Office\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj",
+      "projectUniqueName": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj",
       "projectName": "DubaiPhoneClone.API",
-      "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj",
-      "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.API\\obj\\",
+      "projectPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj",
+      "packagesPath": "C:\\Users\\Office\\.nuget\\packages\\",
+      "outputPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Office\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4618,11 +4639,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj": {
-              "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj"
+            "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj": {
+              "projectPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj"
             },
-            "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Context\\DubaiPhoneClone.Context.csproj": {
-              "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Context\\DubaiPhoneClone.Context.csproj"
+            "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Context\\DubaiPhoneClone.Context.csproj": {
+              "projectPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Context\\DubaiPhoneClone.Context.csproj"
+            },
+            "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj": {
+              "projectPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj"
             }
           }
         }
@@ -4631,11 +4655,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4672,7 +4691,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
