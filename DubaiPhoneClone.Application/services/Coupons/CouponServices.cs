@@ -15,36 +15,36 @@ namespace DubaiPhoneClone.Application.services.Coupons
         {
             _repo = repo;
         }
-        public Coupon CreateCoupon(Coupon coupon)
+        public async Task<Coupon> CreateCoupon(Coupon coupon)
         {
-            var Coupon = _repo.Create(coupon);
-            _repo.Save();
+            var Coupon =await _repo.Create(coupon);
+            await _repo.Save();
             return Coupon;
         }
 
-        public Coupon DeleteCoupon(int CouponId)
+        public async Task<Coupon> DeleteCoupon(int CouponId)
         {
-            var deltecart = _repo.Delete(CouponId);
-            _repo.Save();
+            var deltecart =await _repo.Delete(CouponId);
+            await _repo.Save();
             return deltecart;
         }
 
-        public IQueryable<Coupon> GetAllCoupon()
+        public async Task<IQueryable<Coupon>> GetAllCoupon()
         {
-            var query = _repo.GetAll();
+            var query = await _repo.GetAll();
             return query;
         }
 
-        public Coupon GetCouponByID(int Coupon)
+        public async Task<Coupon> GetCouponByID(int Coupon)
         {
-            var element = _repo.GetById(Coupon);
+            var element = await _repo.GetById(Coupon);
             return element;
         }
 
-        public Coupon UpdateCoupon(Coupon Coupon)
+        public async Task<Coupon> UpdateCoupon(Coupon Coupon)
         {
-            var updatecart = _repo.Update(Coupon);
-            _repo.Save();
+            var updatecart =await _repo.Update(Coupon);
+            await _repo.Save();
             return updatecart;
         }
     }

@@ -5,19 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DubaiPhoneClone.Application.services.User
+namespace DubaiPhoneClone.Application.services.userServices
 {
     public interface IUserServices
     {
-        public IQueryable<Models.User> GetAllUser();
+        public Task<IQueryable<User>> GetAllUser();
 
-        public Models.User GetUserByID(int User);
+        public Task<User> GetUserByID(int User);
 
-        public Models.User CreateUser(Models.User User);
+        public Task<User> CreateUser(User User);
 
-        public Models.User UpdateUser(Models.User User);
+        public Task<User> UpdateUser(User User);
 
-        public Models.User DeleteUser(int UserId);
+        public Task<User> DeleteUser(int UserId);
 
         IQueryable<Order> GetCustomerOrders(int userId);
 

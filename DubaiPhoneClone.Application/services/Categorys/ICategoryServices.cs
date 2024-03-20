@@ -9,14 +9,14 @@ namespace DubaiPhoneClone.Application.services.Categorys
 {
     public interface ICategoryServices
     {
-        public IQueryable<Category> GetAllCategory();
+        public Task<IQueryable<Category>> GetAllCategory();
 
-        public Category GetCategoryByID(int Category);
+        public Task<Category> GetCategoryByID(int Category);
 
-        public Category CreateCategory(Category Category);
+        public Task<Category> CreateCategory(Category Category);
 
-        public Category UpdateCategory(Category Category);
+        public Task<Category> UpdateCategory(Category Category);
 
-        public Category DeleteCategory(int CategoryId);
+        public Task<Category> DeleteCategory(int CategoryId);
     }
 }

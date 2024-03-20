@@ -1,5 +1,6 @@
 ﻿using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,67 +16,67 @@ namespace DubaiPhoneClone.Application.services.product
         {
             _repo = repo;
         }
-        public bool ChangeStockQuantity(Product product, int quantity)
+        public async Task<bool> ChangeStockQuantity(Product product, int quantity)
         {
-            var stock = _repo.ChangeStockQuantity(product, quantity);
+            var stock =await _repo.ChangeStockQuantity(product, quantity);
             return stock;
         }
 
 
-        public Product CreateProduct(Product Product)
+        public async Task<Product> CreateProduct(Product Product)
         {
-            var createproduct = _repo.Create(Product);
-            _repo.Save();
+            var createproduct =await _repo.Create(Product);
+            await _repo.Save();
             return createproduct;
         }
 
-        public Product DeleteProduct(int ProductId)
+        public async Task<Product> DeleteProduct(int ProductId)
         {
-            var delepro = _repo.Delete(ProductId);
-            _repo.Save();
+            var delepro = await _repo.Delete(ProductId);
+            await _repo.Save();
             return delepro;
         }
 
-        public List<Product> GetAllProduct()
+        public async Task<List<Product>> GetAllProduct()
         {
-            var products = _repo.GetAll().ToList();
+            var products = await(await _repo.GetAll()).ToListAsync();
             return products;
         }
 
-        public List<Product> GetByBrand(int bramdId) =>
-         _repo.GetByBrand(bramdId).ToList();
+        public async Task<List<Product>> GetByBrand(int bramdId) =>
+        await (await _repo.GetByBrand(bramdId)).ToListAsync();
 
 
-        public List<Product> GetByBrandAndCategory(int bId, int cId) =>
-             _repo.GetByBrandAndCategory(cId, bId).ToList();
+        public async Task<List<Product>> GetByBrandAndCategory(int bId, int cId) =>
+             await(await _repo.GetByBrandAndCategory(cId, bId)).ToListAsync();
 
 
-        public List<Product> GetByCategory(int cId) =>
-            _repo.GetByCategory(cId).ToList();
+        public async Task<List<Product>> GetByCategory(int cId) =>
+            await(await _repo.GetByCategory(cId)).ToListAsync();
 
 
-        public int GetCountByBrand(int bId) =>
-            _repo.GetCountByBrand(bId);
+        public async Task<int> GetCountByBrand(int bId) =>
+            await _repo.GetCountByBrand(bId);
 
 
-        public int GetCountByCategory(int cId) =>
-            _repo.GetCountByCategory(cId);
+        public async Task<int >GetCountByCategory(int cId) =>
+            await _repo.GetCountByCategory(cId);
 
 
-        public Product GetProductByID(int Product) =>
-            _repo.GetById(Product);
+        public async Task<Product> GetProductByID(int Product) =>
+           await _repo.GetById(Product);
 
 
-        public List<Product> SearchName(string name) =>
-            _repo.SearchName(name).ToList();
+        public async Task<List<Product>> SearchName(string name) =>
+           await(await _repo.SearchName(name)).ToListAsync();
 
 
-        public Product UpdateProduct(Product Product) =>
-             _repo.Update(Product);
+        public async Task<Product> UpdateProduct(Product Product) =>
+             await _repo.Update(Product);
 
 
-        public List<Product> GetAllPagination(int Productnums, int PageNumber) =>
-             _repo.GetAll().Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToList();
+        public async Task<List<Product>> GetAllPagination(int Productnums, int PageNumber) =>
+             await(await _repo.GetAll()).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync();
 
        
     }

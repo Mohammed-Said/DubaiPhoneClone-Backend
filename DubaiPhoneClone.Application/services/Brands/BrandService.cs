@@ -16,36 +16,36 @@ namespace DubaiPhoneClone.Application.services.Brands
             _repo = repo;
         }
 
-        public Brand CreateBrand(Models.Brand Brand)
+        public async Task<Brand> CreateBrand(Brand Brand)
         {
-            var brand = _repo.Create(Brand);
-            _repo.Save();
+            var brand = await _repo.Create(Brand);
+            await _repo.Save();
             return brand;
         }
 
-        public Models.Brand DeleteBrand(int BrandId)
+        public async Task<Brand> DeleteBrand(int BrandId)
         {
-            var deletbrand= _repo.Delete(BrandId);
-            _repo.Save();
+            var deletbrand= await _repo.Delete(BrandId);
+            await _repo.Save();
             return deletbrand;
         }
 
-        public IQueryable<Models.Brand> GetAllBrand()
+        public async Task<IQueryable<Brand>> GetAllBrand()
         {
-            var brands=_repo.GetAll();
+            var brands=await _repo.GetAll();
             return brands;
         }
 
-        public Models.Brand GetBrandByID(int Brand)
+        public async Task<Brand> GetBrandByID(int Brand)
         {
-            var brand=_repo.GetById(Brand);
+            var brand=await _repo.GetById(Brand);
             return brand;
         }
 
-        public Models.Brand UpdateBrand(Models.Brand Brand)
+        public async Task<Brand> UpdateBrand(Brand Brand)
         {
-            var brand= _repo.Update(Brand);
-            _repo.Save();
+            var brand=await _repo.Update(Brand);
+            await _repo.Save();
             return brand;
         }
     }

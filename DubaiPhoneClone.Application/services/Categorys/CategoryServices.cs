@@ -8,40 +8,40 @@ using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Application.services.Categorys
 {
-    public class CategoryServices
+    public class CategoryServices:ICategoryServices
     {
         ICategoryRepository _repo;
         public CategoryServices(ICategoryRepository repo) { _repo = repo; }
-        public Category CreateCategory(Category Category)
+        public async Task<Category> CreateCategory(Category Category)
         {
-            var category = _repo.Create(Category);
-            _repo.Save();
+            var category = await _repo.Create(Category);
+            await _repo.Save();
             return Category;
         }
 
-        public Category DeleteCategory(int CategoryId)
+        public async Task<Category> DeleteCategory(int CategoryId)
         {
-            var deltecart = _repo.Delete(CategoryId);
-            _repo.Save();
+            var deltecart = await _repo.Delete(CategoryId);
+            await _repo.Save();
             return deltecart;
         }
 
-        public IQueryable<Category> GetAllCategory()
+        public async Task<IQueryable<Category>>  GetAllCategory()
         {
-            var query = _repo.GetAll();
+            var query = await _repo.GetAll();
             return query;
         }
 
-        public Category GetCategoryByID(int Category)
+        public async Task<Category> GetCategoryByID(int Category)
         {
-            var element = _repo.GetById(Category);
+            var element = await _repo.GetById(Category);
             return element;
         }
 
-        public Category UpdateCategory(Category Category)
+        public async Task<Category> UpdateCategory(Category Category)
         {
-            var updatecart = _repo.Update(Category);
-            _repo.Save();
+            var updatecart = await _repo.Update(Category);
+            await _repo.Save();
             return updatecart;
         }
     }

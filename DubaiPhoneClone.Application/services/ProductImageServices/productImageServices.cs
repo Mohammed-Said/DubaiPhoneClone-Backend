@@ -8,43 +8,43 @@ using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Application.services.ProductImageServices
 {
-    public class ProductImageServices
+    public class ProductImageServices :IProductImageServices
     {
         private IProductImageRepository _repo;
         public ProductImageServices(IProductImageRepository repo)
         {
             _repo = repo;
         }
-        public ProductImage CreateProductImage(ProductImage productImage)
+        public async Task<ProductImage> CreateProductImage(ProductImage productImage)
         {
-            var ProductImage = _repo.Create(productImage);
-            _repo.Save();
+            var ProductImage = await _repo.Create(productImage);
+            await _repo.Save();
             return ProductImage;
         }
 
-        public ProductImage DeleteProductImage(int ProductImageId)
+        public async Task<ProductImage> DeleteProductImage(int ProductImageId)
         {
-            var deltecart = _repo.Delete(ProductImageId);
-            _repo.Save();
+            var deltecart = await _repo.Delete(ProductImageId);
+            await _repo.Save();
             return deltecart;
         }
 
-        public IQueryable<ProductImage> GetAllProductImage()
+        public async Task<IQueryable<ProductImage>>  GetAllProductImage()
         {
-            var query = _repo.GetAll();
+            var query = await _repo.GetAll();
             return query;
         }
 
-        public ProductImage GetProductImageByID(int ProductImage)
+        public async Task<ProductImage> GetProductImageByID(int ProductImage)
         {
-            var element = _repo.GetById(ProductImage);
+            var element = await _repo.GetById(ProductImage);
             return element;
         }
 
-        public ProductImage UpdateProductImage(ProductImage ProductImage)
+        public async Task<ProductImage> UpdateProductImage(ProductImage ProductImage)
         {
-            var updatecart = _repo.Update(ProductImage);
-            _repo.Save();
+            var updatecart = await _repo.Update(ProductImage);
+            await _repo.Save();
             return updatecart;
         }
     }

@@ -16,23 +16,23 @@ namespace DubaiPhoneClone.Application.services.wishlistitems
             _repo = repo;
         }
 
-        public WishlistItem CreateWishlistItem(WishlistItem WishlistItem)
+        public async Task<WishlistItem> CreateWishlistItem(WishlistItem WishlistItem)
         {
-            var createwish=_repo.Create(WishlistItem);
-            _repo.Save();
+            var createwish=await _repo.Create(WishlistItem);
+            await _repo.Save();
             return createwish;
         }
 
-        public WishlistItem DeleteWishlistItem(int WishlistItemId)
+        public async Task<WishlistItem> DeleteWishlistItem(int WishlistItemId)
         {
-            var deletewish= _repo.Delete(WishlistItemId);
-            _repo.Save();
+            var deletewish= await _repo.Delete(WishlistItemId);
+            await _repo.Save();
             return deletewish;
         }
 
-        public IQueryable<WishlistItem> GetAllWishlistItem()
+        public async Task<IQueryable<WishlistItem>> GetAllWishlistItem()
         {
-            var query = _repo.GetAll();
+            var query =await _repo.GetAll();
             return query;
         }
 
@@ -42,16 +42,16 @@ namespace DubaiPhoneClone.Application.services.wishlistitems
             return query;
         }
 
-        public WishlistItem GetWishlistItemByID(int WishlistItem)
+        public async Task<WishlistItem> GetWishlistItemByID(int WishlistItem)
         {
-            var wishlist=_repo.GetById(WishlistItem);
+            var wishlist=await _repo.GetById(WishlistItem);
             return wishlist;
         }
 
-        public WishlistItem UpdateWishlistItem(WishlistItem WishlistItem)
+        public async Task<WishlistItem> UpdateWishlistItem(WishlistItem WishlistItem)
         {
-            var updateWish=_repo.Update(WishlistItem);
-            _repo.Save();
+            var updateWish=await _repo.Update(WishlistItem);
+            await _repo.Save();
             return updateWish;
         }
     }

@@ -9,14 +9,14 @@ namespace DubaiPhoneClone.Application.services.cartitems
 {
     public interface ICartIemServices
     {
-        public IQueryable<CartItem> GetAllCartItem();
+        public  Task<IQueryable<CartItem>> GetAllCartItem();
 
-        public CartItem GetCartItemByID(int CartItem);
+        public Task<CartItem> GetCartItemByID(int CartItem);
 
-        public CartItem CreateCartItem(CartItem CartItem);
+        public Task<CartItem> CreateCartItem(CartItem CartItem);
 
-        public CartItem UpdateCartItem(CartItem CartItem);
+        public Task<CartItem> UpdateCartItem(CartItem CartItem);
 
-        public CartItem DeleteCartItem(int CartItemId);
+        public Task<CartItem> DeleteCartItem(int CartItemId);
     }
 }

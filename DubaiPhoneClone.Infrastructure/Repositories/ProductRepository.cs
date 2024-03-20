@@ -18,7 +18,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             this.applicationContext = applicationContext;
         }
 
-        public bool ChangeStockQuantity(Product product, int quantity)
+        public async Task<bool> ChangeStockQuantity(Product product, int quantity)
         {
             if (product == null)
                 return false;
@@ -31,30 +31,30 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             product.Stock += quantity;
 
             // Save changes to persist the updated stock quantity
-            applicationContext.SaveChanges();
+            await applicationContext.SaveChangesAsync();
 
             return true;
         }
 
-  
-        public IQueryable<Product> GetByBrand(int brandId)=>
+
+        public async Task<IQueryable<Product>> GetByBrand(int brandId)=>
             applicationContext.Products.Where(p=>p.BrandId == brandId);
 
 
-        public IQueryable<Product> GetByBrandAndCategory(int categoryId, int brandId) =>
+        public async Task<IQueryable<Product>> GetByBrandAndCategory(int categoryId, int brandId) =>
             applicationContext.Products.Where(p => p.BrandId == brandId && p.CategoryId == categoryId);
     
 
-        public IQueryable<Product> GetByCategory(int categoryId) =>
+        public async Task<IQueryable<Product>> GetByCategory(int categoryId) =>
             applicationContext.Products.Where(p => p.CategoryId == categoryId);
 
-        public int GetCountByBrand(int brandId) =>
+        public async Task<int> GetCountByBrand(int brandId) =>
             applicationContext.Products.Where(p => p.BrandId == brandId).Count();
 
-        public int GetCountByCategory(int categoryId) =>
+        public async Task<int> GetCountByCategory(int categoryId) =>
             applicationContext.Products.Where(p => p.CategoryId == categoryId).Count();
 
-        public IQueryable<Product> SearchName(string name)=>
+        public async Task<IQueryable<Product>> SearchName(string name)=>
             applicationContext.Products.Where(p => p.Name.ToLower().Contains(name.ToLower()));
 
         

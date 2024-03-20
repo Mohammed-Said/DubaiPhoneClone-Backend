@@ -15,36 +15,36 @@ namespace DubaiPhoneClone.Application.services.cartitems
         {
             _repo = repo;
         }
-        public CartItem CreateCartItem(CartItem CartItem)
+        public async Task<CartItem> CreateCartItem(CartItem CartItem)
         {
-            var cartItem = _repo.Create(CartItem);
-            _repo.Save();
+            var cartItem =await _repo.Create(CartItem);
+            await _repo.Save();
             return cartItem;
         }
 
-        public CartItem DeleteCartItem(int CartItemId)
+        public async Task<CartItem> DeleteCartItem(int CartItemId)
         {
-            var deltecart=_repo.Delete(CartItemId);
-            _repo.Save();
+            var deltecart=await _repo.Delete(CartItemId);
+            await _repo.Save();
             return deltecart;
         }
 
-        public IQueryable<CartItem> GetAllCartItem()
+        public async Task<IQueryable<CartItem>> GetAllCartItem()
         {
-            var query = _repo.GetAll(); 
+            var query =await _repo.GetAll(); 
             return query;
         }
 
-        public CartItem GetCartItemByID(int CartItem)
+        public async Task<CartItem> GetCartItemByID(int CartItem)
         {
-            var element=_repo.GetById(CartItem);
+            var element=await _repo.GetById(CartItem);
             return element;
         }
 
-        public CartItem UpdateCartItem(CartItem CartItem)
+        public async Task<CartItem> UpdateCartItem(CartItem CartItem)
         {
-            var updatecart=_repo.Update(CartItem);
-            _repo.Save();
+            var updatecart=await _repo.Update(CartItem);
+            await _repo.Save();
             return updatecart;
         }
     }

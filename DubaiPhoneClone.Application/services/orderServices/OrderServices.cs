@@ -16,36 +16,36 @@ namespace DubaiPhoneClone.Application.services.orderServices
         }
      
 
-        public Order CreateOrder(Order order)
+        public async Task<Order> CreateOrder(Order order)
         {
-            var Order = _repo.Create(order);
-            _repo.Save();
+            var Order = await _repo.Create(order);
+            await _repo.Save();
             return Order;
         }
 
-        public Order DeleteOrder(int OrderId)
+        public async Task<Order> DeleteOrder(int OrderId)
         {
-            var deltecart = _repo.Delete(OrderId);
-            _repo.Save();
+            var deltecart = await _repo.Delete(OrderId);
+            await _repo.Save();
             return deltecart;
         }
 
-        public IQueryable<Order> GetAllOrder()
+        public async Task<IQueryable<Order>>  GetAllOrder()
         {
-            var query = _repo.GetAll();
+            var query = await _repo.GetAll();
             return query;
         }
 
-        public Order GetOrderByID(int Order)
+        public async Task<Order> GetOrderByID(int Order)
         {
-            var element = _repo.GetById(Order);
+            var element = await _repo.GetById(Order);
             return element;
         }
 
-        public Order UpdateOrder(Order Order)
+        public async Task<Order> UpdateOrder(Order Order)
         {
-            var updatecart = _repo.Update(Order);
-            _repo.Save();
+            var updatecart = await _repo.Update(Order);
+            await _repo.Save();
             return updatecart;
         }
     }

@@ -1,13 +1,16 @@
-﻿namespace DubaiPhoneClone.Application.Contracts
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace DubaiPhoneClone.Application.Contracts
 {
     public interface IRepository<T, TId>
     {
-        IQueryable<T> GetAll();
-        T GetById(TId id);
+         Task<IQueryable<T>> GetAll();
+        Task<T> GetById(TId id);
 
-        T Create(T entity);
-        T Update(T entity);
-        T Delete(TId id);
-        int Save();
+        Task<T> Create(T entity);
+        Task<T> Update(T entity);
+        Task<T> Delete(TId id);
+        Task<int> Save();
     }
 }

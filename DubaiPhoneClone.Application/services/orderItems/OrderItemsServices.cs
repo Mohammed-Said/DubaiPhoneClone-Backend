@@ -8,43 +8,43 @@ using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Application.services.orderItems
 {
-    public class OrderItemsServices
+    public class OrderItemsServices:IOrderItemsServices
     {
         IOrderItemRepository _repo;
         public OrderItemsServices(IOrderItemRepository repo)
         {
             _repo = repo;
         }
-        public OrderItem CreateOrderItem(OrderItem orderItem)
+        public async Task<OrderItem> CreateOrderItem(OrderItem orderItem)
         {
-            var OrderItem = _repo.Create(orderItem);
-            _repo.Save();
+            var OrderItem = await _repo.Create(orderItem);
+            await _repo.Save();
             return OrderItem;
         }
 
-        public OrderItem DeleteOrderItem(int OrderItemId)
+        public async Task<OrderItem> DeleteOrderItem(int OrderItemId)
         {
-            var deltecart = _repo.Delete(OrderItemId);
-            _repo.Save();
+            var deltecart = await _repo.Delete(OrderItemId);
+            await _repo.Save();
             return deltecart;
         }
 
-        public IQueryable<OrderItem> GetAllOrderItem()
+        public async Task<IQueryable<OrderItem>>  GetAllOrderItem()
         {
-            var query = _repo.GetAll();
+            var query = await _repo.GetAll();
             return query;
         }
 
-        public OrderItem GetOrderItemByID(int OrderItem)
+        public async Task<OrderItem> GetOrderItemByID(int OrderItem)
         {
-            var element = _repo.GetById(OrderItem);
+            var element = await _repo.GetById(OrderItem);
             return element;
         }
 
-        public OrderItem UpdateOrderItem(OrderItem OrderItem)
+        public async Task<OrderItem> UpdateOrderItem(OrderItem OrderItem)
         {
-            var updatecart = _repo.Update(OrderItem);
-            _repo.Save();
+            var updatecart = await _repo.Update(OrderItem);
+            await _repo.Save();
             return updatecart;
         }
     }

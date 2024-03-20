@@ -1,5 +1,4 @@
 ﻿using DubaiPhoneClone.Application.Contracts;
-using DubaiPhoneClone.Application.services.User;
 using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
@@ -23,23 +22,23 @@ namespace DubaiPhoneClone.Application.services.userServices
             _repo.Save();
         }
 
-        public Models.User CreateUser(Models.User User)
+        public async Task<User> CreateUser(User User)
         {
-            var createuser=_repo.Create(User);
-            _repo.Save();
+            var createuser=await _repo.Create(User);
+            await _repo.Save();
             return createuser;
         }
 
-        public Models.User DeleteUser(int UserId)
+        public async Task<User> DeleteUser(int UserId)
         {
-            var deleteuser=_repo.Delete(UserId);
-            _repo.Save();
+            var deleteuser=await _repo.Delete(UserId);
+            await _repo.Save();
             return deleteuser;
         }
 
-        public IQueryable<Models.User> GetAllUser()
+        public async Task<IQueryable<User>>  GetAllUser()
         {
-            var query = _repo.GetAll();
+            var query = await _repo.GetAll();
             return query;
         }
 
@@ -49,16 +48,16 @@ namespace DubaiPhoneClone.Application.services.userServices
             return query;
         }
 
-        public Models.User GetUserByID(int User)
+        public async Task<User> GetUserByID(int User)
         {
-            var user=_repo.GetById(User);
+            var user=await _repo.GetById(User);
             return user;
         }
 
-        public Models.User UpdateUser(Models.User User)
+        public async Task<User> UpdateUser(User User)
         {
-            var updateuser=_repo.Update(User);
-            _repo.Save();
+            var updateuser=await _repo.Update(User);
+            await _repo.Save();
             return updateuser;
         }
     }

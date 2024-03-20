@@ -1,5 +1,9 @@
 
+using DubaiPhoneClone.Application.Contracts;
+using DubaiPhoneClone.Application.services.product;
 using DubaiPhoneClone.Context;
+using DubaiPhoneClone.Infrastructure.Repositories;
+using DubaiPhoneClone.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -17,6 +21,8 @@ namespace DubaiPhoneClone.API
 
             builder.Services.AddDbContext<ApplicationContext>(option =>
                 option.UseSqlServer(connection));
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProuductService, productServices>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

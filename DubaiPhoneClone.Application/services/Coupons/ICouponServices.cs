@@ -9,14 +9,14 @@ namespace DubaiPhoneClone.Application.services.Coupons
 {
     public interface ICouponServices
     {
-        public IQueryable<Coupon> GetAllCoupon();
+        public Task<IQueryable<Coupon>> GetAllCoupon();
 
-        public Coupon GetCouponByID(int Coupon);
+        public Task<Coupon> GetCouponByID(int Coupon);
 
-        public Coupon CreateCoupon(Coupon Coupon);
+        public Task<Coupon> CreateCoupon(Coupon Coupon);
 
-        public Coupon UpdateCoupon(Coupon Coupon);
+        public Task<Coupon> UpdateCoupon(Coupon Coupon);
 
-        public Coupon DeleteCoupon(int CouponId);
+        public Task<Coupon> DeleteCoupon(int CouponId);
     }
 }

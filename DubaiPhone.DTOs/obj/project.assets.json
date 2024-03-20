@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Mohamed\\.nuget\\packages\\": {}
+    "C:\\Users\\Office\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj",
+      "projectUniqueName": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj",
       "projectName": "DubaiPhone.DTOs",
-      "projectPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj",
-      "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mohamed\\Desktop\\DubaiPhoneClone-Backend\\DubaiPhone.DTOs\\obj\\",
+      "projectPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhone.DTOs\\DubaiPhone.DTOs.csproj",
+      "packagesPath": "C:\\Users\\Office\\.nuget\\packages\\",
+      "outputPath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhone.DTOs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Office\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,11 +40,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -66,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
