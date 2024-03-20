@@ -580,3 +580,4 @@ D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.AP
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.API\obj\Debug\net8.0\ref\DubaiPhoneClone.API.dll
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.API\bin\Debug\net8.0\DubaiPhoneClone.Infrastructure.dll
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.API\bin\Debug\net8.0\DubaiPhoneClone.Infrastructure.pdb
+D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.API\bin\Debug\net8.0\AutoMapper.dll

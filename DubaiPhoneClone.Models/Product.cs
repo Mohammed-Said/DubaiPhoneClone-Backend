@@ -1,21 +1,40 @@
-﻿namespace DubaiPhoneClone.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DubaiPhoneClone.Models
 {
     public class Product
     {
+        public Product() {
+            Images = new List<ProductImage>();
+            WishlistItems=new List<WishlistItem>();
+            OrderItems=new List<OrderItem>();
+            CartItems=new List<CartItem>();
+        }
         public int Id { get; set; }
-        public string ArabicName { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
+        [Required(ErrorMessage ="please  enter the arabic name")]
+        [StringLength(50,MinimumLength =3,ErrorMessage ="the arabic name of the product between 3 to 50 characters")]
+        public string ArabicName { get; set; }
+        [Required(ErrorMessage = "please  enter the English name")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "the English name of the product between 3 to 50 characters")]
+        public string Name { get; set; }
+        [Range(0,int.MaxValue,ErrorMessage ="sorry the quantity between  0  to 2147483647")]
+        [Required(ErrorMessage = "please  enter the quantity of this product in our stock")]
         public int Stock { get; set; }
         public string Description { get; set; } = string.Empty;
-        public double Price { get; set; }
+        [Required(ErrorMessage ="how much does this product cost our clients?")]
+        public decimal Price { get; set; }
         public double Percent { get; set; }
 
         //Product-Category one to many
+        [ForeignKey("Category")]
+        [Required]
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
 
         //Product-Brand one to many
-        public int BrandId { get; set; }
+        [ForeignKey("Brand")]
+        public int? BrandId { get; set; }
         public Brand? Brand { get; set; }
 
         public List<ProductImage>? Images { get; set; }

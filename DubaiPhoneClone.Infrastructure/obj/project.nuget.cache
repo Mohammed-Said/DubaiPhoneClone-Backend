@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+UwUYKWfo/weyqDlseTSeBQDqJ/z18csVchaO+LiC+w55Zg5Aymp6fVc6y9K+xMGtQieubMCS2jhLBZAJrsHUw==",
+  "dgSpecHash": "JcPY1r4SDvOCSC7Sg9KxGV88qoNwh605bjAyB4Y/J1Bil1lNKUDRLaQpsA5PCxzM2fvmZukytUfgZ5BTvpIKIg==",
   "success": true,
   "projectFilePath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Infrastructure\\DubaiPhoneClone.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Office\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

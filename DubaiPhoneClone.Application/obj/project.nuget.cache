@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ohxKfrnzgInLkewu8jPvZ9HFsJ6IAjsjxYj2qa0SSy/VI1+UNX/7upfZbb7YNO8d4tl/1hnNZDp3KFUnmLyVdw==",
+  "dgSpecHash": "AgXwZL75gf8WDx+EmwwAdLCi0yDzMkfXRL8p4dcvI2Iv5W65s4Ao8Dv+Mddn8vMaredPwyJXB1xnGyQEvrA6XA==",
   "success": true,
   "projectFilePath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.Application\\DubaiPhoneClone.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Office\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.3\\microsoft.entityframeworkcore.8.0.3.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.3\\microsoft.entityframeworkcore.abstractions.8.0.3.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.3\\microsoft.entityframeworkcore.analyzers.8.0.3.nupkg.sha512",

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BeKhY4aO/f51WlwYiBfita7AM2wnzPj9KMcBogSA8ZhNJBwxrzlVc0xPm7KDFhco6mCH5QGvi5yQMxIu+VtPLw==",
+  "dgSpecHash": "fe+32AxduPqTru6KIRRojmJvt9wZeN7x8lVOPWrRNKkyOH2WrORGBztCMH5qhAylXRj1yQTy2o7zfuyAAx4EIA==",
   "success": true,
   "projectFilePath": "D:\\development\\iti\\graduation project\\DubaiPhoneClone-Backend\\DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Office\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Office\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

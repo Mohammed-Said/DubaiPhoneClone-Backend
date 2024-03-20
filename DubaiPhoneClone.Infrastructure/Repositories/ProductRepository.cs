@@ -1,6 +1,7 @@
 ﻿using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,11 +49,13 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
         public async Task<IQueryable<Product>> GetByCategory(int categoryId) =>
             applicationContext.Products.Where(p => p.CategoryId == categoryId);
 
+        public async Task<int> GetCount() =>
+            await   applicationContext.Products.CountAsync();
         public async Task<int> GetCountByBrand(int brandId) =>
-            applicationContext.Products.Where(p => p.BrandId == brandId).Count();
+            await applicationContext.Products.Where(p => p.BrandId == brandId).CountAsync();
 
         public async Task<int> GetCountByCategory(int categoryId) =>
-            applicationContext.Products.Where(p => p.CategoryId == categoryId).Count();
+          await  applicationContext.Products.Where(p => p.CategoryId == categoryId).CountAsync();
 
         public async Task<IQueryable<Product>> SearchName(string name)=>
             applicationContext.Products.Where(p => p.Name.ToLower().Contains(name.ToLower()));

@@ -1,4 +1,7 @@
-﻿using DubaiPhoneClone.Application.Contracts;
+﻿using AutoMapper;
+using DubaiPhone.DTOs;
+using DubaiPhone.DTOs.productDTOs;
+using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,72 +15,64 @@ namespace DubaiPhoneClone.Application.services.product
     public class productServices : IProuductService
     {
         IProductRepository _repo;
-        public productServices(IProductRepository repo)
+        IMapper _mapper;
+        public productServices(IProductRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
+        }
+        public async Task<List<GetAllProduct>> GetAllProduct()
+        {
+            var products = await (await _repo.GetAll()).ToListAsync();
+            List<GetAllProduct> result = _mapper.Map<List<GetAllProduct>>(products);
+            return result;
+        }
+        public async Task<GetProductDetails> GetProductByID(int Product) =>
+           _mapper.Map<GetProductDetails>(await _repo.GetById(Product));
+        public async Task<List<GetAllProduct>> GetByBrand(int bramdId) =>
+        _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrand(bramdId)).ToListAsync());
+        public async Task<List<GetAllProduct>> GetByBrandAndCategory(int bId, int cId) =>
+             _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrandAndCategory(cId, bId)).ToListAsync());
+        public async Task<List<GetAllProduct>> GetByCategory(int cId) =>
+           _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByCategory(cId)).ToListAsync());
+        public async Task<List<GetAllProduct>> SearchName(string name) =>
+           _mapper.Map<List<GetAllProduct>>(await (await _repo.SearchName(name)).ToListAsync());
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPagination(int Productnums, int PageNumber) =>
+            (new Pagination<List<GetAllProduct>>()
+            {
+                entity = _mapper.Map<List<GetAllProduct>>(await (await _repo.GetAll()).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
+                Count = await _repo.GetCount(),
+                Page = PageNumber,
+                PageSize = Productnums
+            });
+        public async Task<int> GetCountByBrand(int bId) =>
+            await _repo.GetCountByBrand(bId);
+        public async Task<int> GetCountByCategory(int cId) =>
+            await _repo.GetCountByCategory(cId);
+        public async Task<CreatingAndUpdatingProduct> CreateProduct(CreatingAndUpdatingProduct Product)
+        {
+            Product prd = _mapper.Map<Product>(Product);
+            var createdproduct = await _repo.Create(prd);
+            await _repo.Save();
+            Product = _mapper.Map<CreatingAndUpdatingProduct>(createdproduct);
+            return Product;
         }
         public async Task<bool> ChangeStockQuantity(Product product, int quantity)
         {
-            var stock =await _repo.ChangeStockQuantity(product, quantity);
+            var stock = await _repo.ChangeStockQuantity(product, quantity);
             return stock;
         }
-
-
-        public async Task<Product> CreateProduct(Product Product)
-        {
-            var createproduct =await _repo.Create(Product);
-            await _repo.Save();
-            return createproduct;
+        public async Task<CreatingAndUpdatingProduct> UpdateProduct(CreatingAndUpdatingProduct Product){
+            Product prd = _mapper.Map<Product>(Product);
+            Product = _mapper.Map<CreatingAndUpdatingProduct>(await _repo.Update(prd));
+            return Product;
         }
-
-        public async Task<Product> DeleteProduct(int ProductId)
+        public async Task<GetProductDetails> DeleteProduct(int ProductId)
         {
             var delepro = await _repo.Delete(ProductId);
             await _repo.Save();
-            return delepro;
+            GetProductDetails res = _mapper.Map<GetProductDetails>(delepro);
+            return res;
         }
-
-        public async Task<List<Product>> GetAllProduct()
-        {
-            var products = await(await _repo.GetAll()).ToListAsync();
-            return products;
-        }
-
-        public async Task<List<Product>> GetByBrand(int bramdId) =>
-        await (await _repo.GetByBrand(bramdId)).ToListAsync();
-
-
-        public async Task<List<Product>> GetByBrandAndCategory(int bId, int cId) =>
-             await(await _repo.GetByBrandAndCategory(cId, bId)).ToListAsync();
-
-
-        public async Task<List<Product>> GetByCategory(int cId) =>
-            await(await _repo.GetByCategory(cId)).ToListAsync();
-
-
-        public async Task<int> GetCountByBrand(int bId) =>
-            await _repo.GetCountByBrand(bId);
-
-
-        public async Task<int >GetCountByCategory(int cId) =>
-            await _repo.GetCountByCategory(cId);
-
-
-        public async Task<Product> GetProductByID(int Product) =>
-           await _repo.GetById(Product);
-
-
-        public async Task<List<Product>> SearchName(string name) =>
-           await(await _repo.SearchName(name)).ToListAsync();
-
-
-        public async Task<Product> UpdateProduct(Product Product) =>
-             await _repo.Update(Product);
-
-
-        public async Task<List<Product>> GetAllPagination(int Productnums, int PageNumber) =>
-             await(await _repo.GetAll()).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync();
-
-       
     }
 }

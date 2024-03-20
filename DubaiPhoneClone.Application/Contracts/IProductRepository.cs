@@ -16,5 +16,6 @@ namespace DubaiPhoneClone.Application.Contracts
         Task<bool> ChangeStockQuantity(Product product, int quantity);
         Task<int> GetCountByCategory(int categoryId);
         Task<int> GetCountByBrand(int brand);
+        Task<int> GetCount();
     }
 }

@@ -1,4 +1,6 @@
-﻿using DubaiPhoneClone.Models;
+﻿using DubaiPhone.DTOs;
+using DubaiPhone.DTOs.productDTOs;
+using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,23 +11,23 @@ namespace DubaiPhoneClone.Application.services.product
 {
     public interface IProuductService
     {
-         Task<List<Product>> GetAllProduct();
+        Task<List<GetAllProduct>> GetAllProduct();
 
-        Task<Product> GetProductByID(int Product);
+        Task<GetProductDetails> GetProductByID(int Product);
 
-        Task<Product> CreateProduct(Product Product);
+        Task<CreatingAndUpdatingProduct> CreateProduct(CreatingAndUpdatingProduct Product);
 
-        Task<Product> UpdateProduct(Product Product);
+        Task<CreatingAndUpdatingProduct> UpdateProduct(CreatingAndUpdatingProduct Product);
 
-        Task<Product> DeleteProduct(int ProductId);
+        Task<GetProductDetails> DeleteProduct(int ProductId);
 
-        Task<List<Product>> SearchName(string name);
+        Task<List<GetAllProduct>> SearchName(string name);
 
-        Task<List<Product>> GetByCategory(int cId);
+        Task<List<GetAllProduct>> GetByCategory(int cId);
 
-        Task<List<Product>> GetByBrand(int bId);
+        Task<List<GetAllProduct>> GetByBrand(int bId);
 
-        Task<List<Product>> GetByBrandAndCategory(int bId,int cId);
+        Task<List<GetAllProduct>> GetByBrandAndCategory(int bId,int cId);
 
         Task<bool> ChangeStockQuantity(Product product, int quantity);
 
@@ -33,6 +35,6 @@ namespace DubaiPhoneClone.Application.services.product
 
         Task<int> GetCountByBrand(int bId);
 
-        Task<List<Product>> GetAllPagination(int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPagination(int Productnums, int PageNumber);
     }
 }
