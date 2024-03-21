@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DubaiPhoneClone.Models;
 using DubaiPhoneClone.Application.services.Brands;
+using Microsoft.EntityFrameworkCore;
 namespace DubaiPhoneClone.Application.services.Brands
 {
     public class BrandService : IBrandServices
@@ -30,9 +31,9 @@ namespace DubaiPhoneClone.Application.services.Brands
             return deletbrand;
         }
 
-        public async Task<IQueryable<Brand>> GetAllBrand()
+        public async Task<List<Brand>> GetAllBrand()
         {
-            var brands=await _repo.GetAll();
+            var brands=await(await _repo.GetAll()).ToListAsync();
             return brands;
         }
 

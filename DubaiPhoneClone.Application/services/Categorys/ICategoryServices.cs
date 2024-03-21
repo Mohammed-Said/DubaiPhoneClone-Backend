@@ -9,7 +9,7 @@ namespace DubaiPhoneClone.Application.services.Categorys
 {
     public interface ICategoryServices
     {
-        public Task<IQueryable<Category>> GetAllCategory();
+        public Task<List<Category>> GetAllCategory();
 
         public Task<Category> GetCategoryByID(int Category);
 

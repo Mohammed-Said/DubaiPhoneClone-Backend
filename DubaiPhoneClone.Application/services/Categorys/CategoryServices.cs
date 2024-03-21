@@ -1,5 +1,6 @@
 ﻿using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +27,9 @@ namespace DubaiPhoneClone.Application.services.Categorys
             return deltecart;
         }
 
-        public async Task<IQueryable<Category>>  GetAllCategory()
+        public async Task<List<Category>>  GetAllCategory()
         {
-            var query = await _repo.GetAll();
+            var query = await(await _repo.GetAll()).ToListAsync();
             return query;
         }
 

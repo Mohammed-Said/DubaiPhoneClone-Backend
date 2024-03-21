@@ -5,7 +5,7 @@ namespace DubaiPhoneClone.Application.services.Brands
 {
     public interface IBrandServices
     {
-        public  Task<IQueryable<Brand>> GetAllBrand();
+        public Task<List<Brand>> GetAllBrand();
 
         public Task<Brand> GetBrandByID(int Brand);
 
