@@ -18,6 +18,7 @@ namespace DubaiPhoneClone.Context
         public DbSet<Product>? Products { get; set; }
         public DbSet<ProductImage>? ProductImages { get; set; }
         public DbSet<WishlistItem>? WishlistItems { get; set; }
+        public DbSet<BrandCategory>? BrandCategories { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {

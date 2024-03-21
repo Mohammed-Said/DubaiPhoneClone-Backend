@@ -10,6 +10,7 @@ namespace DubaiPhoneClone.Models
         public string ImagePath { get; set; }= string.Empty;
         [JsonIgnore]
         public List<Product>? Products { get; set; }
+        public List<BrandCategory>? Categories { get; set; }
 
 
     }
