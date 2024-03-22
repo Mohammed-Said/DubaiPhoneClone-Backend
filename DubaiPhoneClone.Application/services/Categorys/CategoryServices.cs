@@ -1,4 +1,6 @@
-﻿using DubaiPhoneClone.Application.Contracts;
+﻿using AutoMapper;
+using DubaiPhone.DTOs.CategoryDTOs;
+using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,36 +14,58 @@ namespace DubaiPhoneClone.Application.services.Categorys
     public class CategoryServices:ICategoryServices
     {
         ICategoryRepository _repo;
-        public CategoryServices(ICategoryRepository repo) { _repo = repo; }
-        public async Task<Category> CreateCategory(Category Category)
+        private readonly IMapper mapper;
+
+        public CategoryServices(ICategoryRepository repo,IMapper mapper)
         {
-            var category = await _repo.Create(Category);
+            _repo = repo;
+            this.mapper = mapper;
+        }
+        public async Task<Category> CreateCategory(CreateCategoryDTO Category)
+        {
+            var newCategory = mapper.Map<Category>(Category);
+
+            var category = await _repo.Create(newCategory);
             await _repo.Save();
-            return Category;
+            return category;
         }
 
         public async Task<Category> DeleteCategory(int CategoryId)
         {
+            var oldCategory = await _repo.GetById(CategoryId);
+
+            if (oldCategory is null)
+                return null;
             var deltecart = await _repo.Delete(CategoryId);
             await _repo.Save();
             return deltecart;
         }
 
-        public async Task<List<Category>>  GetAllCategory()
+        public async Task<List<GetCategoryDTO>>  GetAllCategory()
         {
-            var query = await(await _repo.GetAll()).ToListAsync();
-            return query;
+            var categories = await(await _repo.GetAll()).ToListAsync();
+            return mapper.Map<List<GetCategoryDTO>>(categories);
         }
 
-        public async Task<Category> GetCategoryByID(int Category)
+        public async Task<List<GetCategoryWithBrandDTOs>> GetAllCategoryWithBrand()=>
+            await(await _repo.GetCategoryWithBrand()).ToListAsync();
+
+
+        public async Task<GetCategoryDTO> GetCategoryByID(int Category)
         {
-            var element = await _repo.GetById(Category);
-            return element;
+            var category = await _repo.GetById(Category);
+            return mapper.Map<GetCategoryDTO>(category);
+
         }
 
-        public async Task<Category> UpdateCategory(Category Category)
+        public async Task<Category> UpdateCategory(UpdateCategoryDTO category)
         {
-            var updatecart = await _repo.Update(Category);
+            var oldCategory = await _repo.GetById(category.Id);
+            if (oldCategory is null)
+                return null;
+            Category newCategory = mapper.Map(category,oldCategory);
+
+            var updatecart = await _repo.Update(newCategory);
             await _repo.Save();
             return updatecart;
         }

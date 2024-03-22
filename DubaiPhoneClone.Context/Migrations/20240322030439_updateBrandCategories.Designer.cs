@@ -4,6 +4,7 @@ using DubaiPhoneClone.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DubaiPhoneClone.Context.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240322030439_updateBrandCategories")]
+    partial class updateBrandCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +24,6 @@ namespace DubaiPhoneClone.Context.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("BrandCategory", b =>
-                {
-                    b.Property<int>("BrandsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BrandsId", "CategoriesId");
-
-                    b.HasIndex("CategoriesId");
-
-                    b.ToTable("BrandCategory");
-                });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.Brand", b =>
                 {
@@ -60,6 +48,29 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Brands");
+                });
+
+            modelBuilder.Entity("DubaiPhoneClone.Models.BrandCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("BrandCategories");
                 });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.CartItem", b =>
@@ -124,9 +135,6 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<double>("Percent")
                         .HasColumnType("float");
 
@@ -134,10 +142,6 @@ namespace DubaiPhoneClone.Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OrderId")
-                        .IsUnique()
-                        .HasFilter("[OrderId] IS NOT NULL");
 
                     b.ToTable("Coupons");
                 });
@@ -179,6 +183,29 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("DubaiPhoneClone.Models.OrderCoupon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CouponId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CouponId");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("OrderCoupons");
                 });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.OrderItem", b =>
@@ -268,12 +295,7 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.Property<int>("PordId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
                 });
@@ -332,34 +354,61 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ProductUser", b =>
+            modelBuilder.Entity("DubaiPhoneClone.Models.WishlistItem", b =>
                 {
-                    b.Property<int>("ProductsId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductsId", "UsersId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("UsersId");
+                    b.HasKey("Id");
 
-                    b.ToTable("ProductUser");
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("WishlistItems");
                 });
 
-            modelBuilder.Entity("BrandCategory", b =>
+            modelBuilder.Entity("ProductProductImage", b =>
                 {
-                    b.HasOne("DubaiPhoneClone.Models.Brand", null)
-                        .WithMany()
-                        .HasForeignKey("BrandsId")
+                    b.Property<int>("ImagesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ImagesId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductProductImage");
+                });
+
+            modelBuilder.Entity("DubaiPhoneClone.Models.BrandCategory", b =>
+                {
+                    b.HasOne("DubaiPhoneClone.Models.Brand", "Brand")
+                        .WithMany("Categories")
+                        .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DubaiPhoneClone.Models.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
+                    b.HasOne("DubaiPhoneClone.Models.Category", "Category")
+                        .WithMany("Brands")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.CartItem", b =>
@@ -381,15 +430,6 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("DubaiPhoneClone.Models.Coupon", b =>
-                {
-                    b.HasOne("DubaiPhoneClone.Models.Order", "Order")
-                        .WithOne("Coupon")
-                        .HasForeignKey("DubaiPhoneClone.Models.Coupon", "OrderId");
-
-                    b.Navigation("Order");
-                });
-
             modelBuilder.Entity("DubaiPhoneClone.Models.Order", b =>
                 {
                     b.HasOne("DubaiPhoneClone.Models.User", "User")
@@ -399,6 +439,25 @@ namespace DubaiPhoneClone.Context.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DubaiPhoneClone.Models.OrderCoupon", b =>
+                {
+                    b.HasOne("DubaiPhoneClone.Models.Coupon", "Coupon")
+                        .WithMany()
+                        .HasForeignKey("CouponId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DubaiPhoneClone.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Coupon");
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.OrderItem", b =>
@@ -437,46 +496,56 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("DubaiPhoneClone.Models.ProductImage", b =>
+            modelBuilder.Entity("DubaiPhoneClone.Models.WishlistItem", b =>
                 {
                     b.HasOne("DubaiPhoneClone.Models.Product", "Product")
-                        .WithMany("Images")
+                        .WithMany("WishlistItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("ProductUser", b =>
-                {
-                    b.HasOne("DubaiPhoneClone.Models.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
+                    b.HasOne("DubaiPhoneClone.Models.User", "User")
+                        .WithMany("WishlistItems")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DubaiPhoneClone.Models.User", null)
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ProductProductImage", b =>
+                {
+                    b.HasOne("DubaiPhoneClone.Models.ProductImage", null)
                         .WithMany()
-                        .HasForeignKey("UsersId")
+                        .HasForeignKey("ImagesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DubaiPhoneClone.Models.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.Brand", b =>
                 {
+                    b.Navigation("Categories");
+
                     b.Navigation("Products");
                 });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.Category", b =>
                 {
+                    b.Navigation("Brands");
+
                     b.Navigation("Products");
                 });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.Order", b =>
                 {
-                    b.Navigation("Coupon");
-
                     b.Navigation("OrderItems");
                 });
 
@@ -484,9 +553,9 @@ namespace DubaiPhoneClone.Context.Migrations
                 {
                     b.Navigation("CartItems");
 
-                    b.Navigation("Images");
-
                     b.Navigation("OrderItems");
+
+                    b.Navigation("WishlistItems");
                 });
 
             modelBuilder.Entity("DubaiPhoneClone.Models.User", b =>
@@ -494,6 +563,8 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.Navigation("CartItems");
 
                     b.Navigation("Orders");
+
+                    b.Navigation("WishlistItems");
                 });
 #pragma warning restore 612, 618
         }

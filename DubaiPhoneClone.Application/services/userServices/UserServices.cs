@@ -16,9 +16,9 @@ namespace DubaiPhoneClone.Application.services.userServices
             _repo = repo;        
         }
 
-        public void AddCartItem(int bookId, int customerId, int quantity)
+        public void AddCartItem(int prodId, int customerId, int quantity)
         {
-           _repo.AddCartItem(bookId, customerId, quantity);
+           _repo.AddCartItem(prodId, customerId, quantity);
             _repo.Save();
         }
 

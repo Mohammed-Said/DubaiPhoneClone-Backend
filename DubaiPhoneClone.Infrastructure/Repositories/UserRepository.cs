@@ -1,11 +1,6 @@
 ﻿using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Infrastructure.Repositories
 {
@@ -46,16 +41,16 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
         void IUserRepository.AddWishlistItem(int prodId, int userId, int quantity)
         {
-            var existingWishlistItem = applicationContext?.WishlistItems?.FirstOrDefault(c => c.ProductId == prodId && c.UserId == userId);
-            if (existingWishlistItem != null) 
-                return;
-            var wishlistItem = new WishlistItem
-            {
-                ProductId = prodId,
-                UserId = userId
+            //var existingWishlistItem = applicationContext?.WishlistItems?.FirstOrDefault(c => c.ProductId == prodId && c.UserId == userId);
+            //if (existingWishlistItem != null) 
+            //    return;
+            //var wishlistItem = new WishlistItem
+            //{
+            //    ProductId = prodId,
+            //    UserId = userId
 
-            };
-            applicationContext.WishlistItems.Add(wishlistItem);
+            //};
+            //applicationContext.WishlistItems.Add(wishlistItem);
 
             applicationContext.SaveChanges();
 

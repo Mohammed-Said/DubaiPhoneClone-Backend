@@ -1,4 +1,6 @@
-﻿using DubaiPhoneClone.Models;
+﻿using DubaiPhone.DTOs.BrandDTOs;
+using DubaiPhone.DTOs.CategoryDTOs;
+using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +11,17 @@ namespace DubaiPhoneClone.Application.services.Categorys
 {
     public interface ICategoryServices
     {
-        public Task<List<Category>> GetAllCategory();
+        public Task<List<GetCategoryDTO>> GetAllCategory();
 
-        public Task<Category> GetCategoryByID(int Category);
+        public Task<GetCategoryDTO> GetCategoryByID(int Category);
 
-        public Task<Category> CreateCategory(Category Category);
+        public Task<Category> CreateCategory(CreateCategoryDTO Category);
 
-        public Task<Category> UpdateCategory(Category Category);
+        public Task<Category> UpdateCategory(UpdateCategoryDTO Category);
 
         public Task<Category> DeleteCategory(int CategoryId);
+
+        Task<List<GetCategoryWithBrandDTOs>> GetAllCategoryWithBrand();
+
     }
 }

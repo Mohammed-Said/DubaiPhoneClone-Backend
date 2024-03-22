@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace DubaiPhoneClone.Models
+﻿namespace DubaiPhoneClone.Models
 {
     public class Brand
     {
@@ -8,9 +6,8 @@ namespace DubaiPhoneClone.Models
         public string Name { get; set; }= string.Empty;
         public string ArabicName { get; set; }= string.Empty;
         public string ImagePath { get; set; }= string.Empty;
-        [JsonIgnore]
         public List<Product>? Products { get; set; }
-        public List<BrandCategory>? Categories { get; set; }
+        public List<Category>? Categories { get; set; }
 
 
     }

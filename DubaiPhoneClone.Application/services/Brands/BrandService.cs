@@ -7,19 +7,25 @@ using System.Threading.Tasks;
 using DubaiPhoneClone.Models;
 using DubaiPhoneClone.Application.services.Brands;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using DubaiPhone.DTOs.BrandDTOs;
 namespace DubaiPhoneClone.Application.services.Brands
 {
     public class BrandService : IBrandServices
     {
         IBrandRepository _repo;
-        public BrandService(IBrandRepository  repo) 
+        private readonly IMapper mapper;
+
+        public BrandService(IBrandRepository  repo,IMapper mapper) 
         {
             _repo = repo;
+            this.mapper = mapper;
         }
 
-        public async Task<Brand> CreateBrand(Brand Brand)
+        public async Task<Brand> CreateBrand(CreateBrandDTO Brand)
         {
-            var brand = await _repo.Create(Brand);
+            var newBrand=mapper.Map<Brand>(Brand);
+            var brand = await _repo.Create(newBrand);
             await _repo.Save();
             return brand;
         }
@@ -31,23 +37,32 @@ namespace DubaiPhoneClone.Application.services.Brands
             return deletbrand;
         }
 
-        public async Task<List<Brand>> GetAllBrand()
+        public async Task<List<GetBrandDTO>> GetAllBrand()
         {
             var brands=await(await _repo.GetAll()).ToListAsync();
-            return brands;
+            return mapper.Map<List<GetBrandDTO>>(brands);
         }
 
-        public async Task<Brand> GetBrandByID(int Brand)
+        public async Task<List<GetBrandWithCategoryDTO>> GetAllBrandWithCategory()=>
+            await(await _repo.GetBrandsWithCategory()).ToListAsync();
+            
+        
+
+        public async Task<GetBrandDTO> GetBrandByID(int Brand)
         {
             var brand=await _repo.GetById(Brand);
-            return brand;
+            return mapper.Map<GetBrandDTO>(brand);
         }
 
-        public async Task<Brand> UpdateBrand(Brand Brand)
+        public async Task<Brand> UpdateBrand(UpdateBrandDTO brand)
         {
-            var brand=await _repo.Update(Brand);
+            var oldBrand =await _repo.GetById(brand.Id);
+
+            Brand updatedBrand = mapper.Map(brand,oldBrand);
+            updatedBrand = await _repo.Update(updatedBrand);
             await _repo.Save();
-            return brand;
+            return updatedBrand;
         }
+        
     }
 }

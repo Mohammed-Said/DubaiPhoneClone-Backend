@@ -21,6 +21,6 @@ namespace DubaiPhoneClone.Application.services.userServices
 
         IQueryable<Order> GetCustomerOrders(int userId);
 
-        void AddCartItem(int bookId, int customerId, int quantity);
+        void AddCartItem(int prodId, int customerId, int quantity);
     }
 }

@@ -21,7 +21,7 @@ namespace DubaiPhone.DTOs.productDTOs
         public Category? Category { get; set; }
         public int? BrandId { get; set; }
         public Brand? Brand { get; set; }
-        public List<WishlistItem>? WishlistItems { get; set; }
+        public List<User>? WishlistItems { get; set; }
         public List<ProductImage>? Images { get; set; }
     }
 }

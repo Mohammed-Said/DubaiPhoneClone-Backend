@@ -4,6 +4,7 @@ using DubaiPhoneClone.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DubaiPhoneClone.Context.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240322142501_updateModels")]
+    partial class updateModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -268,12 +271,7 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.Property<int>("PordId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
                 });
@@ -332,17 +330,32 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("ProductProductImage", b =>
+                {
+                    b.Property<int>("ImagesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ImagesId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductProductImage");
+                });
+
             modelBuilder.Entity("ProductUser", b =>
                 {
-                    b.Property<int>("ProductsId")
+                    b.Property<int>("WishlistItemsId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
+                    b.Property<int>("WishlistItemsId1")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductsId", "UsersId");
+                    b.HasKey("WishlistItemsId", "WishlistItemsId1");
 
-                    b.HasIndex("UsersId");
+                    b.HasIndex("WishlistItemsId1");
 
                     b.ToTable("ProductUser");
                 });
@@ -437,28 +450,32 @@ namespace DubaiPhoneClone.Context.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("DubaiPhoneClone.Models.ProductImage", b =>
+            modelBuilder.Entity("ProductProductImage", b =>
                 {
-                    b.HasOne("DubaiPhoneClone.Models.Product", "Product")
-                        .WithMany("Images")
-                        .HasForeignKey("ProductId")
+                    b.HasOne("DubaiPhoneClone.Models.ProductImage", null)
+                        .WithMany()
+                        .HasForeignKey("ImagesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
+                    b.HasOne("DubaiPhoneClone.Models.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProductUser", b =>
                 {
                     b.HasOne("DubaiPhoneClone.Models.Product", null)
                         .WithMany()
-                        .HasForeignKey("ProductsId")
+                        .HasForeignKey("WishlistItemsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DubaiPhoneClone.Models.User", null)
                         .WithMany()
-                        .HasForeignKey("UsersId")
+                        .HasForeignKey("WishlistItemsId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -483,8 +500,6 @@ namespace DubaiPhoneClone.Context.Migrations
             modelBuilder.Entity("DubaiPhoneClone.Models.Product", b =>
                 {
                     b.Navigation("CartItems");
-
-                    b.Navigation("Images");
 
                     b.Navigation("OrderItems");
                 });

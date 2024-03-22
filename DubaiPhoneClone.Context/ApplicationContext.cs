@@ -13,12 +13,9 @@ namespace DubaiPhoneClone.Context
         public DbSet<Category>? Categories { get; set; }
         public DbSet<Coupon>? Coupons { get; set; }
         public DbSet<Order>? Orders { get; set; }
-        public DbSet<OrderCoupon>? OrderCoupons { get; set; }
         public DbSet<OrderItem>? OrderItems { get; set; }
         public DbSet<Product>? Products { get; set; }
         public DbSet<ProductImage>? ProductImages { get; set; }
-        public DbSet<WishlistItem>? WishlistItems { get; set; }
-        public DbSet<BrandCategory>? BrandCategories { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
@@ -39,7 +36,13 @@ namespace DubaiPhoneClone.Context
             modelBuilder.Entity<User>()
                 .HasIndex(c => c.Email)
                 .IsUnique();
+            //modelBuilder.Entity<Coupon>()
+            //    .HasOne(c => c.Order)
+            //    .WithOne(C => C.Coupon)
+            //    .IsRequired(false);
 
+            
+                
         }
     }
 }

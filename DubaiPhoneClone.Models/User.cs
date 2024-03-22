@@ -1,4 +1,6 @@
-﻿namespace DubaiPhoneClone.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DubaiPhoneClone.Models
 {
     public class User
     {
@@ -14,7 +16,7 @@
 
         public List<Order>? Orders { get; set; }
         public List<CartItem>? CartItems { get; set; }
-        public List<WishlistItem>? WishlistItems { get; set; }
+        public List<Product>? Products { get; set; }
 
     }
 }
