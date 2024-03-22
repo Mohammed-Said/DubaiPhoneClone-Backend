@@ -53,7 +53,7 @@ namespace DubaiPhoneClone.API.Controllers
             }
             return Ok(products);
         }
-        [HttpGet("{name}")]
+        [HttpGet("search/{name}")]
         public async Task<IActionResult> SearchByName(string name)
         {
             var products = await _productServices.SearchName(name);
@@ -74,7 +74,7 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(products);
         }
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetByBrandAndCategory(int id)
+        public async Task<IActionResult> GetProductByID(int id)
         {
             var product = await _productServices.GetProductByID(id);
             if (product == null )
@@ -85,7 +85,7 @@ namespace DubaiPhoneClone.API.Controllers
         }
         [HttpGet("catCount/{catId}")]
         public async Task<IActionResult> GetCountByCategory(int catId)=> Ok(await _productServices.GetCountByCategory(catId));
-        [HttpGet("brandCount/{brandId}")]
+        [HttpGet("catCount/{brandId}")]
         public async Task<IActionResult> GetCountByBrand(int brandId)=>Ok(await _productServices.GetCountByBrand(brandId));
     }
 }
