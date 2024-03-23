@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DubaiPhone.DTOs.BrandDTOs;
 using DubaiPhone.DTOs.CategoryDTOs;
+using DubaiPhone.DTOs.CouponDTOs;
 using DubaiPhone.DTOs.OrderDTOs;
 using DubaiPhone.DTOs.productDTOs;
 using DubaiPhoneClone.Models;
@@ -29,6 +30,11 @@ namespace DubaiPhoneClone.Application.mapper
             CreateMap<Order, getOrderDTO>().ReverseMap();
             CreateMap<Order, UpdateOrderDTO>().ReverseMap();
             CreateMap<Order, CreateOrderDTO>().ReverseMap();
+
+            //Coupon
+            CreateMap<Coupon, GetCouponDTO>().ReverseMap();
+            CreateMap<Coupon, UpdateCouponDTO>().ReverseMap();
+            CreateMap<Coupon, CreateCouponDTO>().ReverseMap();
 
         }
     }

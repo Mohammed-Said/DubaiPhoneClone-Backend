@@ -1,22 +1,29 @@
-﻿using DubaiPhoneClone.Application.Contracts;
+﻿using AutoMapper;
+using DubaiPhone.DTOs.CouponDTOs;
+using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace DubaiPhoneClone.Application.services.Coupons
 {
     public class CouponServices
     {
         ICouponRepository _repo;
-        public CouponServices(ICouponRepository repo)
+        private readonly IMapper mapper;
+
+        public CouponServices(ICouponRepository repo,IMapper mapper)
         {
             _repo = repo;
+            this.mapper = mapper;
         }
-        public async Task<Coupon> CreateCoupon(Coupon coupon)
+        public async Task<Coupon> CreateCoupon(CreateCouponDTO _coupon)
         {
+            Coupon coupon= mapper.Map<Coupon>(_coupon);
             var Coupon =await _repo.Create(coupon);
             await _repo.Save();
             return Coupon;
@@ -29,21 +36,23 @@ namespace DubaiPhoneClone.Application.services.Coupons
             return deltecart;
         }
 
-        public async Task<IQueryable<Coupon>> GetAllCoupon()
+        public async Task<List<GetCouponDTO>> GetAllCoupon()
         {
             var query = await _repo.GetAll();
-            return query;
+            return mapper.Map<List<GetCouponDTO>>(query);
         }
 
-        public async Task<Coupon> GetCouponByID(int Coupon)
+        public async Task<GetCouponDTO> GetCouponByID(int Coupon)
         {
             var element = await _repo.GetById(Coupon);
-            return element;
+            return mapper.Map<GetCouponDTO>(element); ;
         }
 
-        public async Task<Coupon> UpdateCoupon(Coupon Coupon)
+        public async Task<Coupon> UpdateCoupon(UpdateCouponDTO _coupon)
         {
-            var updatecart =await _repo.Update(Coupon);
+            Coupon coupon = mapper.Map<Coupon>(_coupon);
+
+            var updatecart =await _repo.Update(coupon);
             await _repo.Save();
             return updatecart;
         }
