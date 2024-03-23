@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
 using DubaiPhone.DTOs.BrandDTOs;
 using DubaiPhone.DTOs.CategoryDTOs;
+using DubaiPhone.DTOs.OrderDTOs;
 using DubaiPhone.DTOs.productDTOs;
 using DubaiPhoneClone.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DubaiPhoneClone.Application.mapper
 {
@@ -28,6 +25,10 @@ namespace DubaiPhoneClone.Application.mapper
             CreateMap<Category, UpdateCategoryDTO>().ReverseMap();
             CreateMap<Category, CreateCategoryDTO>().ReverseMap();
 
+            //Orders
+            CreateMap<Order, getOrderDTO>().ReverseMap();
+            CreateMap<Order, UpdateOrderDTO>().ReverseMap();
+            CreateMap<Order, CreateOrderDTO>().ReverseMap();
 
         }
     }

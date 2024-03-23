@@ -1,5 +1,8 @@
-﻿using DubaiPhoneClone.Application.Contracts;
+﻿using AutoMapper;
+using DubaiPhone.DTOs.OrderDTOs;
+using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +14,17 @@ namespace DubaiPhoneClone.Application.services.orderServices
     public class OrderServices:IOrderServices
     {
         IOrederRepository _repo;
-        public OrderServices(IOrederRepository repo) {
+        private readonly IMapper mapper;
+
+        public OrderServices(IOrederRepository repo,IMapper mapper) {
         _repo = repo;
+            this.mapper = mapper;
         }
      
 
-        public async Task<Order> CreateOrder(Order order)
+        public async Task<Order> CreateOrder(CreateOrderDTO _order)
         {
+            Order order = mapper.Map<Order>(_order); 
             var Order = await _repo.Create(order);
             await _repo.Save();
             return Order;
@@ -30,21 +37,22 @@ namespace DubaiPhoneClone.Application.services.orderServices
             return deltecart;
         }
 
-        public async Task<IQueryable<Order>>  GetAllOrder()
+        public async Task<List<getOrderDTO>>  GetAllOrder()
         {
-            var query = await _repo.GetAll();
-            return query;
+            var orders = await (await _repo.GetAll()).ToListAsync();
+            return mapper.Map<List<getOrderDTO>>(orders);
         }
 
-        public async Task<Order> GetOrderByID(int Order)
+        public async Task<getOrderDTO> GetOrderByID(int Order)
         {
             var element = await _repo.GetById(Order);
-            return element;
+            return mapper.Map<getOrderDTO>(element);
         }
 
-        public async Task<Order> UpdateOrder(Order Order)
+        public async Task<Order> UpdateOrder(UpdateOrderDTO _Order)
         {
-            var updatecart = await _repo.Update(Order);
+            Order order= mapper.Map<Order>(_Order);
+            var updatecart = await _repo.Update(order);
             await _repo.Save();
             return updatecart;
         }
