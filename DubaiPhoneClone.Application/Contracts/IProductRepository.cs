@@ -14,6 +14,7 @@ namespace DubaiPhoneClone.Application.Contracts
         Task<IQueryable<Product>> GetByBrand(int brand);
         Task<IQueryable<Product>> GetByBrandAndCategory(int categoryId, int brand);
         Task<bool> ChangeStockQuantity(Product product, int quantity);
+        Task<int> GetCountByCategoryAndBrand(int categoryId, int brandId);
         Task<int> GetCountByCategory(int categoryId);
         Task<int> GetCountByBrand(int brand);
         Task<int> GetCount();

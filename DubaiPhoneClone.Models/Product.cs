@@ -13,18 +13,21 @@ namespace DubaiPhoneClone.Models
         }
         public int Id { get; set; }
         [Required(ErrorMessage ="please  enter the arabic name")]
-        [StringLength(50,MinimumLength =3,ErrorMessage ="the arabic name of the product between 3 to 50 characters")]
+        [StringLength(100,MinimumLength =3,ErrorMessage ="the arabic name of the product between 3 to 50 characters")]
         public string ArabicName { get; set; }
         [Required(ErrorMessage = "please  enter the English name")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "the English name of the product between 3 to 50 characters")]
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "the English name of the product between 3 to 50 characters")]
         public string Name { get; set; }
         [Range(0,int.MaxValue,ErrorMessage ="sorry the quantity between  0  to 2147483647")]
         [Required(ErrorMessage = "please  enter the quantity of this product in our stock")]
         public int Stock { get; set; }
+       
         public string Description { get; set; } = string.Empty;
+        public string Cover { get; set; } = string.Empty;
+
         [Required(ErrorMessage ="how much does this product cost our clients?")]
-        public decimal Price { get; set; }
-        public double Percent { get; set; }
+        public decimal NormalPrice { get; set; }
+        public decimal SalePrice { get; set; }
 
         //Product-Category one to many
         [ForeignKey("Category")]

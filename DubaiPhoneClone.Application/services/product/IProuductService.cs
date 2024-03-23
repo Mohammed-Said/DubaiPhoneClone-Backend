@@ -36,5 +36,9 @@ namespace DubaiPhoneClone.Application.services.product
         Task<int> GetCountByBrand(int bId);
 
         Task<Pagination<List<GetAllProduct>>> GetAllPagination(int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByBrand(int brandId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategory(int categoryId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrand(int categoryId, int brandId, int Productnums, int PageNumber);
+
     }
 }

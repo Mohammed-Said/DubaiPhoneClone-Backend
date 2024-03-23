@@ -8,8 +8,8 @@ namespace DubaiPhone.DTOs
 {
     public  class Pagination<T>
     {
-       public T entity { get; set; }
        public int Count;
+       public T entity { get; set; }
        public int Page;
        public int PageSize;
     }

@@ -40,15 +40,43 @@ namespace DubaiPhoneClone.Application.services.product
         public async Task<Pagination<List<GetAllProduct>>> GetAllPagination(int Productnums, int PageNumber) =>
             (new Pagination<List<GetAllProduct>>()
             {
-                entity = _mapper.Map<List<GetAllProduct>>(await (await _repo.GetAll()).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
                 Count = await _repo.GetCount(),
                 Page = PageNumber,
-                PageSize = Productnums
+                PageSize = Productnums,
+                entity = _mapper.Map<List<GetAllProduct>>(await (await _repo.GetAll()).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
+            });
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByBrand(int brandId,int Productnums, int PageNumber) =>
+            (new Pagination<List<GetAllProduct>>()
+            {
+                Count = await _repo.GetCountByBrand(brandId),
+                Page = PageNumber,
+                PageSize = Productnums,
+                entity = _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrand(brandId)).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
+            });  
+
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategory(int categoryId,int Productnums, int PageNumber) =>
+            (new Pagination<List<GetAllProduct>>()
+            {
+                Count = await _repo.GetCountByCategory(categoryId),
+                Page = PageNumber,
+                PageSize = Productnums,
+                entity = _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByCategory(categoryId)).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
+            }); 
+
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrand(int categoryId, int brandId,int Productnums, int PageNumber) =>
+            (new Pagination<List<GetAllProduct>>()
+            {
+                Count = await _repo.GetCountByCategory(categoryId),
+                Page = PageNumber,
+                PageSize = Productnums,
+                entity = _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrandAndCategory(categoryId, brandId)).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
             });
         public async Task<int> GetCountByBrand(int bId) =>
             await _repo.GetCountByBrand(bId);
         public async Task<int> GetCountByCategory(int cId) =>
-            await _repo.GetCountByCategory(cId);
+            await _repo.GetCountByCategory(cId); 
+        public async Task<int> GetCountByCategoryAndBrand(int categoryId,int brandId) =>
+            await _repo.GetCountByCategoryAndBrand(categoryId,brandId);
         public async Task<CreatingAndUpdatingProduct> CreateProduct(CreatingAndUpdatingProduct Product)
         {
             Product prd = _mapper.Map<Product>(Product);

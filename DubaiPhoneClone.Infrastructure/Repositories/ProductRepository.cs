@@ -56,6 +56,8 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
         public async Task<int> GetCountByCategory(int categoryId) =>
           await  applicationContext.Products.Where(p => p.CategoryId == categoryId).CountAsync();
+        public async Task<int> GetCountByCategoryAndBrand(int categoryId, int brandId) =>
+          await  applicationContext.Products.Where(p => p.CategoryId == categoryId && p.BrandId == brandId).CountAsync();
 
         public async Task<IQueryable<Product>> SearchName(string name)=>
             applicationContext.Products.Where(p => p.Name.ToLower().Contains(name.ToLower()));
