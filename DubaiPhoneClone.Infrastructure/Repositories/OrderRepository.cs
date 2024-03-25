@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Infrastructure.Repositories
 {
-    public class OrederRepository : Repository<Order, int>, IOrederRepository
+    public class OrderRepository : Repository<Order, int>, IOrderRepository
     {
         private readonly ApplicationContext applicationContext;
 
-        public OrederRepository(ApplicationContext applicationContext) : base(applicationContext)
+        public OrderRepository(ApplicationContext applicationContext) : base(applicationContext)
         {
             this.applicationContext = applicationContext;
         }

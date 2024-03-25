@@ -32,6 +32,12 @@ namespace DubaiPhoneClone.API
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<ICategoryServices, CategoryServices>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            builder.Services.AddTransient<IConfiguration>(sp =>
+            {
+                IConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+                configurationBuilder.AddJsonFile("appsettings.json");
+                return configurationBuilder.Build();
+            });
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

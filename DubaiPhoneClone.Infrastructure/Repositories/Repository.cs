@@ -7,7 +7,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
     public class Repository<T, TId> : IRepository<T, TId> where T : class
     {
         private readonly ApplicationContext _appContext;
-        DbSet<T> DbSetEntity;
+        protected   DbSet<T> DbSetEntity;
 
 
         public Repository(ApplicationContext applicationContext)
@@ -20,7 +20,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
         {
 
            var ent=await DbSetEntity.AddAsync(entity);
-           await _appContext.SaveChangesAsync();
+           //await _appContext.SaveChangesAsync();
 
             return ent.Entity;
 
@@ -31,7 +31,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
         {
             var entity = await DbSetEntity.FindAsync(id);
             var  y=DbSetEntity.Remove(entity);
-            await _appContext.SaveChangesAsync();
+            //await _appContext.SaveChangesAsync();
 
             return y.Entity;
 
@@ -58,7 +58,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
         {
 
             var x=DbSetEntity.Update(entity);
-            await _appContext.SaveChangesAsync();
+            //await _appContext.SaveChangesAsync();
 
             return x.Entity;
 
