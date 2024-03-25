@@ -10,8 +10,8 @@ namespace DubaiPhoneClone.Application.services.orderServices
 {
     public class OrderServices:IOrderServices
     {
-        IOrederRepository _repo;
-        public OrderServices(IOrederRepository repo) {
+        IOrderRepository _repo;
+        public OrderServices(IOrderRepository repo) {
         _repo = repo;
         }
      

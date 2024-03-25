@@ -4,8 +4,9 @@ namespace DubaiPhoneClone.Application.Contracts
 {
     public interface IUserRepository : IRepository<User, int>
     {
-        IQueryable<Order> GetCustomerOrders(int userId);
-        void AddCartItem(int prodId, int userId, int quantity);
-        void AddWishlistItem(int prodId, int userId, int quantity);
+        Task<List<Order>> GetCustomerOrders(int userId);
+        Task<bool> AddCartItem(CartItem   item);
+        Task<bool> AddWishlistItem(int prodId, int userId);
+        Task<bool> CheckIfEmailIsUsedBefore(string  Email);
     }
 }

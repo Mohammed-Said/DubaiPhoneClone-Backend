@@ -1,4 +1,5 @@
-﻿using DubaiPhoneClone.Models;
+﻿using DubaiPhone.DTOs.cartDTOs;
+using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace DubaiPhoneClone.Application.services.cartitems
 
         public Task<CartItem> GetCartItemByID(int CartItem);
 
-        public Task<CartItem> CreateCartItem(CartItem CartItem);
+        public Task<CreateCartItem> CreateCartItem(CreateCartItem CartItem);
 
         public Task<CartItem> UpdateCartItem(CartItem CartItem);
 

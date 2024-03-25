@@ -1,7 +1,14 @@
-﻿namespace DubaiPhoneClone.Models
+﻿using System.Collections.Generic;
+
+namespace DubaiPhoneClone.Models
 {
     public class User
     {
+        public User() {
+            Orders = new List<Order>();
+         CartItems = new List<CartItem>();
+            WishlistItems = new List<WishlistItem>();
+        }
         public int Id { get; set; }
         public string UserName { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
@@ -12,9 +19,9 @@
         public string Address { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
 
-        public List<Order>? Orders { get; set; }
-        public List<CartItem>? CartItems { get; set; }
-        public List<WishlistItem>? WishlistItems { get; set; }
+        public List<Order> Orders { get; set; }
+        public List<CartItem> CartItems { get; set; }
+        public List<WishlistItem> WishlistItems { get; set; }
 
     }
 }

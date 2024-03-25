@@ -2,7 +2,7 @@
 
 namespace DubaiPhoneClone.Application.Contracts
 {
-    public interface IOrederRepository : IRepository<Order, int>
+    public interface IOrderRepository : IRepository<Order, int>
     {
 
     }

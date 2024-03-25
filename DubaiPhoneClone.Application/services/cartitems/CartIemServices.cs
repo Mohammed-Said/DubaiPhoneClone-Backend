@@ -1,4 +1,6 @@
-﻿using DubaiPhoneClone.Application.Contracts;
+﻿using AutoMapper;
+using DubaiPhone.DTOs.cartDTOs;
+using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
@@ -11,13 +13,16 @@ namespace DubaiPhoneClone.Application.services.cartitems
     public class CartIemServices : ICartIemServices
     {
         ICartItemRepository _repo;
-        public CartIemServices(ICartItemRepository repo) 
+        private readonly IMapper _mapper;
+
+        public CartIemServices(ICartItemRepository repo,IMapper mapper) 
         {
             _repo = repo;
+            _mapper=mapper;
         }
-        public async Task<CartItem> CreateCartItem(CartItem CartItem)
+        public async Task<CreateCartItem> CreateCartItem(CreateCartItem CartItem)
         {
-            var cartItem =await _repo.Create(CartItem);
+            var cartItem =_mapper.Map<CreateCartItem>(await _repo.Create(_mapper.Map<CartItem>(CartItem)));
             await _repo.Save();
             return cartItem;
         }

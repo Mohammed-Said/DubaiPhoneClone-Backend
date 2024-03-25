@@ -1,4 +1,6 @@
-﻿using DubaiPhoneClone.Models;
+﻿using DubaiPhone.DTOs.cartDTOs;
+using DubaiPhone.DTOs.userDTOs;
+using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +11,19 @@ namespace DubaiPhoneClone.Application.services.userServices
 {
     public interface IUserServices
     {
-        public Task<IQueryable<User>> GetAllUser();
+        public Task<List<GetUser>> GetAllUser();
 
-        public Task<User> GetUserByID(int User);
+        public Task<GetUser> GetUserByID(int User);
 
-        public Task<User> CreateUser(User User);
+        public Task<GetUser> CreateUser(CreateUser User);
 
-        public Task<User> UpdateUser(User User);
+        public Task<GetUser> UpdateUser(UpdateUser User);
 
-        public Task<User> DeleteUser(int UserId);
+        public Task<GetUser> DeleteUser(int UserId);
 
-        IQueryable<Order> GetCustomerOrders(int userId);
+        Task<List<Order>> GetCustomerOrders(int userId);
 
-        void AddCartItem(int bookId, int customerId, int quantity);
+        Task<bool> AddCartItem(CreateCartItem item);
+        public  Task<bool> AddLovedItem(int itemId, int userId);
     }
 }
