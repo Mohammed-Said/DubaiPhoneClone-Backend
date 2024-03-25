@@ -29,7 +29,6 @@ namespace DubaiPhoneClone.Application.services.product
 
         Task<List<GetAllProduct>> GetByBrandAndCategory(int bId,int cId);
 
-        Task<bool> ChangeStockQuantity(Product product, int quantity);
 
         Task<int> GetCountByCategory(int cId);
 
@@ -40,5 +39,26 @@ namespace DubaiPhoneClone.Application.services.product
         Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategory(int categoryId, int Productnums, int PageNumber);
         Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrand(int categoryId, int brandId, int Productnums, int PageNumber);
 
+        //order by  Pagination
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationOrderByPrice(string way, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationOrderByName(string way, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByBrandOrderByPrice(string way, int brandId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByBrandOrderByName(string way, int brandId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryOrderByName(string way, int categoryId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryOrderByPrice(string way, int categoryId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrandOrderByPrice(string way, int categoryId, int brandId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrandOrderByName(string way, int categoryId, int brandId, int Productnums, int PageNumber);
+
+
+        // Filter 
+        Task<Pagination<List<GetAllProduct>>> FilterByPriceAllPagination(int min, int max, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> FilterByPriceBrandPagination(int min, int max, int brandId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> FilterByPriceCategoryPagination(int min, int max, int categoryId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> FilterByPriceCategoryAndBrandPagination(int min, int max, int brandId, int categoryId, int Productnums, int PageNumber);
+
+        Task<Pagination<List<GetAllProduct>>> FilterByStockAllPagination( int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> FilterByStockBrandPagination( int brandId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> FilterByStockCategoryPagination( int categoryId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> FilterByStockCategoryAndBrandPagination( int brandId, int categoryId, int Productnums, int PageNumber);
     }
 }
