@@ -56,21 +56,21 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
        public   async Task<bool> AddWishlistItem(int prodId, int userId)
         {
 
-            List<WishlistItem> userLovedItems = (await DbSetEntity.FindAsync(userId))?.WishlistItems;
-            if(userLovedItems == null)
-            {
-                return false;
-            }
-            var existingWishlistItem = userLovedItems.FirstOrDefault(c => c.ProductId == prodId && c.UserId == userId);
-            if (existingWishlistItem != null) 
-                return  true;
-            var wishlistItem = new WishlistItem
-            {
-                ProductId = prodId,
-                UserId = userId
+            //List<WishlistItem> userLovedItems = (await DbSetEntity.FindAsync(userId))?.WishlistItems;
+            //if(userLovedItems == null)
+            //{
+            //    return false;
+            //}
+            //var existingWishlistItem = userLovedItems.FirstOrDefault(c => c.ProductId == prodId && c.UserId == userId);
+            //if (existingWishlistItem != null) 
+            //    return  true;
+            //var wishlistItem = new WishlistItem
+            //{
+            //    ProductId = prodId,
+            //    UserId = userId
 
-            };
-            userLovedItems.Add(wishlistItem);
+            //};
+            //userLovedItems.Add(wishlistItem);
             return true;
             //applicationContext.SaveChanges();
 

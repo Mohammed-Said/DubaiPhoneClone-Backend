@@ -20,6 +20,6 @@ namespace DubaiPhone.DTOs.userDTOs
 
         public List<Order>? Orders { get; set; }
         public List<CartItem>? CartItems { get; set; }
-        public List<WishlistItem>? WishlistItems { get; set; }
+        public List<Product>? WishlistItems { get; set; }
     }
 }

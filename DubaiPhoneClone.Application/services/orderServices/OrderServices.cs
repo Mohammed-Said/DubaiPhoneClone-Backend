@@ -14,10 +14,10 @@ namespace DubaiPhoneClone.Application.services.orderServices
     public class OrderServices:IOrderServices
     {
 
-        IOrederRepository _repo;
+        IOrderRepository _repo;
         private readonly IMapper mapper;
 
-        public OrderServices(IOrederRepository repo,IMapper mapper) {
+        public OrderServices(IOrderRepository repo,IMapper mapper) {
 
         _repo = repo;
             this.mapper = mapper;

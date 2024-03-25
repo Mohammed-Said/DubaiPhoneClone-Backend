@@ -9,7 +9,7 @@ namespace DubaiPhoneClone.Models
         public User() {
             Orders = new List<Order>();
          CartItems = new List<CartItem>();
-            WishlistItems = new List<WishlistItem>();
+            Products = new List<Product>();
         }
         public int Id { get; set; }
         public string UserName { get; set; } = string.Empty;
