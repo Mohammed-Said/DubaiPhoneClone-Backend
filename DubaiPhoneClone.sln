@@ -16,7 +16,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DubaiPhone.DTOs", "DubaiPho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DubaiPhoneClone.Context", "DubaiPhoneClone.Context\DubaiPhoneClone.Context.csproj", "{EE2F6BF6-BA71-44BC-B932-B2F8862548FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DubaiPhoneClone.API", "DubaiPhoneClone.API\DubaiPhoneClone.API.csproj", "{C7B389E7-C927-4581-B188-A2B4E0C92812}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DubaiPhoneClone.API", "DubaiPhoneClone.API\DubaiPhoneClone.API.csproj", "{C7B389E7-C927-4581-B188-A2B4E0C92812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard", "Dashboard\Dashboard.csproj", "{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 		{C7B389E7-C927-4581-B188-A2B4E0C92812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7B389E7-C927-4581-B188-A2B4E0C92812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7B389E7-C927-4581-B188-A2B4E0C92812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

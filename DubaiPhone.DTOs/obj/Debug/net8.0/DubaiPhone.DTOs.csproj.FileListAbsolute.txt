@@ -50,3 +50,19 @@ D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\bi
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhoneClone.Models.pdb
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.csproj.AssemblyReference.cache
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.csproj.CopyComplete
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhone.DTOs.deps.json
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhone.DTOs.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhone.DTOs.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhoneClone.Models.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\bin\Debug\net8.0\DubaiPhoneClone.Models.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.csproj.AssemblyReference.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.AssemblyInfoInputs.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.AssemblyInfo.cs
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.csproj.CoreCompileInputs.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.sourcelink.json
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.csproj.CopyComplete
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\refint\DubaiPhone.DTOs.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\DubaiPhone.DTOs.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhone.DTOs\obj\Debug\net8.0\ref\DubaiPhone.DTOs.dll

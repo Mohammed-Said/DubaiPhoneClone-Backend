@@ -70,3 +70,21 @@ D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Ap
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\refint\DubaiPhoneClone.Application.dll
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.pdb
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\ref\DubaiPhoneClone.Application.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.deps.json
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Application.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhone.DTOs.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Models.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhone.DTOs.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\bin\Debug\net8.0\DubaiPhoneClone.Models.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.csproj.AssemblyReference.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.AssemblyInfoInputs.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.AssemblyInfo.cs
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.csproj.CoreCompileInputs.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.sourcelink.json
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.csproj.CopyComplete
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\refint\DubaiPhoneClone.Application.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\DubaiPhoneClone.Application.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Application\obj\Debug\net8.0\ref\DubaiPhoneClone.Application.dll

@@ -46,3 +46,15 @@ D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Mo
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\refint\DubaiPhoneClone.Models.dll
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.pdb
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\ref\DubaiPhoneClone.Models.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\bin\Debug\net8.0\DubaiPhoneClone.Models.deps.json
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\bin\Debug\net8.0\DubaiPhoneClone.Models.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\bin\Debug\net8.0\DubaiPhoneClone.Models.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.AssemblyInfoInputs.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.AssemblyInfo.cs
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.csproj.CoreCompileInputs.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.sourcelink.json
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\refint\DubaiPhoneClone.Models.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\DubaiPhoneClone.Models.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Models\obj\Debug\net8.0\ref\DubaiPhoneClone.Models.dll

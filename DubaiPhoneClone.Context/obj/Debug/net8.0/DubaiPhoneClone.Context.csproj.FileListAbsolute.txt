@@ -62,3 +62,19 @@ D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Co
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\refint\DubaiPhoneClone.Context.dll
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.pdb
 D:\development\iti\graduation project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\ref\DubaiPhoneClone.Context.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\bin\Debug\net8.0\DubaiPhoneClone.Context.deps.json
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\bin\Debug\net8.0\DubaiPhoneClone.Context.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\bin\Debug\net8.0\DubaiPhoneClone.Context.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\bin\Debug\net8.0\DubaiPhoneClone.Models.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\bin\Debug\net8.0\DubaiPhoneClone.Models.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.csproj.AssemblyReference.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.GeneratedMSBuildEditorConfig.editorconfig
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.AssemblyInfoInputs.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.AssemblyInfo.cs
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.csproj.CoreCompileInputs.cache
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.sourcelink.json
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.csproj.CopyComplete
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\refint\DubaiPhoneClone.Context.dll
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\DubaiPhoneClone.Context.pdb
+E:\ITI Gradution Project\DubaiPhoneClone-Backend\DubaiPhoneClone.Context\obj\Debug\net8.0\ref\DubaiPhoneClone.Context.dll
