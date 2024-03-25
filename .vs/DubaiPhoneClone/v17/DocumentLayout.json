@@ -1,25 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\",
+  "WorkspaceRootPath": "C:\\Users\\Mohamed\\Desktop\\Back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7B389E7-C927-4581-B188-A2B4E0C92812}|DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj|d:\\graduation project\\dubaiphoneclone\\dubaiphoneclone\\dubaiphoneclone.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}|Dashboard\\Dashboard.csproj|c:\\users\\mohamed\\desktop\\back-end\\dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}|Dashboard\\Dashboard.csproj|solutionrelative:dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}|Dashboard\\Dashboard.csproj|c:\\users\\mohamed\\desktop\\back-end\\dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C0F07520-5EA6-426E-A7E0-EF2788E8C9E3}|Dashboard\\Dashboard.csproj|solutionrelative:dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B389E7-C927-4581-B188-A2B4E0C92812}|DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj|c:\\users\\mohamed\\desktop\\back-end\\dubaiphoneclone.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C7B389E7-C927-4581-B188-A2B4E0C92812}|DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj|solutionrelative:dubaiphoneclone.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Context\\Migrations\\20240317121615_updateBrandandCategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DubaiPhoneClone.Context\\Migrations\\20240317121615_updateBrandandCategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C7B389E7-C927-4581-B188-A2B4E0C92812}|DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj|c:\\users\\mohamed\\desktop\\back-end\\dubaiphoneclone.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7B389E7-C927-4581-B188-A2B4E0C92812}|DubaiPhoneClone.API\\DubaiPhoneClone.API.csproj|solutionrelative:dubaiphoneclone.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|d:\\graduation project\\dubaiphoneclone\\dubaiphoneclone\\dubaiphoneclone.models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|C:\\Users\\Mohamed\\Desktop\\Back-end\\dubaiphoneclone.models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|solutionrelative:dubaiphoneclone.models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|d:\\graduation project\\dubaiphoneclone\\dubaiphoneclone\\dubaiphoneclone.models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|C:\\Users\\Mohamed\\Desktop\\Back-end\\dubaiphoneclone.models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|solutionrelative:dubaiphoneclone.models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|d:\\graduation project\\dubaiphoneclone\\dubaiphoneclone\\dubaiphoneclone.models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|C:\\Users\\Mohamed\\Desktop\\Back-end\\dubaiphoneclone.models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7E0D839-FB72-40BD-9279-C71890B40C2B}|DubaiPhoneClone.Models\\DubaiPhoneClone.Models.csproj|solutionrelative:dubaiphoneclone.models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -35,53 +43,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.API\\appsettings.json",
-              "RelativeDocumentMoniker": "DubaiPhoneClone.API\\appsettings.json",
-              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.API\\appsettings.json",
-              "RelativeToolTip": "DubaiPhoneClone.API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-17T12:19:54.987Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mohamed\\Desktop\\Back-end\\Dashboard\\Program.cs",
+              "RelativeDocumentMoniker": "Dashboard\\Program.cs",
+              "ToolTip": "C:\\Users\\Mohamed\\Desktop\\Back-end\\Dashboard\\Program.cs*",
+              "RelativeToolTip": "Dashboard\\Program.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T21:54:20.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "20240317121615_updateBrandandCategory.cs",
-              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Context\\Migrations\\20240317121615_updateBrandandCategory.cs",
-              "RelativeDocumentMoniker": "DubaiPhoneClone.Context\\Migrations\\20240317121615_updateBrandandCategory.cs",
-              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Context\\Migrations\\20240317121615_updateBrandandCategory.cs",
-              "RelativeToolTip": "DubaiPhoneClone.Context\\Migrations\\20240317121615_updateBrandandCategory.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAUwBUAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T12:16:15.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\Category.cs",
-              "RelativeDocumentMoniker": "DubaiPhoneClone.Models\\Category.cs",
-              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\Category.cs",
-              "RelativeToolTip": "DubaiPhoneClone.Models\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvw0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T12:08:44.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Brand.cs",
-              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\Brand.cs",
-              "RelativeDocumentMoniker": "DubaiPhoneClone.Models\\Brand.cs",
-              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\Brand.cs",
-              "RelativeToolTip": "DubaiPhoneClone.Models\\Brand.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwcAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T12:08:17.519Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Mohamed\\Desktop\\Back-end\\Dashboard\\appsettings.json",
+              "RelativeDocumentMoniker": "Dashboard\\appsettings.json",
+              "ToolTip": "C:\\Users\\Mohamed\\Desktop\\Back-end\\Dashboard\\appsettings.json",
+              "RelativeToolTip": "Dashboard\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwMAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-25T21:53:43.061Z",
               "EditorCaption": ""
             },
             {
@@ -94,16 +76,65 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.API\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.API\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.API\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "DubaiPhoneClone.API\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAiwC0AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T21:51:39.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.API\\appsettings.json",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.API\\appsettings.json",
+              "RelativeToolTip": "DubaiPhoneClone.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-17T12:19:54.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.Models\\Category.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.Models\\Category.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T12:08:44.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.Models\\Brand.cs",
+              "RelativeDocumentMoniker": "DubaiPhoneClone.Models\\Brand.cs",
+              "ToolTip": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.Models\\Brand.cs",
+              "RelativeToolTip": "DubaiPhoneClone.Models\\Brand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwcAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T12:08:17.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ProductImage.cs",
-              "DocumentMoniker": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\ProductImage.cs",
+              "DocumentMoniker": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.Models\\ProductImage.cs",
               "RelativeDocumentMoniker": "DubaiPhoneClone.Models\\ProductImage.cs",
-              "ToolTip": "D:\\Graduation project\\DubaiPhoneClone\\DubaiPhoneClone\\DubaiPhoneClone.Models\\ProductImage.cs",
+              "ToolTip": "C:\\Users\\Mohamed\\Desktop\\Back-end\\DubaiPhoneClone.Models\\ProductImage.cs",
               "RelativeToolTip": "DubaiPhoneClone.Models\\ProductImage.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T15:17:13.616Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-16T15:17:13.616Z"
             }
           ]
         }

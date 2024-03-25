@@ -1,13 +1,14 @@
 ﻿using DubaiPhoneClone.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 
 
 namespace DubaiPhoneClone.Context
 {
-    public class ApplicationContext:DbContext
+    public class ApplicationContext:IdentityDbContext<User>
     {
-        public DbSet<User>? Users { get; set; }
         public DbSet<Brand>? Brands { get; set; }
         public DbSet<CartItem>? CartItems { get; set; }
         public DbSet<Category>? Categories { get; set; }
@@ -20,29 +21,17 @@ namespace DubaiPhoneClone.Context
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
         }
-
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            // Specify unique constraint for UserName
-            modelBuilder.Entity<User>()
-                .HasIndex(c => c.UserName)
-                .IsUnique();
+            base.OnModelCreating(builder);
+            builder.Entity<User>().ToTable("Users", "security");
+            builder.Entity<IdentityRole>().ToTable("Roles", "security");
+            builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles", "security");
+            builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "security");
+            builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins", "security");
+            builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims", "security");
+            builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens", "security");
 
-            modelBuilder.Entity<User>()
-                .HasIndex(c => c.PhoneNumber)
-                .IsUnique();
-
-            modelBuilder.Entity<User>()
-                .HasIndex(c => c.Email)
-                .IsUnique();
-            //modelBuilder.Entity<Coupon>()
-            //    .HasOne(c => c.Order)
-            //    .WithOne(C => C.Coupon)
-            //    .IsRequired(false);
-
-            
-                
         }
     }
 }

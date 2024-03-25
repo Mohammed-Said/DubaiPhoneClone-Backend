@@ -17,7 +17,7 @@ namespace DubaiPhoneClone.API.Controllers
             _categoryServices = categoryServices;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllCategories()
+        public async Task<IActionResult> GetAllBrands()
         {
             var category = await _categoryServices.GetAllCategory();
             if (category == null || category.Count == 0)

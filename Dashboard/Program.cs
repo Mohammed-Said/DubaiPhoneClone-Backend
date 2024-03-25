@@ -1,3 +1,6 @@
+using DubaiPhoneClone.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace Dashboard
 {
     public class Program
@@ -8,6 +11,11 @@ namespace Dashboard
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            var connection = builder.Configuration.GetConnectionString("Connection");
+
+            builder.Services.AddDbContext<ApplicationContext>(option =>
+                option.UseSqlServer(connection));
 
             var app = builder.Build();
 
