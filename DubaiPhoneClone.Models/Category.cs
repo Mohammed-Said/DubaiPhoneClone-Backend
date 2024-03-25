@@ -9,9 +9,8 @@ namespace DubaiPhoneClone.Models
 
         public string ArabicName { get; set; } = string.Empty;
         public string ImagePath { get; set; } = string.Empty;
-        [JsonIgnore]
         public List<Product>? Products { get; set; }
-        public List<BrandCategory>? Brands { get; set; }
+        public List<Brand>? Brands { get; set; }
 
     }
 }

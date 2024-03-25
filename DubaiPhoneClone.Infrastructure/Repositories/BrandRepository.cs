@@ -1,6 +1,8 @@
-﻿using DubaiPhoneClone.Application.Contracts;
+﻿using DubaiPhone.DTOs.BrandDTOs;
+using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +18,16 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
         {
             this.appContext = applicationContext;
         }
+
+        public async Task<IQueryable<GetBrandWithCategoryDTO>> GetBrandsWithCategory() =>
+            appContext.Brands.Include(b => b.Categories).Select(b => new GetBrandWithCategoryDTO {
+            ImagePath=b.ImagePath,
+            Name=b.Name,
+            Id=b.Id,
+            ArabicName=b.ArabicName,
+            Categories=b.Categories.Select(c=>c.Name).ToList()
+            });
+
+        
     }
 }

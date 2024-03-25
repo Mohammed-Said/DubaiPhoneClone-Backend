@@ -14,7 +14,9 @@
         public int UserId { get; set; }
 
         public User? User { get; set; }
+        public virtual Coupon? Coupon { get; set; }
         public List<OrderItem>? OrderItems { get; set; }
+
 
 
 

@@ -25,5 +25,6 @@ namespace DubaiPhoneClone.Application.services.userServices
 
         Task<bool> AddCartItem(CreateCartItem item);
         public  Task<bool> AddLovedItem(int itemId, int userId);
+
     }
 }

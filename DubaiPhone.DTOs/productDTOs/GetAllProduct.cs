@@ -14,8 +14,8 @@ namespace DubaiPhone.DTOs.productDTOs
         public int Id { get; set; }
         public string ArabicName { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public double Percent { get; set; }
-        public List<ProductImage>? Images { get; set; }
+        public decimal NormalPrice { get; set; }
+        public decimal SalePrice { get; set; }
+        public string Cover { get; set; }
     }
 }

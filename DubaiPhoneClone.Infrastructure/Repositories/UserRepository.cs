@@ -2,12 +2,14 @@
 using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Models;
+
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace DubaiPhoneClone.Infrastructure.Repositories
 {
@@ -53,6 +55,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
        public   async Task<bool> AddWishlistItem(int prodId, int userId)
         {
+
             List<WishlistItem> userLovedItems = (await DbSetEntity.FindAsync(userId))?.WishlistItems;
             if(userLovedItems == null)
             {
@@ -70,6 +73,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             userLovedItems.Add(wishlistItem);
             return true;
             //applicationContext.SaveChanges();
+
 
         }
 

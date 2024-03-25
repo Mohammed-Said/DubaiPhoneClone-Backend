@@ -1,13 +1,15 @@
 ﻿using AutoMapper;
+
+using DubaiPhone.DTOs.BrandDTOs;
+using DubaiPhone.DTOs.CategoryDTOs;
+using DubaiPhone.DTOs.CouponDTOs;
+using DubaiPhone.DTOs.OrderDTOs;
 using DubaiPhone.DTOs.cartDTOs;
+
 using DubaiPhone.DTOs.productDTOs;
 using DubaiPhone.DTOs.userDTOs;
 using DubaiPhoneClone.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DubaiPhoneClone.Application.mapper
 {
@@ -17,10 +19,36 @@ namespace DubaiPhoneClone.Application.mapper
             CreateMap<Product, GetProductDetails>();
             CreateMap<Product, GetAllProduct>();
             CreateMap<Product,CreatingAndUpdatingProduct>().ReverseMap();
+
+            
+            //brand 
+            CreateMap<Brand, GetBrandDTO>();
+            CreateMap<Brand, UpdateBrandDTO>().ReverseMap();
+            CreateMap<Brand, CreateBrandDTO>().ReverseMap(); 
+            
+            //Category 
+            CreateMap<Category, GetCategoryDTO>();
+            CreateMap<Category, UpdateCategoryDTO>().ReverseMap();
+            CreateMap<Category, CreateCategoryDTO>().ReverseMap();
+
+            //Orders
+            CreateMap<Order, getOrderDTO>().ReverseMap();
+            CreateMap<Order, UpdateOrderDTO>().ReverseMap();
+            CreateMap<Order, CreateOrderDTO>().ReverseMap();
+
+            //Coupon
+            CreateMap<Coupon, GetCouponDTO>().ReverseMap();
+            CreateMap<Coupon, UpdateCouponDTO>().ReverseMap();
+            CreateMap<Coupon, CreateCouponDTO>().ReverseMap();
+
+            
             CreateMap<CartItem, CreateCartItem>().ReverseMap();
+            
+            //User
             CreateMap<CreateUser, User>();
             CreateMap<UpdateUser, User>();
             CreateMap<User, GetUser>();
+
         }
     }
 }

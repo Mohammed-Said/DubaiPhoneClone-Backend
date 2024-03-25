@@ -16,13 +16,15 @@ namespace DubaiPhoneClone.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
             // Add services to the container.
 
             var connection = builder.Configuration.GetConnectionString("Connection");
 
             builder.Services.AddDbContext<ApplicationContext>(option =>
                 option.UseSqlServer(connection));
+
+      
+
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProuductService, productServices>();
             builder.Services.AddScoped<IBrandRepository, BrandRepository>();
@@ -40,7 +42,7 @@ namespace DubaiPhoneClone.API
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen();   
 
             var app = builder.Build();
 
@@ -52,9 +54,10 @@ namespace DubaiPhoneClone.API
             }
 
             app.UseHttpsRedirection();
+            
+            app.UseCors(p=>p.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

@@ -51,10 +51,10 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
                        ProductId = prod.Id,
                        CartItemId = item.Id,
                        Title = prod.Name,
-                       Price = prod.Price,
+                       Price = prod.SalePrice,
                        Quantity = item.Quantity,
                        Stock = prod.Stock,
-                       ImagePath = prod.Images.FirstOrDefault().Path 
+                       Cover = prod.Cover
                    };
         }
         public void PlaceOrder(Order order)

@@ -1,4 +1,5 @@
-﻿using DubaiPhoneClone.Models;
+﻿using DubaiPhone.DTOs.CouponDTOs;
+using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,13 @@ namespace DubaiPhoneClone.Application.services.Coupons
 {
     public interface ICouponServices
     {
-        public Task<IQueryable<Coupon>> GetAllCoupon();
+        public Task<List<GetCouponDTO>> GetAllCoupon();
 
-        public Task<Coupon> GetCouponByID(int Coupon);
+        public Task<GetCouponDTO> GetCouponByID(int Coupon);
 
-        public Task<Coupon> CreateCoupon(Coupon Coupon);
+        public Task<Coupon> CreateCoupon(CreateCouponDTO Coupon);
 
-        public Task<Coupon> UpdateCoupon(Coupon Coupon);
+        public Task<Coupon> UpdateCoupon(UpdateCouponDTO Coupon);
 
         public Task<Coupon> DeleteCoupon(int CouponId);
     }
