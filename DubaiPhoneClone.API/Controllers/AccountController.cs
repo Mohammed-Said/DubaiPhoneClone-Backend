@@ -90,6 +90,7 @@ namespace DubaiPhoneClone.API.Controllers
                     {
                         token = new JwtSecurityTokenHandler().WriteToken(token),
                         expitation = token.ValidTo,
+                        status = 200,
                     });
                 }
             }
