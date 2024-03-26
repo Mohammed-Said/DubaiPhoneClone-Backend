@@ -12,6 +12,7 @@ namespace DubaiPhoneClone.Application.services.product
     public interface IProuductService
     {
         Task<List<GetAllProduct>> GetAllProduct();
+        Task<List<GetProductDetails>> GetProductDetails();
 
         Task<GetProductDetails> GetProductByID(int Product);
 

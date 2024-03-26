@@ -49,6 +49,15 @@ namespace DubaiPhoneClone.Application.services.product
             List<GetAllProduct> result = _mapper.Map<List<GetAllProduct>>(products);
             return result;
         }
+        // ===========
+        public async Task<List<GetProductDetails>> GetProductDetails()
+        {
+            var products = await(await _repo.GetAll()).ToListAsync();
+            List<GetProductDetails> result = _mapper.Map< List < GetProductDetails >>(products);
+            return result;
+        }
+       
+
         public async Task<GetProductDetails> GetProductByID(int Product) =>
            _mapper.Map<GetProductDetails>(await _repo.GetById(Product));
 
@@ -358,7 +367,9 @@ namespace DubaiPhoneClone.Application.services.product
                 entity = _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrandAndCategory(categoryId, brandId)).Where(p => p.Stock > 0).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
                 Stock = await GetCountByCategoryAndBrandStock(categoryId, brandId)
 
-            }; 
+            };
+
+       
         #endregion
 
 
