@@ -6,6 +6,7 @@ using DubaiPhoneClone.Application.services.product;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Infrastructure.Repositories;
 using DubaiPhoneClone.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -23,7 +24,9 @@ namespace DubaiPhoneClone.API
             builder.Services.AddDbContext<ApplicationContext>(option =>
                 option.UseSqlServer(connection));
 
-      
+            //Account
+            builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>();
+
 
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProuductService, productServices>();
