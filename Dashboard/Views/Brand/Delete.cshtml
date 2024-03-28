@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DubaiPhone.DTOs.BrandDTOs.GetBrandDTO>
+
+@{
+    ViewData["Title"] = "Delete Brand";
+    
+}
+
+<h1>DeleteBrand</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Brand</h4>
+    <hr />
+    <dl class="row">
+        @foreach (var item in Model)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @item.Name
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ArabicName)
+            </dt>
+            <dd>
+                @item.ArabicName
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </dt>
+            <dd>
+                @item.ImagePath
+            </dd>
+        }
+        
+        
+        
+        
+    </dl>
+
+    <form method="post"> 
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
