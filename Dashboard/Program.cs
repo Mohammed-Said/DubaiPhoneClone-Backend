@@ -1,4 +1,7 @@
+using DubaiPhoneClone.Application.Contracts;
+using DubaiPhoneClone.Application.services.product;
 using DubaiPhoneClone.Context;
+using DubaiPhoneClone.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard
@@ -16,6 +19,11 @@ namespace Dashboard
 
             builder.Services.AddDbContext<ApplicationContext>(option =>
                 option.UseSqlServer(connection));
+
+
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProuductService, productServices>();
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
 

@@ -22,17 +22,6 @@ namespace DubaiPhoneClone.Application.services.userServices
             _mapper = mapper;
         }
 
-
-        public  async Task<bool> AddCartItem(CreateCartItem   item)
-        {
-           bool sucess=await _repo.AddCartItem(_mapper.Map<CartItem>(item));
-            if (sucess)
-            {
-                await _repo.Save();
-            }
-            return sucess;
-        }
-
         public async Task<bool> AddLovedItem(int itemId ,int userId)
         {
             bool sucess = await _repo.AddWishlistItem(itemId,userId);

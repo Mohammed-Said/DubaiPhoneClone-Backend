@@ -1,4 +1,4 @@
-﻿using DubaiPhone.DTOs;
+﻿using DubaiPhone.DTOs.cartDTOs;
 using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Models;
@@ -40,18 +40,20 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
             return true;
         }
-        public IQueryable<ProductCart> GetUserCart(int userId)
+
+        public async Task<IQueryable<ProductCartDTO>> GetCartProducts(string userId)
         {
             return from item in _appContext.CartItems
                    where item.UserId == userId
-                   join prod in _appContext.Products.Include(p => p.Images)?.Select(p => p)
+                   join prod in _appContext.Products
                    on item.ProductID equals prod.Id
-                   select new ProductCart
+                   select new ProductCartDTO
                    {
                        ProductId = prod.Id,
                        CartItemId = item.Id,
-                       Title = prod.Name,
-                       Price = prod.SalePrice,
+                       ProductName = prod.Name,
+                       SalePrice = prod.SalePrice,
+                       NormalPrice = prod.NormalPrice,
                        Quantity = item.Quantity,
                        Stock = prod.Stock,
                        Cover = prod.Cover
@@ -75,6 +77,11 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
                 orderItem.OrderID = order.Id;
                 orderItem.Quantity = item.Quantity;
                 orderItem.ProductID = item.ProductID;
+                var prod = _appContext.Products.Find(item.ProductID);
+
+                if (prod is not null)
+                    prod.Stock -= item.Quantity;
+
                 _appContext.OrderItems.Add(orderItem);
 
                 //Remove CartItems
@@ -85,6 +92,32 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
         }
 
+        public async Task<bool> AddCartItem(CartItem item)
+        {
+            CartItem cart;
+            List<CartItem> userCartItems = await _appContext.CartItems.Where(c => c.UserId == item.UserId).ToListAsync();
+
+            Product product = _appContext.Products.FirstOrDefault(p => p.Id == item.ProductID);
+
+            if (product is null || product.Stock <= item.Quantity)
+                return false;
+
+            var existingCartItem = userCartItems.FirstOrDefault(c => c.ProductID == item.ProductID);
+
+            if (existingCartItem is not null)
+                // If the item already exists, update the quantity
+                existingCartItem.Quantity = item.Quantity;
+
+            else
+                // If the item doesn't exist, add it as a new cart item
+                 _appContext.Add(item);
+
+            return true;
+        }
+
+        public async Task<IQueryable<CartItem>> GetUserCart(string userId) =>
+            _appContext.CartItems.Where(c => c.UserId == userId);
+
     }
-    
+
 }
