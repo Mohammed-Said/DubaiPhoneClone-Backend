@@ -9,22 +9,41 @@ namespace DubaiPhoneClone.API.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
-        private readonly CartIemServices _cartItemServices;
+        private readonly ICartIemServices _cartItemServices;
         private readonly IConfiguration _configuration;
 
-        public CartController(CartIemServices   cartIemServices,IConfiguration  configuration) {
-            _cartItemServices=cartIemServices;
-            _configuration=configuration;
+        public CartController(ICartIemServices cartIemServices, IConfiguration configuration)
+        {
+            _cartItemServices = cartIemServices;
+            _configuration = configuration;
         }
         [HttpPost]
-        public async Task<IActionResult> CreateCartItem(CreateCartItem cartItem)
+        public async Task<IActionResult> CreateCartItem(CreateCartItemDTO cartItem)
         {
             if (ModelState.IsValid)
             {
-                cartItem = await _cartItemServices.CreateCartItem(cartItem);
-               return Created(_configuration.GetValue<string>("hostaName")+$"/api/cart/{cartItem.Id}", cartItem);
+                cartItem = await _cartItemServices.AddCartItem(cartItem);
+                return Created(_configuration.GetValue<string>("hostaName") + $"/api/cart/{cartItem}", cartItem);
             }
-           return BadRequest(ModelState);
+            return BadRequest(ModelState);
         }
+        [HttpGet("GetUserCart")]
+        public async Task<IActionResult> GetUserCart(string userId)
+        {
+            var cart = await _cartItemServices.GetUserCart(userId);
+            if (cart == null)
+                return BadRequest();
+            return Ok(cart);
+
+        }
+        [HttpGet("GetCartProducts")]
+        public async Task<IActionResult> GetCartProducts(string userId)
+        {
+            var cart = await _cartItemServices.GetCartProducts(userId);
+            if (cart == null)
+                return BadRequest();
+            return Ok(cart);
+        }
+
     }
 }

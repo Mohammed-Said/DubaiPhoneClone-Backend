@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DubaiPhone.DTOs.AccountDTO
+namespace DubaiPhone.DTOs.userDTOs
 {
     public class LoginDTO
     {
-        [Required(ErrorMessage = "Username is Required")]
+        [Required]
         public string UserName { get; set; } = string.Empty;
-        [Required(ErrorMessage = "Password is Required")]
+        [Required]
         public string Password { get; set; } = string.Empty;
 
     }

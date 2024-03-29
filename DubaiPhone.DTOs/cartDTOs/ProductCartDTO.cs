@@ -1,13 +1,14 @@
-﻿namespace DubaiPhone.DTOs
+﻿namespace DubaiPhone.DTOs.cartDTOs
 {
-    public class ProductCart
+    public class ProductCartDTO
     {
         public int ProductId { get; set; }
         public int CartItemId { get; set; }
         public int Quantity { get; set; }
         public int Stock { get; set; }
-        public string Title { get; set; } = string.Empty;
+        public string ProductName { get; set; } = string.Empty;
         public string Cover { get; set; } = string.Empty;
-        public decimal Price { get; set; }
+        public decimal NormalPrice { get; set; }
+        public decimal SalePrice { get; set; }
     }
 }

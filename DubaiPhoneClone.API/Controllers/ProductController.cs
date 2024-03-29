@@ -17,7 +17,7 @@ namespace DubaiPhoneClone.API.Controllers
 
         public ProductController(IProuductService productImageServices)
         {
-            _productServices= productImageServices;
+            _productServices = productImageServices;
         }
 
         [HttpPost]
@@ -67,13 +67,14 @@ namespace DubaiPhoneClone.API.Controllers
         public async Task<IActionResult> getALL()
         {
             var products = await _productServices.GetAllProduct();
-            if (products == null||products.Count==0) {
-                return NoContent();   
+            if (products == null || products.Count == 0)
+            {
+                return NoContent();
             }
             return Ok(products);
         }
         [HttpGet("cat/{categoryId:int}")]
-        public async Task<IActionResult> getByCategory(int  categoryId)
+        public async Task<IActionResult> getByCategory(int categoryId)
         {
             var products = await _productServices.GetByCategory(categoryId);
             if (products == null || products.Count == 0)
@@ -90,13 +91,13 @@ namespace DubaiPhoneClone.API.Controllers
             {
                 return NoContent();
             }
-            
+
             return Ok(products);
         }
         [HttpGet("{categoryId:int}/{brandId:int}")]
         public async Task<IActionResult> GetByBrandAndCategory(int categoryId, int brandId)
         {
-            var products = await _productServices.GetByBrandAndCategory(brandId,categoryId);
+            var products = await _productServices.GetByBrandAndCategory(brandId, categoryId);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
@@ -104,7 +105,7 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(products);
         }
 
-        
+
 
         [HttpGet("{name}")]
         public async Task<IActionResult> SearchByName(string name)
@@ -120,14 +121,14 @@ namespace DubaiPhoneClone.API.Controllers
         #region GetPagination
 
         [HttpGet("pages")]
-        public async Task<IActionResult> GetAllPagination(int numOfProductPerPage,int pageNumber)
+        public async Task<IActionResult> GetAllPagination(int numOfProductPerPage, int pageNumber)
         {
             var products = await _productServices.GetAllPagination(numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
+            return Ok(products);
         }
 
         [HttpGet("BrandPagination")]
@@ -173,95 +174,95 @@ namespace DubaiPhoneClone.API.Controllers
         #region OrderBy
 
 
-        [HttpGet("GetAllPaginationOrderByPrice")]
-        public async Task<IActionResult> GetAllPaginationOrderByPrice( string way,int numOfProductPerPage,int pageNumber)
+        [HttpGet("ProductPaginationOrderByPrice")]
+        public async Task<IActionResult> GetAllPaginationOrderByPrice(string way, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.GetAllPaginationOrderByPrice(way,numOfProductPerPage, pageNumber);
+            var products = await _productServices.GetAllPaginationOrderByPrice(way, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
+            return Ok(products);
         }
 
-        [HttpGet("GetAllPaginationOrderByName")]
-        public async Task<IActionResult> GetAllPaginationOrderByName( string way,int numOfProductPerPage,int pageNumber)
+        [HttpGet("ProductPaginationOrderByName")]
+        public async Task<IActionResult> GetAllPaginationOrderByName(string way, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.GetAllPaginationOrderByPrice(way,numOfProductPerPage, pageNumber);
+            var products = await _productServices.GetAllPaginationOrderByPrice(way, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
-        } 
-        [HttpGet("GetAllPaginationByBrandOrderByName")]
-        public async Task<IActionResult> GetAllPaginationByBrandOrderByName( string way,int brandId,int numOfProductPerPage,int pageNumber)
+            return Ok(products);
+        }
+        [HttpGet("ProductPaginationByBrandOrderByName")]
+        public async Task<IActionResult> GetAllPaginationByBrandOrderByName(string way, int brandId, int numOfProductPerPage, int pageNumber)
         {
             var products = await _productServices.GetAllPaginationByBrandOrderByName(way, brandId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
+            return Ok(products);
         }
-        [HttpGet("GetAllPaginationByBrandOrderByPrice")]
-        public async Task<IActionResult> GetAllPaginationByBrandOrderByPrice( string way,int brandId,int numOfProductPerPage,int pageNumber)
+        [HttpGet("ProductPaginationByBrandOrderByPrice")]
+        public async Task<IActionResult> GetAllPaginationByBrandOrderByPrice(string way, int brandId, int numOfProductPerPage, int pageNumber)
         {
             var products = await _productServices.GetAllPaginationByBrandOrderByPrice(way, brandId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
+            return Ok(products);
         }
-        [HttpGet("GetAllPaginationByCategoryOrderByName")]
-        public async Task<IActionResult> GetAllPaginationByCategoryOrderByName( string way,int categoryId,int numOfProductPerPage,int pageNumber)
+        [HttpGet("ProductPaginationByCategoryOrderByName")]
+        public async Task<IActionResult> GetAllPaginationByCategoryOrderByName(string way, int categoryId, int numOfProductPerPage, int pageNumber)
         {
             var products = await _productServices.GetAllPaginationByCategoryOrderByName(way, categoryId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
+            return Ok(products);
         }
-        [HttpGet("GetAllPaginationByCategoryOrderByPrice")]
-        public async Task<IActionResult> GetAllPaginationByCategoryOrderByPrice( string way,int categoryId,int numOfProductPerPage,int pageNumber)
+        [HttpGet("ProductPaginationByCategoryOrderByPrice")]
+        public async Task<IActionResult> GetAllPaginationByCategoryOrderByPrice(string way, int categoryId, int numOfProductPerPage, int pageNumber)
         {
             var products = await _productServices.GetAllPaginationByCategoryOrderByPrice(way, categoryId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
+            return Ok(products);
         }
-        [HttpGet("GetAllPaginationByCategoryAndBrandOrderByPrice")]
-        public async Task<IActionResult> GetAllPaginationByCategoryAndBrandOrderByPrice( string way,int categoryId,int brandId,int numOfProductPerPage,int pageNumber)
+        [HttpGet("ProductPaginationByCategoryAndBrandOrderByPrice")]
+        public async Task<IActionResult> GetAllPaginationByCategoryAndBrandOrderByPrice(string way, int categoryId, int brandId, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.GetAllPaginationByCategoryAndBrandOrderByPrice(way, categoryId,brandId, numOfProductPerPage, pageNumber);
+            var products = await _productServices.GetAllPaginationByCategoryAndBrandOrderByPrice(way, categoryId, brandId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
-        } 
-        [HttpGet("GetAllPaginationByCategoryAndBrandOrderByName")]
-        public async Task<IActionResult> GetAllPaginationByCategoryAndBrandOrderByName( string way,int categoryId,int brandId,int numOfProductPerPage,int pageNumber)
+            return Ok(products);
+        }
+        [HttpGet("ProductPaginationByCategoryAndBrandOrderByName")]
+        public async Task<IActionResult> GetAllPaginationByCategoryAndBrandOrderByName(string way, int categoryId, int brandId, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.GetAllPaginationByCategoryAndBrandOrderByName(way, categoryId,brandId, numOfProductPerPage, pageNumber);
+            var products = await _productServices.GetAllPaginationByCategoryAndBrandOrderByName(way, categoryId, brandId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
             }
-            return Ok( products);
+            return Ok(products);
         }
 
         #endregion
 
         #region FilterByPrice
         [HttpGet("FilterAllByPrice")]
-        public async Task<IActionResult> FilterAllByPricePagination(int min,int max,int numOfProductPerPage, int pageNumber)
+        public async Task<IActionResult> FilterAllByPricePagination(int min, int max, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.FilterByPriceAllPagination(min,max,numOfProductPerPage, pageNumber);
+            var products = await _productServices.FilterByPriceAllPagination(min, max, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
@@ -270,9 +271,9 @@ namespace DubaiPhoneClone.API.Controllers
         }
 
         [HttpGet("FilterBrandByPrice")]
-        public async Task<IActionResult> FilterBrandByPrice(int min,int max,int brandId, int numOfProductPerPage, int pageNumber)
+        public async Task<IActionResult> FilterBrandByPrice(int min, int max, int brandId, int numOfProductPerPage, int pageNumber)
         {
-            Pagination<List<GetAllProduct>> products = await _productServices.FilterByPriceBrandPagination(min,max,brandId, numOfProductPerPage, pageNumber);
+            Pagination<List<GetAllProduct>> products = await _productServices.FilterByPriceBrandPagination(min, max, brandId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
@@ -281,7 +282,7 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(products);
         }
         [HttpGet("FilterCategoryByPrice")]
-        public async Task<IActionResult> FilterCategoryByPrice(int min,int max,int categoryId, int numOfProductPerPage, int pageNumber)
+        public async Task<IActionResult> FilterCategoryByPrice(int min, int max, int categoryId, int numOfProductPerPage, int pageNumber)
         {
             var products = await _productServices.FilterByPriceCategoryPagination(min, max, categoryId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
@@ -291,9 +292,9 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(products);
         }
         [HttpGet("FilterCategoryAndBrandByPrice")]
-        public async Task<IActionResult> FilterCategoryAndBrandByPrice(int min,int max,int categoryId, int brandId, int numOfProductPerPage, int pageNumber)
+        public async Task<IActionResult> FilterCategoryAndBrandByPrice(int min, int max, int categoryId, int brandId, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.FilterByPriceCategoryAndBrandPagination(min,max,categoryId, brandId, numOfProductPerPage, pageNumber);
+            var products = await _productServices.FilterByPriceCategoryAndBrandPagination(min, max, categoryId, brandId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
@@ -306,7 +307,7 @@ namespace DubaiPhoneClone.API.Controllers
         #region FilterByStock
 
         [HttpGet("FilterAllByStock")]
-        public async Task<IActionResult> FilterAllByStock( int numOfProductPerPage, int pageNumber)
+        public async Task<IActionResult> FilterAllByStock(int numOfProductPerPage, int pageNumber)
         {
             var products = await _productServices.FilterByStockAllPagination(numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
@@ -317,9 +318,9 @@ namespace DubaiPhoneClone.API.Controllers
         }
 
         [HttpGet("FilterBrandByStock")]
-        public async Task<IActionResult> FilterBrandByStock( int brandId, int numOfProductPerPage, int pageNumber)
+        public async Task<IActionResult> FilterBrandByStock(int brandId, int numOfProductPerPage, int pageNumber)
         {
-            Pagination<List<GetAllProduct>> products = await _productServices.FilterByStockBrandPagination( brandId, numOfProductPerPage, pageNumber);
+            Pagination<List<GetAllProduct>> products = await _productServices.FilterByStockBrandPagination(brandId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
@@ -328,9 +329,9 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(products);
         }
         [HttpGet("FilterCategoryByStock")]
-        public async Task<IActionResult> FilterCategoryByStock( int categoryId, int numOfProductPerPage, int pageNumber)
+        public async Task<IActionResult> FilterCategoryByStock(int categoryId, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.FilterByStockCategoryPagination( categoryId, numOfProductPerPage, pageNumber);
+            var products = await _productServices.FilterByStockCategoryPagination(categoryId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
@@ -338,9 +339,9 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(products);
         }
         [HttpGet("FilterCategoryAndBrandByStock")]
-        public async Task<IActionResult> FilterCategoryAndBrandByStock( int categoryId, int brandId, int numOfProductPerPage, int pageNumber)
+        public async Task<IActionResult> FilterCategoryAndBrandByStock(int categoryId, int brandId, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.FilterByStockCategoryAndBrandPagination( categoryId, brandId, numOfProductPerPage, pageNumber);
+            var products = await _productServices.FilterByStockCategoryAndBrandPagination(categoryId, brandId, numOfProductPerPage, pageNumber);
             if (products == null || products.Count == 0)
             {
                 return NoContent();
