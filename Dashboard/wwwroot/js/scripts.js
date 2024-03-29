@@ -7,6 +7,28 @@
 // Scripts
 // 
 
+        document.querySelectorAll(".delete-btn").forEach(function(btn) {
+            btn.addEventListener("click", function () {
+                var id = this.getAttribute("data-id");
+                if (confirm("Are you sure you want to delete this product?")) {
+                    fetch(`/Product/Delete/${id}`, {
+                        method: "POST"
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error("Network response was not ok");
+                            }
+                            // Reload the page after successful deletion
+                            location.reload();
+                        })
+                        .catch(error => {
+                            console.error("There was an error!", error);
+                        });
+                }
+            });
+        });
+
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
@@ -24,3 +46,10 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+        document.getElementById("deleteButton").addEventListener("click", function () {
+            if (confirm("Are you sure you want to delete this product?")) {
+            document.getElementById("deleteForm").submit();
+            }
+        });
+

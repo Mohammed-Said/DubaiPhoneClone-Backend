@@ -23,7 +23,7 @@ namespace DubaiPhoneClone.Models
         public int Stock { get; set; }
        
         public string Description { get; set; } = string.Empty;
-        public string Cover { get; set; } = string.Empty;
+        public string Cover { get; set; } 
 
         [Required(ErrorMessage ="how much does this product cost our clients?")]
         public decimal NormalPrice { get; set; }

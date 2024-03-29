@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace DubaiPhone.DTOs.productDTOs
 {
@@ -25,6 +26,8 @@ namespace DubaiPhone.DTOs.productDTOs
         public decimal NormalPrice { get; set; }
         public decimal SalePercent { get; set; }
         [Required]
+        public string Cover { get; set; }
+        public IFormFile ImageFile { get; set; }
         public int CategoryId { get; set; }
         public int? BrandId { get; set; }
     }

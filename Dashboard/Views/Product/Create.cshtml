@@ -1,0 +1,78 @@
+﻿@model DubaiPhone.DTOs.productDTOs.CreatingAndUpdatingProduct
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container mt-5">
+    <h1>Create Product</h1>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="ImageFile">Product Image</label>
+            <input type="file" class="form-control-file" id="ImageFile" name="ImageFile">
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="ArabicName">Arabic Name</label>
+            <input type="text" class="form-control" id="ArabicName" name="ArabicName" placeholder="Enter Arabic Name" required>
+            <span asp-validation-for="ArabicName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Name">English Name</label>
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter English Name" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Stock">Stock</label>
+            <input type="number" class="form-control" id="Stock" name="Stock" placeholder="Enter Stock" required>
+            <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <textarea class="form-control" id="Description" name="Description" rows="3"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="NormalPrice">Normal Price</label>
+            <input type="number" class="form-control" id="NormalPrice" name="NormalPrice" placeholder="Enter Normal Price" required>
+            <span asp-validation-for="NormalPrice" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="SalePercent">Sale Percent</label>
+            <input type="number" class="form-control" id="SalePercent" name="SalePercent" placeholder="Enter Sale Percent">
+            <span asp-validation-for="SalePercent" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="CategoryId">Category</label>
+            <select class="form-control" id="CategoryId" name="CategoryId">
+                <option value="">Select Category</option>
+                @foreach (var category in ViewBag.CategoryList)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="BrandId">Brand</label>
+            <select class="form-control" id="BrandId" name="BrandId">
+                <option value="">Select Brand</option>
+                @foreach (var brand in ViewBag.BrandList)
+                {
+                    <option value="@brand.Id">@brand.Name</option>
+                }
+            </select>
+            <span asp-validation-for="BrandId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
