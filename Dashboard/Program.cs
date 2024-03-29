@@ -1,4 +1,7 @@
 using DubaiPhoneClone.Application.Contracts;
+
+using DubaiPhoneClone.Application.services.Brands;
+
 using DubaiPhoneClone.Application.services.product;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Infrastructure.Repositories;
@@ -23,6 +26,10 @@ namespace Dashboard
 
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProuductService, productServices>();
+
+            builder.Services.AddScoped<IBrandRepository, BrandRepository>();
+            builder.Services.AddScoped<IBrandServices, BrandService>();
+
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
