@@ -1,4 +1,5 @@
 ﻿using DubaiPhoneClone.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,6 +23,8 @@ namespace DubaiPhone.DTOs.productDTOs
         public Category? Category { get; set; }
         public int? BrandId { get; set; }
         public Brand? Brand { get; set; }
+        public IFormFile ImageFile { get; set; }
+
         public List<User>? WishlistItems { get; set; }
         public List<ProductImage>? Images { get; set; }
     }
