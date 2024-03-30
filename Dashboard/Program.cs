@@ -1,5 +1,8 @@
 using DubaiPhoneClone.Application.Contracts;
+
 using DubaiPhoneClone.Application.services.Brands;
+using DubaiPhoneClone.Application.services.Categorys;
+
 using DubaiPhoneClone.Application.services.Categorys;
 using DubaiPhoneClone.Application.services.product;
 using DubaiPhoneClone.Context;
@@ -28,6 +31,7 @@ namespace Dashboard
 
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProuductService, productServices>();
+
             builder.Services.AddScoped<ICategoryServices , CategoryServices>();
             builder.Services.AddScoped<ICategoryRepository , CategoryRepository>(); 
             builder.Services.AddScoped<IBrandServices , BrandService>();

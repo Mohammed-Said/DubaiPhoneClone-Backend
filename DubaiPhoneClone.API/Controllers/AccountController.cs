@@ -1,4 +1,4 @@
-﻿using DubaiPhone.DTOs.AccountDTO;
+﻿using DubaiPhone.DTOs.userDTOs;
 using DubaiPhoneClone.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -62,37 +62,46 @@ namespace DubaiPhoneClone.API.Controllers
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByNameAsync(model.UserName);
-                if (user == null)
+
+                if (user is null)
                     return Unauthorized();
 
 
                 bool isLogin = await _userManager.CheckPasswordAsync(user, model.Password);
-                if (isLogin)
+
+                if (!isLogin)
+                    return Unauthorized();
+
+                var claims = new List<Claim>();
+
+                claims.Add(new Claim(ClaimTypes.Name, user.UserName!));
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id));
+                claims.Add(new Claim(ClaimTypes.Email, user.Email));
+
+                if (user.PhoneNumber is not null)
+                    claims.Add(new Claim(ClaimTypes.MobilePhone, user.PhoneNumber));
+
+                claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
+
+                SecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+                SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+                JwtSecurityToken token = new JwtSecurityToken(
+                    issuer: _configuration["JWT:ValidIssuer"],//Provider (API)
+                    audience: _configuration["JWT:ValidAudiance"],//Consumer (Angular)
+                    claims,
+                    expires: DateTime.Now.AddDays(15),
+                    signingCredentials: signingCredentials
+                    );
+
+                return Ok(new
                 {
-                    var claims = new List<Claim>();
+                    token = new JwtSecurityTokenHandler().WriteToken(token),
+                    expitation = token.ValidTo,
+                    status = 200,
+                });
 
-                    claims.Add(new Claim(ClaimTypes.Name, user.UserName!));
-                    claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id));
-                    claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
 
-                    SecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
-                    SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-                    JwtSecurityToken token = new JwtSecurityToken(
-                        issuer: _configuration["JWT:ValidIssuer"],//Provider (API)
-                        audience: _configuration["JWT:ValidAudiance"],//Consumer (Angular)
-                        claims: claims,
-                        expires: DateTime.Now.AddDays(15),
-                        signingCredentials: signingCredentials
-                        );
-
-                    return Ok(new
-                    {
-                        token = new JwtSecurityTokenHandler().WriteToken(token),
-                        expitation = token.ValidTo,
-                        status = 200,
-                    });
-                }
             }
             return Unauthorized();
         }

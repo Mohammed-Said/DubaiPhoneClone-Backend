@@ -22,8 +22,6 @@ namespace DubaiPhoneClone.Application.services.userServices
         public Task<GetUser> DeleteUser(int UserId);
 
         Task<List<Order>> GetCustomerOrders(int userId);
-
-        Task<bool> AddCartItem(CreateCartItem item);
         public  Task<bool> AddLovedItem(int itemId, int userId);
 
     }
