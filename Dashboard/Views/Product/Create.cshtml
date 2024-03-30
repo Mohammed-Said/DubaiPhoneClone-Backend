@@ -5,53 +5,53 @@
 
 
 <div class="container mt-5">
-    <h1>Create Product</h1>
+    <h1 class="text-center">Create Product</h1>
     <form asp-action="Create" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="ImageFile">Product Image</label>
+            <label class="fs-5 fw-bold mt-2 mb-2" for="ImageFile">Product Image</label>
             <input type="file" class="form-control-file" id="ImageFile" name="ImageFile">
             <span asp-validation-for="ImageFile" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="ArabicName">Arabic Name</label>
+            <label class="fs-5 fw-bold mt-2 mb-2" for="ArabicName">Arabic Name</label>
             <input type="text" class="form-control" id="ArabicName" name="ArabicName" placeholder="Enter Arabic Name" required>
             <span asp-validation-for="ArabicName" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="Name">English Name</label>
+            <label class="fs-5 fw-bold mt-2 mb-2" for="Name">English Name</label>
             <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter English Name" required>
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="Stock">Stock</label>
+            <label class="fs-5 fw-bold mt-2 mb-2" for="Stock">Stock</label>
             <input type="number" class="form-control" id="Stock" name="Stock" placeholder="Enter Stock" required>
             <span asp-validation-for="Stock" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="Description">Description</label>
+            <label class="fs-5 fw-bold mt-2 mb-2" for="Description">Description</label>
             <textarea class="form-control" id="Description" name="Description" rows="3"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="NormalPrice">Normal Price</label>
+            <label class="fs-5 fw-bold mt-2 mb-2" for="NormalPrice">Normal Price</label>
             <input type="number" class="form-control" id="NormalPrice" name="NormalPrice" placeholder="Enter Normal Price" required>
             <span asp-validation-for="NormalPrice" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="SalePercent">Sale Percent</label>
+            <label class="fs-5 fw-bold mt-2 mb-2" for="SalePercent">Sale Percent</label>
             <input type="number" class="form-control" id="SalePercent" name="SalePercent" placeholder="Enter Sale Percent">
             <span asp-validation-for="SalePercent" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="CategoryId">Category</label>
-            <select class="form-control" id="CategoryId" name="CategoryId">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="CategoryId">Category</label>
+            <select class="form-select" id="CategoryId" name="CategoryId">
                 <option value="">Select Category</option>
                 @foreach (var category in ViewBag.CategoryList)
                 {
@@ -62,8 +62,8 @@
         </div>
 
         <div class="form-group">
-            <label for="BrandId">Brand</label>
-            <select class="form-control" id="BrandId" name="BrandId">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="BrandId">Brand</label>
+            <select class ="form-select" id="BrandId" name="BrandId">
                 <option value="">Select Brand</option>
                 @foreach (var brand in ViewBag.BrandList)
                 {
@@ -72,7 +72,9 @@
             </select>
             <span asp-validation-for="BrandId" class="text-danger"></span>
         </div>
+		<div class="d-grid gap-2 mt-5">
+            <button class="btn btn-outline-success" type="submit">Submit</button>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
 </div>

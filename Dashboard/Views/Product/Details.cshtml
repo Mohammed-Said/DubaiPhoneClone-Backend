@@ -51,8 +51,8 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col">
-            <a href="@Url.Action("Edit", new { id = Model.Id })" class="btn btn-primary">Edit</a>
-            <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
         </div>
     </div>
 </div>

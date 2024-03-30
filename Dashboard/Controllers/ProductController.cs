@@ -4,6 +4,7 @@ using DubaiPhoneClone.Application.services.Categorys;
 using DubaiPhoneClone.Application.services.product;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Dashboard.Controllers
 {
@@ -202,12 +203,13 @@ namespace Dashboard.Controllers
         public async Task<IActionResult> Search(string name)
         {
             try
-            {
-                var products = await _productServices.SearchName(name);
-                if (products == null || products.Count == 0)
+            { 
+                if ( string.IsNullOrWhiteSpace(name))
                 {
-                    ViewBag.ErrorMessage = "No products found with that name.";
+                    return RedirectToAction("Index");
                 }
+                var products = await _productServices.SearchName(name);
+               
                 return View("Index", products);
             }
             catch (Exception ex)

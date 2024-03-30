@@ -27,7 +27,7 @@ namespace DubaiPhoneClone.Models
 
         [Required(ErrorMessage ="how much does this product cost our clients?")]
         public decimal NormalPrice { get; set; }
-        public decimal SalePrice { get; set; }
+        public decimal SalePrice { get; set; } 
 
         //Product-Category one to many
         [ForeignKey("Category")]

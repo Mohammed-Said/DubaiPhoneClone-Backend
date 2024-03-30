@@ -1,13 +1,11 @@
 using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Application.services.Brands;
-<<<<<<< HEAD
 using DubaiPhoneClone.Application.services.Categorys;
-=======
->>>>>>> b1898cd8587e26f1f277c3a2a4193e4884e8d05a
 using DubaiPhoneClone.Application.services.product;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Dashboard
 {
@@ -23,22 +21,20 @@ namespace Dashboard
             var connection = builder.Configuration.GetConnectionString("Connection");
 
             builder.Services.AddDbContext<ApplicationContext>(option =>
-                option.UseSqlServer(connection));
+               option.UseSqlServer(connection));
+      
+             
 
 
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProuductService, productServices>();
-<<<<<<< HEAD
             builder.Services.AddScoped<ICategoryServices , CategoryServices>();
             builder.Services.AddScoped<ICategoryRepository , CategoryRepository>(); 
             builder.Services.AddScoped<IBrandServices , BrandService>();
             builder.Services.AddScoped<IBrandRepository , BrandRepository>();
             builder.Services.AddScoped<IBrandRepository, BrandRepository>();
             builder.Services.AddScoped<IBrandServices, BrandService>();
-=======
-            builder.Services.AddScoped<IBrandRepository, BrandRepository>();
-            builder.Services.AddScoped<IBrandServices, BrandService>();
->>>>>>> b1898cd8587e26f1f277c3a2a4193e4884e8d05a
+
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
