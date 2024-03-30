@@ -204,7 +204,7 @@ namespace Dashboard.Controllers
         {
             try
             { 
-                if ( string.IsNullOrWhiteSpace(name))
+                if (string.IsNullOrWhiteSpace(name))
                 {
                     return RedirectToAction("Index");
                 }

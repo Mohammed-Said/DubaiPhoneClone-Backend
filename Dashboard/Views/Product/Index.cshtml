@@ -31,18 +31,18 @@
 <table class="table  table-hover">
     <thead class="table-primary">
         <tr>
-            <th>Image</th>
-            <th >Name</th>
-            <th>Normal Price</th>
-            <th>Sale Price</th>
-            <th>Actions</th>
+            <th class="text-center">Image</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Normal Price</th>
+            <th class="text-center">Sale Price</th>
+            <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                    <img class="w-25" src="~/Products/@item.Cover">
+            <td class="d-flex justify-content-center align-items-center">
+                  <img class="w-25" src="~/Products/@item.Cover">
             </td>
             <td>@item.Name</td>
             <td>@item.NormalPrice</td>

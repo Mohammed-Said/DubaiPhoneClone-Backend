@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DubaiPhone.DTOs.CategoryDTOs.GetCategoryDTO> 
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="mb-5 mt-5">
+    <div class="row">
+        <div class="col-2 d-flex justify-content-end fs-5 text-info-emphasis">
+            Category Name
+        </div>
+        <div class="col-4">
+            <form class="d-flex" role="search" asp-action="Search" asp-controller="Category" method="get">
+                <input class="form-control me-2" type="search" name="name" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+        </div>
+
+
+        <div class="col-6 d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-secondary">
+                <a asp-controller="Category" asp-action="Create" class="btn ">
+                    Add New Category
+                </a>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<table class="table  table-hover">
+    <thead class="table-primary">
+        <tr>
+            <th class="text-center">Image</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Arabic Name </th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) 
+    {
+            <tr>
+                <td>
+                    <img class="w-10" src="~/Categories/@item.ImagePath">
+                </td>
+                <td>@item.Name</td>
+                <td>@item.ArabicName</td>
+                <td>
+                    <div class="d-flex ">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn mb-2 text-warning">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span class="details-text">Edit</span>
+                        </a>
+                        <button class="btn mb-2 text-danger delete-btn" data-id="@item.Id">
+                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="details-text">Delete</span>
+                        </button>
+                    </div>
+                </td>
+
+            </tr>
+
+    }
+    </tbody>
+</table>
