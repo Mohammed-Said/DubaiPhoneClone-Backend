@@ -14,10 +14,12 @@ namespace DubaiPhoneClone.Application.services.cartitems
 
         public Task<CartItem> GetCartItemByID(int CartItem);
 
-        public Task<CreateCartItem> CreateCartItem(CreateCartItem CartItem);
+        Task<CreateCartItemDTO> AddCartItem(CreateCartItemDTO item);
 
         public Task<CartItem> UpdateCartItem(CartItem CartItem);
 
         public Task<CartItem> DeleteCartItem(int CartItemId);
+        Task<List<CartItemDTO>> GetUserCart(string userId);
+        Task<List<ProductCartDTO>> GetCartProducts(string userId);
     }
 }

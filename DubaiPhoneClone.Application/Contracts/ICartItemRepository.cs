@@ -1,4 +1,4 @@
-﻿using DubaiPhone.DTOs;
+﻿using DubaiPhone.DTOs.cartDTOs;
 using DubaiPhoneClone.Models;
 
 namespace DubaiPhoneClone.Application.Contracts
@@ -6,7 +6,9 @@ namespace DubaiPhoneClone.Application.Contracts
     public interface ICartItemRepository : IRepository<CartItem, int>
     {
         bool ChangeQuantity(int CartItemId, int quantity);
-        public IQueryable<ProductCart> GetUserCart(int userId);
+        public Task<IQueryable<ProductCartDTO>> GetCartProducts(string userId);
+        public Task<IQueryable<CartItem>> GetUserCart(string userId);
+        Task<bool> AddCartItem(CartItem item);
         void PlaceOrder(Order order);
     }
 }

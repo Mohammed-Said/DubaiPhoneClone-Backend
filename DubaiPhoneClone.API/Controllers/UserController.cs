@@ -31,24 +31,7 @@ namespace DubaiPhoneClone.API.Controllers
             }
             return Created(_configuration.GetValue<string>("hostaName") + $"/api/user/{createdUser.Id}", createdUser);
         }
-        [HttpPatch("additemtomycart")]
-        public  async   Task<IActionResult>addToCart(CreateCartItem item)
-        {
-            //add userId from claims
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-           bool sucess=await _userServices.AddCartItem(item);
-           if(sucess)
-            {
-                return Ok();
-            }
-            else
-            {
-                return BadRequest();
-            }
-        }
+        
         [HttpPatch("additemtomywishlist/{itemId:int}")]
         public async Task<IActionResult> addToWishList(int itemId)
         {

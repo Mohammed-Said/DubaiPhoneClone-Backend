@@ -2,6 +2,7 @@
 using DubaiPhone.DTOs.cartDTOs;
 using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,15 @@ namespace DubaiPhoneClone.Application.services.cartitems
             _repo = repo;
             _mapper=mapper;
         }
-        public async Task<CreateCartItem> CreateCartItem(CreateCartItem CartItem)
+        public async Task<CreateCartItemDTO> AddCartItem(CreateCartItemDTO item)
         {
-            var cartItem =_mapper.Map<CreateCartItem>(await _repo.Create(_mapper.Map<CartItem>(CartItem)));
-            await _repo.Save();
-            return cartItem;
+            bool sucess = await _repo.AddCartItem(_mapper.Map<CartItem>(item));
+            if (sucess)
+            {
+                await _repo.Save();
+                return item;
+            }
+            return null;
         }
 
         public async Task<CartItem> DeleteCartItem(int CartItemId)
@@ -52,5 +57,11 @@ namespace DubaiPhoneClone.Application.services.cartitems
             await _repo.Save();
             return updatecart;
         }
+
+        public async Task<List<CartItemDTO>> GetUserCart(string userId)=>
+             _mapper.Map<List<CartItemDTO>>(await (await _repo.GetUserCart(userId)).ToListAsync());
+
+        public async Task<List<ProductCartDTO>> GetCartProducts(string userId) =>
+            await (await _repo.GetCartProducts(userId)).ToListAsync();
     }
 }
