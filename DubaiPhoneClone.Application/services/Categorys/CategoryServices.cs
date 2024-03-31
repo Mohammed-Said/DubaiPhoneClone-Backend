@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DubaiPhone.DTOs.CategoryDTOs;
+using DubaiPhone.DTOs.productDTOs;
 using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Models;
 using Microsoft.EntityFrameworkCore;
@@ -40,7 +41,7 @@ namespace DubaiPhoneClone.Application.services.Categorys
             await _repo.Save();
             return deltecart;
         }
-
+        
         public async Task<List<GetCategoryDTO>>  GetAllCategory()
         {
             var categories = await(await _repo.GetAll()).ToListAsync();
@@ -69,5 +70,9 @@ namespace DubaiPhoneClone.Application.services.Categorys
             await _repo.Save();
             return updatecart;
         }
+
+        public async Task<List<GetCategoryDTO>> SearchName(string name) =>
+        mapper.Map<List<GetCategoryDTO>>(await (await _repo.SearchName(name)).ToListAsync());
+
     }
 }

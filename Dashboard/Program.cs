@@ -31,7 +31,6 @@ namespace Dashboard
 
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProuductService, productServices>();
-
             builder.Services.AddScoped<ICategoryServices , CategoryServices>();
             builder.Services.AddScoped<ICategoryRepository , CategoryRepository>(); 
             builder.Services.AddScoped<IBrandServices , BrandService>();

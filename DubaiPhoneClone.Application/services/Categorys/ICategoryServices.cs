@@ -1,5 +1,6 @@
 ﻿using DubaiPhone.DTOs.BrandDTOs;
 using DubaiPhone.DTOs.CategoryDTOs;
+using DubaiPhone.DTOs.productDTOs;
 using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace DubaiPhoneClone.Application.services.Categorys
         public Task<Category> DeleteCategory(int CategoryId);
 
         Task<List<GetCategoryWithBrandDTOs>> GetAllCategoryWithBrand();
+        Task<List<GetCategoryDTO>> SearchName(string name);
 
     }
 }

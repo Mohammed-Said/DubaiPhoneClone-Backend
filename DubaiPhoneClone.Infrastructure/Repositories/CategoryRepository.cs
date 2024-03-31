@@ -24,5 +24,10 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
                 Brands = c.Brands.Select(b=>b.Name).ToList()
 
             });
+
+        public async Task<IQueryable<Category>> SearchName(string name) =>
+        applicationContext.Categories.Where(p => p.Name.ToLower().Contains(name.ToLower()));
+
+
     }
 }

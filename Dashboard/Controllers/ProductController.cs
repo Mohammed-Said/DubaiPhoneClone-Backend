@@ -189,7 +189,6 @@ namespace Dashboard.Controllers
                     }
                 }
 
-                // Delete the product using the service
                 await _productServices.DeleteProduct(id);
 
                 return RedirectToAction("Index");

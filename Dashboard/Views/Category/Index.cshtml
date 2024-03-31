@@ -30,18 +30,18 @@
 <table class="table  table-hover">
     <thead class="table-primary">
         <tr>
-            <th class="text-center">Image</th>
-            <th class="text-center">Name</th>
-            <th class="text-center">Arabic Name </th>
-            <th class="text-center">Actions</th>
+            <th >Image</th>
+            <th >Name</th>
+            <th>Arabic Name </th>
+            <th class="ps-5">Actions</th>
         </tr>
     </thead>
     <tbody>
     @foreach (var item in Model) 
     {
             <tr>
-                <td>
-                    <img class="w-10" src="~/Categories/@item.ImagePath">
+                <td class="d-inline-block" style="width: 100px; height: 100px;">
+                    <img class="w-100 h-100" src="~/Categories/@item.ImagePath">
                 </td>
                 <td>@item.Name</td>
                 <td>@item.ArabicName</td>
@@ -51,10 +51,10 @@
                             <i class="fa-solid fa-pen-to-square"></i>
                             <span class="details-text">Edit</span>
                         </a>
-                        <button class="btn mb-2 text-danger delete-btn" data-id="@item.Id">
+                        <a class="btn mb-2 text-danger" asp-action="Delete" asp-route-id="@item.Id">
                             <i class="fa-solid fa-trash-can"></i>
                             <span class="details-text">Delete</span>
-                        </button>
+                        </a>
                     </div>
                 </td>
 
