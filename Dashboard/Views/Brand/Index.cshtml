@@ -18,9 +18,10 @@
 
         <div class="col-6 d-flex justify-content-end">
             <button type="button" class="btn btn-outline-secondary">
-                <a asp-action="Create"> Add New Brand</a>
+                <a class="btn " asp-action="Create"> Add New Brand</a>
             </button>
         </div>
+
     </div>
 
 </div>
@@ -38,9 +39,10 @@
 @foreach (var item in Model)
 {
             <tr>
-                <td>
-                    <img class="w-25" src="/Brands/@item.ImagePath">
+                <td class="d-inline-block" style="width: 100px; height: 100px;">
+                    <img class="w-100 h-100" src="/Brands/@item.ImagePath">
                 </td>
+                
                 <td>@item.Name</td>
                 <td>@item.ArabicName</td>
                 <td>

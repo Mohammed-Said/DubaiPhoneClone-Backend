@@ -55,7 +55,6 @@ namespace Dashboard.Controllers
                     category.ImagePath = fileName;
                 }
 
-                // Create the product using the service
                 await _categoryServices.CreateCategory(category);
 
                 return RedirectToAction("Index");
