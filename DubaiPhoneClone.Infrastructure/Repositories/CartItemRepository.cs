@@ -51,7 +51,8 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
                    {
                        ProductId = prod.Id,
                        CartItemId = item.Id,
-                       ProductName = prod.Name,
+                       Name = prod.Name,
+                       ArabicName = prod.ArabicName,
                        SalePrice = prod.SalePrice,
                        NormalPrice = prod.NormalPrice,
                        Quantity = item.Quantity,
@@ -118,6 +119,20 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
         public async Task<IQueryable<CartItem>> GetUserCart(string userId) =>
             _appContext.CartItems.Where(c => c.UserId == userId);
 
+        public async Task<IQueryable<ProductCartDTO>> GetCartProducts(int[] ids)
+        {
+          return _appContext.Products.Where(p => ids.Contains(p.Id))
+            .Select(prod=>new ProductCartDTO
+            {
+                ProductId = prod.Id,
+                Name = prod.Name,
+                ArabicName = prod.ArabicName,
+                SalePrice = prod.SalePrice,
+                NormalPrice = prod.NormalPrice,
+                Stock = prod.Stock >5 ?5 : prod.Stock,
+                Cover = prod.Cover
+            });
+        }
     }
 
 }

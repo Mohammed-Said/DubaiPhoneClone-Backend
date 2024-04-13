@@ -15,7 +15,7 @@ namespace DubaiPhoneClone.Application.services.Brands
         public Task<Brand> UpdateBrand(UpdateBrandDTO Brand);
 
         public Task<Brand> DeleteBrand(int BrandId);
-         Task<List<GetBrandWithCategoryDTO>> GetAllBrandWithCategory();
+         Task<List<BrandWithCategoryDTO>> GetAllBrandWithCategory();
 
     }
 }

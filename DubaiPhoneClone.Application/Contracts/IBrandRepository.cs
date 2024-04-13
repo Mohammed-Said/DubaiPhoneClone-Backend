@@ -6,6 +6,6 @@ namespace DubaiPhoneClone.Application.Contracts
     
     public interface IBrandRepository : IRepository<Brand, int>
     {
-        Task<IQueryable<GetBrandWithCategoryDTO>> GetBrandsWithCategory();
+        Task<IQueryable<Brand>> GetBrandsWithCategory();
     }
 }

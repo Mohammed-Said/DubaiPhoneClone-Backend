@@ -12,15 +12,15 @@ namespace DubaiPhoneClone.Application.services.product
     public interface IProuductService
     {
         Task<List<GetAllProduct>> GetAllProduct();
-        Task<List<GetProductDetails>> GetProductDetails();
+        Task<List<ProductDetailsDTO>> GetProductDetails();
 
-        Task<GetProductDetails> GetProductByID(int Product);
+        Task<ProductDetailsDTO> GetProductByID(int Product);
 
         Task<CreatingAndUpdatingProduct> CreateProduct(CreatingAndUpdatingProduct Product);
 
         Task<CreatingAndUpdatingProduct> UpdateProduct(CreatingAndUpdatingProduct Product);
 
-        Task<GetProductDetails> DeleteProduct(int ProductId);
+        Task<ProductDetailsDTO> DeleteProduct(int ProductId);
 
         Task<List<GetAllProduct>> SearchName(string name);
 
@@ -28,7 +28,7 @@ namespace DubaiPhoneClone.Application.services.product
 
         Task<List<GetAllProduct>> GetByBrand(int bId);
 
-        Task<List<GetAllProduct>> GetByBrandAndCategory(int bId,int cId);
+        Task<List<GetAllProduct>> GetByBrandAndCategory(int cId,int bId);
 
 
         Task<int> GetCountByCategory(int cId);
@@ -60,6 +60,10 @@ namespace DubaiPhoneClone.Application.services.product
         Task<Pagination<List<GetAllProduct>>> FilterByStockAllPagination( int Productnums, int PageNumber);
         Task<Pagination<List<GetAllProduct>>> FilterByStockBrandPagination( int brandId, int Productnums, int PageNumber);
         Task<Pagination<List<GetAllProduct>>> FilterByStockCategoryPagination( int categoryId, int Productnums, int PageNumber);
-        Task<Pagination<List<GetAllProduct>>> FilterByStockCategoryAndBrandPagination( int brandId, int categoryId, int Productnums, int PageNumber);
+        Task<Pagination<List<GetAllProduct>>> FilterByStockCategoryAndBrandPagination( int categoryId, int brandId, int Productnums, int PageNumber);
+
+        // min max price
+        Task<decimal> GetMinPrice(int? categoryId, int? brandId);
+        Task<decimal> GetMaxPrice(int? categoryId, int? brandId);
     }
 }

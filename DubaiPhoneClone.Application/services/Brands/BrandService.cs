@@ -43,10 +43,11 @@ namespace DubaiPhoneClone.Application.services.Brands
             return mapper.Map<List<GetBrandDTO>>(brands);
         }
 
-        public async Task<List<GetBrandWithCategoryDTO>> GetAllBrandWithCategory()=>
-            await(await _repo.GetBrandsWithCategory()).ToListAsync();
-            
-        
+        public async Task<List<BrandWithCategoryDTO>> GetAllBrandWithCategory()
+        {
+            var brands= await (await _repo.GetBrandsWithCategory()).ToListAsync();
+            return mapper.Map<List<BrandWithCategoryDTO>>(brands);
+        }
 
         public async Task<GetBrandDTO> GetBrandByID(int Brand)
         {

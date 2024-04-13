@@ -36,11 +36,11 @@ namespace DubaiPhoneClone.Application.services.product
             Product = _mapper.Map<CreatingAndUpdatingProduct>(await _repo.Update(prd));
             return Product;
         }
-        public async Task<GetProductDetails> DeleteProduct(int ProductId)
+        public async Task<ProductDetailsDTO> DeleteProduct(int ProductId)
         {
             var delepro = await _repo.Delete(ProductId);
             await _repo.Save();
-            GetProductDetails res = _mapper.Map<GetProductDetails>(delepro);
+            ProductDetailsDTO res = _mapper.Map<ProductDetailsDTO>(delepro);
             return res;
         }
         public async Task<List<GetAllProduct>> GetAllProduct()
@@ -50,20 +50,20 @@ namespace DubaiPhoneClone.Application.services.product
             return result;
         }
         // ===========
-        public async Task<List<GetProductDetails>> GetProductDetails()
+        public async Task<List<ProductDetailsDTO>> GetProductDetails()
         {
             var products = await(await _repo.GetAll()).ToListAsync();
-            List<GetProductDetails> result = _mapper.Map< List < GetProductDetails >>(products);
+            List<ProductDetailsDTO> result = _mapper.Map< List < ProductDetailsDTO >>(products);
             return result;
         }
        
 
-        public async Task<GetProductDetails> GetProductByID(int Product) =>
-           _mapper.Map<GetProductDetails>(await _repo.GetById(Product));
+        public async Task<ProductDetailsDTO> GetProductByID(int Product) =>
+           _mapper.Map<ProductDetailsDTO>(await _repo.GetById(Product));
 
         public async Task<List<GetAllProduct>> GetByBrand(int bramdId) =>
         _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrand(bramdId)).ToListAsync());
-        public async Task<List<GetAllProduct>> GetByBrandAndCategory(int bId, int cId) =>
+        public async Task<List<GetAllProduct>> GetByBrandAndCategory( int cId, int bId) =>
              _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrandAndCategory(cId, bId)).ToListAsync());
         public async Task<List<GetAllProduct>> GetByCategory(int cId) =>
            _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByCategory(cId)).ToListAsync());
@@ -369,9 +369,36 @@ namespace DubaiPhoneClone.Application.services.product
 
             };
 
-       
+
         #endregion
 
+        public async Task<decimal> GetMinPrice(int? categoryId,int? brandId)
+        {
+            if (categoryId.HasValue&&brandId.HasValue)
+               return (await _repo.GetByBrandAndCategory(categoryId.Value,brandId.Value)).Min(p => p.SalePrice);
+            if (categoryId.HasValue)
+               return (await _repo.GetByCategory(categoryId.Value)).Min(p => p.SalePrice);
+            if (brandId.HasValue)
+               return (await _repo.GetByBrand(brandId.Value)).Min(p => p.SalePrice);
+            
 
+            return (await _repo.GetAll()).Min(p => p.SalePrice);
+
+
+        }
+        public async Task<decimal> GetMaxPrice() =>
+            (await _repo.GetAll()).Max(p => p.SalePrice);
+
+        public async Task<decimal> GetMaxPrice(int? categoryId, int? brandId)
+        {
+            if (categoryId.HasValue && brandId.HasValue)
+                return (await _repo.GetByBrandAndCategory(categoryId.Value, brandId.Value)).Max(p => p.SalePrice);
+            if (categoryId.HasValue)
+                return (await _repo.GetByCategory(categoryId.Value)).Max(p => p.SalePrice);
+            if (brandId.HasValue)
+                return (await _repo.GetByBrand(brandId.Value)).Max(p => p.SalePrice);
+
+            return (await _repo.GetAll()).Max(p => p.SalePrice);
+        }
     }
 }
