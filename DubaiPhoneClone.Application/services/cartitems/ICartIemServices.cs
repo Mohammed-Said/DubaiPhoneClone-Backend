@@ -10,8 +10,6 @@ namespace DubaiPhoneClone.Application.services.cartitems
 {
     public interface ICartIemServices
     {
-        public  Task<IQueryable<CartItem>> GetAllCartItem();
-
         public Task<CartItem> GetCartItemByID(int CartItem);
 
         Task<CreateCartItemDTO> AddCartItem(CreateCartItemDTO item);
@@ -21,5 +19,6 @@ namespace DubaiPhoneClone.Application.services.cartitems
         public Task<CartItem> DeleteCartItem(int CartItemId);
         Task<List<CartItemDTO>> GetUserCart(string userId);
         Task<List<ProductCartDTO>> GetCartProducts(string userId);
+        Task<List<ProductCartDTO>> GetCartProducts(int[] ids);
     }
 }

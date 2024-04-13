@@ -38,13 +38,6 @@ namespace DubaiPhoneClone.Application.services.cartitems
             await _repo.Save();
             return deltecart;
         }
-
-        public async Task<IQueryable<CartItem>> GetAllCartItem()
-        {
-            var query =await _repo.GetAll(); 
-            return query;
-        }
-
         public async Task<CartItem> GetCartItemByID(int CartItem)
         {
             var element=await _repo.GetById(CartItem);
@@ -63,5 +56,7 @@ namespace DubaiPhoneClone.Application.services.cartitems
 
         public async Task<List<ProductCartDTO>> GetCartProducts(string userId) =>
             await (await _repo.GetCartProducts(userId)).ToListAsync();
+        public async Task<List<ProductCartDTO>> GetCartProducts(int[] ids) =>
+            await (await _repo.GetCartProducts(ids)).ToListAsync();
     }
 }

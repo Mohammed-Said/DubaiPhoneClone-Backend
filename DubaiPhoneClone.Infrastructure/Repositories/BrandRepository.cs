@@ -19,14 +19,8 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             this.appContext = applicationContext;
         }
 
-        public async Task<IQueryable<GetBrandWithCategoryDTO>> GetBrandsWithCategory() =>
-            appContext.Brands.Include(b => b.Categories).Select(b => new GetBrandWithCategoryDTO {
-            ImagePath=b.ImagePath,
-            Name=b.Name,
-            Id=b.Id,
-            ArabicName=b.ArabicName,
-            Categories=b.Categories.Select(c=>c.Name).ToList()
-            });
+        public async Task<IQueryable<Brand>> GetBrandsWithCategory() =>
+            appContext.Brands.Include(b => b.Categories);
 
         
     }

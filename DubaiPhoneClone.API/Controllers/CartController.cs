@@ -36,10 +36,19 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(cart);
 
         }
-        [HttpGet("GetCartProducts")]
+        [HttpGet("GetCartProductsByUser")]
         public async Task<IActionResult> GetCartProducts(string userId)
         {
             var cart = await _cartItemServices.GetCartProducts(userId);
+            if (cart == null)
+                return BadRequest();
+            return Ok(cart);
+        }
+
+        [HttpGet("GetCartProducts")]
+        public async Task<IActionResult> GetCartProducts([FromQuery]int[] ids)
+        {
+            var cart = await _cartItemServices.GetCartProducts(ids);
             if (cart == null)
                 return BadRequest();
             return Ok(cart);

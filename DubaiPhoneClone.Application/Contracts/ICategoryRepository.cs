@@ -6,7 +6,7 @@ namespace DubaiPhoneClone.Application.Contracts
 {
     public interface ICategoryRepository : IRepository<Category, int>
     {
-        Task<IQueryable<GetCategoryWithBrandDTOs>> GetCategoryWithBrand();
+        Task<IQueryable<Category>> GetCategoryWithBrand();
 
     }
 }

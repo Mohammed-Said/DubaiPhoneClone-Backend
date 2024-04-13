@@ -16,20 +16,24 @@ namespace DubaiPhoneClone.Application.mapper
     public class AutoMapperProfile:Profile
     {
         public AutoMapperProfile() {
-            CreateMap<Product, GetProductDetails>();
+            CreateMap<Product, ProductDetailsDTO>().ForMember(d => d.Images, o => o.MapFrom(p => p.Images.Select(i=>i.Path)));
             CreateMap<Product, GetAllProduct>();
             CreateMap<Product,CreatingAndUpdatingProduct>().ReverseMap();
 
             
             //brand 
+            CreateMap<Brand, BrandDto>();
             CreateMap<Brand, GetBrandDTO>();
             CreateMap<Brand, UpdateBrandDTO>().ReverseMap();
             CreateMap<Brand, CreateBrandDTO>().ReverseMap(); 
+            CreateMap<Brand, BrandWithCategoryDTO>();
             
             //Category 
+            CreateMap<Category, CategoryDto>();
             CreateMap<Category, GetCategoryDTO>();
             CreateMap<Category, UpdateCategoryDTO>().ReverseMap();
             CreateMap<Category, CreateCategoryDTO>().ReverseMap();
+            CreateMap<Category, CategoryWithBrandDTOs>();
 
             //Orders
             CreateMap<Order, getOrderDTO>().ReverseMap();

@@ -6,8 +6,9 @@
         public int CartItemId { get; set; }
         public int Quantity { get; set; }
         public int Stock { get; set; }
-        public string Title { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
         public string Cover { get; set; } = string.Empty;
-        public decimal Price { get; set; }
+        public decimal SalePrice { get; set; }
+        public decimal NormalPrice { get; set; }
     }
 }

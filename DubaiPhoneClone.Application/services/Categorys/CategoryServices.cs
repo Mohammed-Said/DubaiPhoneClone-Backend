@@ -47,9 +47,11 @@ namespace DubaiPhoneClone.Application.services.Categorys
             return mapper.Map<List<GetCategoryDTO>>(categories);
         }
 
-        public async Task<List<GetCategoryWithBrandDTOs>> GetAllCategoryWithBrand()=>
-            await(await _repo.GetCategoryWithBrand()).ToListAsync();
-
+        public async Task<List<CategoryWithBrandDTOs>> GetAllCategoryWithBrand()
+        {
+            var categories= await (await _repo.GetCategoryWithBrand()).ToListAsync();
+            return mapper.Map< List<CategoryWithBrandDTOs>>(categories);
+        }
 
         public async Task<GetCategoryDTO> GetCategoryByID(int Category)
         {
