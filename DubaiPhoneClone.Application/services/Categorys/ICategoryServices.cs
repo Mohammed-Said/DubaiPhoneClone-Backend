@@ -23,6 +23,7 @@ namespace DubaiPhoneClone.Application.services.Categorys
         public Task<Category> DeleteCategory(int CategoryId);
 
         Task<List<CategoryWithBrandDTOs>> GetAllCategoryWithBrand();
+        Task<List<GetCategoryDTO>> SearchName(string name);
 
     }
 }

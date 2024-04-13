@@ -4,6 +4,7 @@ using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace DubaiPhoneClone.Infrastructure.Repositories
 {
@@ -16,5 +17,8 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
         public async Task<IQueryable<Category>> GetCategoryWithBrand() =>
             applicationContext.Categories.Include(c => c.Brands);
+
+        public async Task<IQueryable<Category>> SearchName(string name) =>
+         applicationContext.Categories.Where(p => p.Name.ToLower().Contains(name.ToLower()));
     }
 }

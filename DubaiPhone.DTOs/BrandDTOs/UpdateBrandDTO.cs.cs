@@ -14,7 +14,5 @@ namespace DubaiPhone.DTOs.BrandDTOs
         public string ArabicName { get; set; } = string.Empty;
         public string ImagePath { get; set; } = string.Empty;
         public IFormFile ImageFile { get; set; }
-
-
     }
 }
