@@ -1,0 +1,84 @@
+﻿@model DubaiPhone.DTOs.productDTOs.CreatingAndUpdatingProduct
+@{
+    ViewData["Title"] = "Edit Product";
+    var categoryList = new SelectList(ViewBag.CategoryList, "Id", "Name", Model.CategoryId);
+    var brandList = new SelectList(ViewBag.BrandList, "Id", "Name", Model.BrandId);
+
+
+}
+
+
+<div class="container mt-5">
+    <h1 class="text-center">Edit Product</h1>
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="Cover" value="@Model.Cover" />
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="ImageFile">Product Image</label>
+            <input type="file" class="form-control-file" id="ImageFile" name="ImageFile">
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+            @if (!string.IsNullOrEmpty(Model.Cover))
+            {
+                <p>Current Image: @Model.Cover</p>
+            }
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="ArabicName">Arabic Name</label>
+            <input type="text" class="form-control" id="ArabicName" name="ArabicName" placeholder="Enter Arabic Name" value="@Model.ArabicName" required>
+            <span asp-validation-for="ArabicName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="Name">English Name</label>
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter English Name" value="@Model.Name" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="Stock">Stock</label>
+            <input type="number" class="form-control" id="Stock" name="Stock" placeholder="Enter Stock" value="@Model.Stock" required>
+            <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="Description">Description</label>
+            <textarea class="form-control" id="Description" name="Description" rows="3">@Model.Description</textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="NormalPrice">Normal Price</label>
+            <input type="number" class="form-control" id="NormalPrice" name="NormalPrice" placeholder="Enter Normal Price" value="@Model.NormalPrice" required>
+            <span asp-validation-for="NormalPrice" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2"  for="SalePercent">Sale Percent</label>
+            <input type="number" class="form-control" id="SalePercent" name="SalePercent" placeholder="Enter Sale Percent" value="@Model.SalePercent">
+            <span asp-validation-for="SalePercent" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" class="fs-4 fw-bold mt-2 mb-2" for="CategoryId">Category</label>
+            <select class="form-select" aria-label="Large select example" asp-for="CategoryId" asp-items="categoryList" id="CategoryId" name="CategoryId">
+                <option value="">Select Category</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="BrandId">Brand</label>
+            <select class="form-select" aria-label="Large select example" asp-for="BrandId" asp-items="brandList" id="BrandId" name="BrandId">
+                <option value="">Select Brand</option>
+            </select>
+            <span asp-validation-for="BrandId" class="text-danger"></span>
+        </div>
+
+        <div class="d-grid gap-2 mt-5">
+            <button class="btn btn-outline-success" type="submit">Update</button>
+        </div>
+    </form>
+</div>

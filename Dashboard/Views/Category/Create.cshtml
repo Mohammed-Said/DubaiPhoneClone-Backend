@@ -1,0 +1,31 @@
+﻿@model DubaiPhone.DTOs.CategoryDTOs.CreateCategoryDTO
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Create Category</h1>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="ImageFile">Category Image</label>
+            <input type="file" class="form-control-file" id="ImageFile" name="ImageFile">
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="ArabicName">Arabic Name</label>
+            <input type="text" class="form-control" id="ArabicName" name="ArabicName" placeholder="Enter Arabic Name" required>
+            <span asp-validation-for="ArabicName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="Name">English Name</label>
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter English Name" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="d-grid gap-2 mt-5">
+            <button class="btn btn-outline-success" type="submit">Submit</button>
+
+        </div>
+    </form>
+</div>
+

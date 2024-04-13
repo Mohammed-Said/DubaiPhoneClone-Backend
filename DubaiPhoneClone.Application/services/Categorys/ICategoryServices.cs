@@ -1,5 +1,6 @@
 ﻿using DubaiPhone.DTOs.BrandDTOs;
 using DubaiPhone.DTOs.CategoryDTOs;
+using DubaiPhone.DTOs.productDTOs;
 using DubaiPhoneClone.Models;
 using System;
 using System.Collections.Generic;

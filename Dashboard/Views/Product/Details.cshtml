@@ -1,0 +1,58 @@
+﻿@model DubaiPhone.DTOs.productDTOs.GetProductDetails
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Product Image -->
+        <div class="col-md-4">
+            <img src="/Products/@Model.Cover" class="img-fluid" alt="Product Cover Image">
+        </div>
+        <!-- Product Details -->
+        <div class="col-md-8">
+            <h1>Product Details</h1>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4">ID:</dt>
+                <dd class="col-sm-8">@Model.Id</dd>
+
+                <dt class="col-sm-4">Arabic Name:</dt>
+                <dd class="col-sm-8">@Model.ArabicName</dd>
+
+                <dt class="col-sm-4">Name:</dt>
+                <dd class="col-sm-8">@Model.Name</dd>
+
+                <dt class="col-sm-4">Normal Price:</dt>
+                <dd class="col-sm-8">@Model.NormalPrice</dd>
+
+                <dt class="col-sm-4">Sale Price:</dt>
+                <dd class="col-sm-8">@Model.SalePrice</dd>
+
+                <dt class="col-sm-4">Stock:</dt>
+                <dd class="col-sm-8">@Model.Stock</dd>
+
+                <dt class="col-sm-4">Description:</dt>
+                <dd class="col-sm-8">@Model.Description</dd>
+
+                <dt class="col-sm-4">Category Name:</dt>
+                <dd class="col-sm-8">@ViewData["CategoryName"]</dd>
+
+                <dt class="col-sm-4">Brand Name:</dt>
+                <dd class="col-sm-8">@ViewData["BrandName"]</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

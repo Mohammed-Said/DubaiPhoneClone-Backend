@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Catrgories\**" />
+    <Content Remove="wwwroot\Catrgories\**" />
+    <EmbeddedResource Remove="wwwroot\Catrgories\**" />
+    <None Remove="wwwroot\Catrgories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
@@ -21,6 +28,11 @@
     <ProjectReference Include="..\DubaiPhoneClone.Application\DubaiPhoneClone.Application.csproj" />
     <ProjectReference Include="..\DubaiPhoneClone.Context\DubaiPhoneClone.Context.csproj" />
     <ProjectReference Include="..\DubaiPhoneClone.Infrastructure\DubaiPhoneClone.Infrastructure.csproj" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Brands\" />
   </ItemGroup>
 
 </Project>

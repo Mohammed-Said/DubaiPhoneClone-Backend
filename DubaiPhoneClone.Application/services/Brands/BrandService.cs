@@ -9,6 +9,7 @@ using DubaiPhoneClone.Application.services.Brands;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using DubaiPhone.DTOs.BrandDTOs;
+using DubaiPhone.DTOs.CategoryDTOs;
 namespace DubaiPhoneClone.Application.services.Brands
 {
     public class BrandService : IBrandServices
@@ -64,6 +65,9 @@ namespace DubaiPhoneClone.Application.services.Brands
             await _repo.Save();
             return updatedBrand;
         }
-        
+
+        public async Task<List<GetBrandDTO>> SearchName(string name) =>
+        mapper.Map<List<GetBrandDTO>>(await (await _repo.SearchName(name)).ToListAsync());
+
     }
 }

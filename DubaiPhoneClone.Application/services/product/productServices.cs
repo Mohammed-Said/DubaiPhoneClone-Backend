@@ -33,8 +33,11 @@ namespace DubaiPhoneClone.Application.services.product
         public async Task<CreatingAndUpdatingProduct> UpdateProduct(CreatingAndUpdatingProduct Product)
         {
             Product prd = _mapper.Map<Product>(Product);
-            Product = _mapper.Map<CreatingAndUpdatingProduct>(await _repo.Update(prd));
+            var updatedProduct = await _repo.Update(prd);
+            await _repo.Save(); 
+            Product = _mapper.Map<CreatingAndUpdatingProduct>(updatedProduct);
             return Product;
+            
         }
         public async Task<ProductDetailsDTO> DeleteProduct(int ProductId)
         {

@@ -10,47 +10,57 @@
             Product Name
         </div>
         <div class="col-4">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" role="search" asp-action="Search" asp-controller="Product" method="get">
+                <input class="form-control me-2" type="search" name="name" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-secondary" type="submit">Search</button>
             </form>
         </div>
 
+
         <div class="col-6 d-flex justify-content-end">
-            <button type="button" class="btn btn-outline-secondary">Add New Product</button>
+            <button  type="button" class="btn btn-outline-secondary"> 
+                <a asp-action="Create" class="btn ">
+					Add New Product
+                </a> 
+            </button>
         </div>
     </div>
 
 </div>
 
-<table class="table  table-hover" ">
+<table class="table  table-hover">
     <thead class="table-primary">
         <tr>
-            <th>Image</th>
-            <th >Name</th>
-            <th>Normal Price</th>
-            <th>Sale Price</th>
-            <th>Action</th>
+            <th class="text-center">Image</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Normal Price</th>
+            <th class="text-center">Sale Price</th>
+            <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                    <img class="w-50" src="/Products/galaxy-s24-ultra-441x441.jpg">
-            @*E:\ITI Gradution Project\DubaiPhoneClone-Backend\Dashboard\wwwroot\Products\galaxy-s24-ultra-441x441.jpg*@
+            <td class="d-flex justify-content-center align-items-center">
+                  <img class="w-25" src="~/Products/@item.Cover">
             </td>
             <td>@item.Name</td>
             <td>@item.NormalPrice</td>
             <td>@item.SalePrice</td>
             <td>
                 <div class="d-flex ">
-                        <a class="btn mb-2 text-warning" asp-action="Edit" asp-route-id="@item.Id">
-                            <i class="fa-solid fa-pen-to-square" ></i>
+                        <a class="btn mb-2 text-danger position-relative" asp-action="Details" asp-route-id="@item.Id">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="details-text">Details</span>
                         </a>
-                    <a class="btn mb-2 text-danger" asp-action="Delete" asp-route-id="@item.Id">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn mb-2 text-warning">
+                            <i class="fa-solid fa-pen-to-square" ></i>
+                            <span class="details-text">Edit</span>
+                        </a>
+                        <button class="btn mb-2 text-danger delete-btn" data-id="@item.Id">
                             <i class="fa-solid fa-trash-can"></i>
-                    </a>
+                            <span class="details-text">Delete</span>
+                        </button>
                 </div>
                 
             </td>
