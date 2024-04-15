@@ -46,22 +46,7 @@ namespace DubaiPhoneClone.API.Controllers
                 return BadRequest();
             }
         }
-        [HttpGet("orders/{userid:int}")]
-        public async Task<IActionResult> GetUserOrders(int userid)
-        {
-            List<Order>orders=await _userServices.GetCustomerOrders(userid);
-            if (orders == null)
-            {
-                return BadRequest();
-            }
-            return Ok(orders);
-        }
-        [HttpGet("myorders")]
-        public async Task<IActionResult> GetMyOrders()
-        {
-            int userId=0;//get from claims
-            return Ok(_userServices.GetCustomerOrders(userId));
-        }
+     
         [HttpGet("myprofile")]
         public  async Task<IActionResult> getMydata()
         {

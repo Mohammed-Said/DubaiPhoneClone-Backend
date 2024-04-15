@@ -24,10 +24,10 @@ namespace DubaiPhoneClone.Application.services.orderServices
         }
      
 
-        public async Task<Order> CreateOrder(CreateOrderDTO _order)
+        public async Task<Order> CreateOrder(CreateOrderDto _order)
         {
             Order order = mapper.Map<Order>(_order); 
-            var Order = await _repo.Create(order);
+            var Order = await _repo.CreateOrder(order);
             await _repo.Save();
             return Order;
         }
@@ -39,24 +39,23 @@ namespace DubaiPhoneClone.Application.services.orderServices
             return deltecart;
         }
 
-        public async Task<List<getOrderDTO>>  GetAllOrder()
+        public async Task<List<OrderDto>>  GetAllOrder()
         {
             var orders = await (await _repo.GetAll()).ToListAsync();
-            return mapper.Map<List<getOrderDTO>>(orders);
+            return mapper.Map<List<OrderDto>>(orders);
         }
 
-        public async Task<getOrderDTO> GetOrderByID(int Order)
+        public async Task<OrderDto> GetOrderByID(int Order)
         {
             var element = await _repo.GetById(Order);
-            return mapper.Map<getOrderDTO>(element);
+            return mapper.Map<OrderDto>(element);
         }
 
-        public async Task<Order> UpdateOrder(UpdateOrderDTO _Order)
+        public async Task<List<OrderDto>> GetUserOrders(string userId)
         {
-            Order order= mapper.Map<Order>(_Order);
-            var updatecart = await _repo.Update(order);
-            await _repo.Save();
-            return updatecart;
+           var orders= await _repo.GetUserOrders(userId).ToListAsync();
+
+           return mapper.Map<List<OrderDto>>(orders);
         }
     }
 }

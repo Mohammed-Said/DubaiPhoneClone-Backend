@@ -55,11 +55,6 @@ namespace DubaiPhoneClone.Application.services.userServices
             return query;
         }
 
-        public  async Task<List<Order>> GetCustomerOrders(int userId)
-        {
-            var query=await _repo.GetCustomerOrders(userId);//mapping  to  get  order
-            return query;
-        }
 
         public async Task<GetUser> GetUserByID(int User)
         {

@@ -36,9 +36,10 @@ namespace DubaiPhoneClone.Application.mapper
             CreateMap<Category, CategoryWithBrandDTOs>();
 
             //Orders
-            CreateMap<Order, getOrderDTO>().ReverseMap();
-            CreateMap<Order, UpdateOrderDTO>().ReverseMap();
-            CreateMap<Order, CreateOrderDTO>().ReverseMap();
+            CreateMap<Order, OrderDto>().ReverseMap();
+            CreateMap<OrderItem, OrderItemDto>().ReverseMap();
+            CreateMap<Order, UpdateOrderDto>().ReverseMap();
+            CreateMap<Order, CreateOrderDto>().ReverseMap();
 
             //Coupon
             CreateMap<Coupon, GetCouponDTO>().ReverseMap();

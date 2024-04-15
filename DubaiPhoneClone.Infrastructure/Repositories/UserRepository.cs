@@ -19,10 +19,6 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
         public UserRepository(ApplicationContext applicationContext) : base(applicationContext) { }
         //this.applicationContext = applicationContext;
-
-        public async Task<List<Order>> GetCustomerOrders(int userId) =>
-          (await DbSetEntity.FindAsync(userId))?.Orders;
-
         public async Task<bool> AddWishlistItem(int prodId, int userId)
         {
 

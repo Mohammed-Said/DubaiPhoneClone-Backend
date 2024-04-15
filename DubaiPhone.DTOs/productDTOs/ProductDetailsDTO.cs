@@ -20,5 +20,10 @@ namespace DubaiPhone.DTOs.productDTOs
         public string Description { get; set; }
         public string Cover { get; set; }
         public List<string>? Images { get; set; }
+
+        public IFormFile ImageFile { get; set; }
+        public int? BrandId { get; set; }
+        public int? CategoryId { get; set; }
+
     }
 }

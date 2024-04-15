@@ -28,7 +28,7 @@ namespace DubaiPhone.DTOs.productDTOs
         [Required]
         public string Cover { get; set; }
         public IFormFile ImageFile { get; set; }
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         public int? BrandId { get; set; }
     }
 }

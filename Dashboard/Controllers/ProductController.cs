@@ -36,7 +36,7 @@ namespace Dashboard.Controllers
                 return NotFound();
             }
 
-            var categoryDetails = await _categoryServices.GetCategoryByID(productDetails.CategoryId);
+            var categoryDetails = await _categoryServices.GetCategoryByID(productDetails.CategoryId.Value);
 
             ViewData["CategoryName"] = categoryDetails.Name;
 
@@ -111,7 +111,7 @@ namespace Dashboard.Controllers
                 Stock = productDetails.Stock,
                 Description = productDetails.Description,
                 BrandId = productDetails.BrandId,
-                CategoryId = productDetails.CategoryId,
+                CategoryId = productDetails?.CategoryId,
             };
             ViewBag.CategoryList = await _categoryServices.GetAllCategory();
 

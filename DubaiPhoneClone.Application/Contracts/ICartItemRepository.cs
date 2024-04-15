@@ -10,6 +10,5 @@ namespace DubaiPhoneClone.Application.Contracts
         public Task<IQueryable<ProductCartDTO>> GetCartProducts(int[] ids);
         public Task<IQueryable<CartItem>> GetUserCart(string userId);
         Task<bool> AddCartItem(CartItem item);
-        void PlaceOrder(Order order);
     }
 }

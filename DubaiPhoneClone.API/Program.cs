@@ -3,6 +3,7 @@ using DubaiPhoneClone.Application.Contracts;
 using DubaiPhoneClone.Application.services.Brands;
 using DubaiPhoneClone.Application.services.cartitems;
 using DubaiPhoneClone.Application.services.Categorys;
+using DubaiPhoneClone.Application.services.orderServices;
 using DubaiPhoneClone.Application.services.product;
 using DubaiPhoneClone.Context;
 using DubaiPhoneClone.Infrastructure.Repositories;
@@ -67,6 +68,8 @@ namespace DubaiPhoneClone.API
             builder.Services.AddScoped<ICategoryServices, CategoryServices>();
             builder.Services.AddScoped<ICartIemServices, CartIemServices>();
             builder.Services.AddScoped<ICartItemRepository, CartItemRepository>();
+            builder.Services.AddScoped<IOrderServices, OrderServices>();
+            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             builder.Services.AddControllers();

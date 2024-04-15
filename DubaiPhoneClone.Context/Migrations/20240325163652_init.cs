@@ -177,7 +177,7 @@ namespace DubaiPhoneClone.Context.Migrations
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TotalPrice = table.Column<double>(type: "float", nullable: false),
                     OrderedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DeliverdOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DeliveredOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),

@@ -17,6 +17,27 @@ namespace DubaiPhoneClone.API.Controllers
         {
             this._orderServices = orderServices;
         }
+
+        [HttpPost]
+        public async Task<ActionResult> PostAsync([FromBody] CreateOrderDto _order)
+        {
+            if (ModelState.IsValid)
+            {
+
+                await _orderServices.CreateOrder(_order);
+                return Ok(_order);
+
+            }
+            return BadRequest(ModelState);
+        }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteAsync(int id)
+        {
+            if (await _orderServices.DeleteOrder(id) == null)
+                return BadRequest();
+            return Ok();
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAllBrands()
         {
@@ -28,11 +49,10 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(order);
         }
 
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<ActionResult> GetById([FromRoute] int id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetById(int id)
         {
-            getOrderDTO order = await _orderServices.GetOrderByID(id);
+            OrderDto order = await _orderServices.GetOrderByID(id);
             if (order == null)
             {
                 return NoContent();
@@ -40,36 +60,15 @@ namespace DubaiPhoneClone.API.Controllers
             return Ok(order);
         }
 
-        [HttpPost]
-        public async Task<ActionResult> PostAsync([FromBody] CreateOrderDTO _order)
+        [HttpGet("GetUserOrders")]
+        public async Task<ActionResult> GetUserOrders(string id)
         {
-            if (ModelState.IsValid)
+            List<OrderDto> order = await _orderServices.GetUserOrders(id);
+            if (order == null || order.Count==0)
             {
-               
-                await _orderServices.CreateOrder(_order);
-                return Ok(_order);
-
+                return NotFound();
             }
-            return BadRequest(ModelState);
-        }
-
-        [HttpPut]
-        public async Task<ActionResult> Put([FromBody] UpdateOrderDTO order)
-        {
-            if (ModelState.IsValid)
-            {
-                await _orderServices.UpdateOrder(order);
-                return Ok(order);
-
-            }
-            return BadRequest(ModelState);
-        }
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteAsync(int id)
-        {
-            if (await _orderServices.DeleteOrder(id) == null)
-                return BadRequest();
-            return Ok();
+            return Ok(order);
         }
     }
 }

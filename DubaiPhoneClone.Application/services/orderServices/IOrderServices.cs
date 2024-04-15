@@ -10,15 +10,15 @@ namespace DubaiPhoneClone.Application.services.orderServices
 {
     public interface IOrderServices
     {
-        public Task<List<getOrderDTO>> GetAllOrder();
+        public Task<List<OrderDto>> GetAllOrder();
 
-        public Task<getOrderDTO> GetOrderByID(int Order);
+        public Task<OrderDto> GetOrderByID(int Order);
 
-        public Task<Order> CreateOrder(CreateOrderDTO Order);
-
-        public Task<Order> UpdateOrder(UpdateOrderDTO Order);
+        public Task<Order> CreateOrder(CreateOrderDto Order);
 
         public Task<Order> DeleteOrder(int OrderId);
-        
+
+        public Task<List<OrderDto>> GetUserOrders(string userId);
+
     }
 }

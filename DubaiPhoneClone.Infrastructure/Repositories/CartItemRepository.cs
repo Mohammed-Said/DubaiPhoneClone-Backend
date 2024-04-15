@@ -60,38 +60,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
                        Cover = prod.Cover
                    };
         }
-        public void PlaceOrder(Order order)
-        {
-            //Create Order
-
-            _appContext.Orders.Add(order);
-            _appContext.SaveChanges();
-
-            //Add Cart items into Order items
-            //Get All Customer Catr items
-            var cartItems = _appContext.CartItems.Where(c => c.UserId == order.UserId);
-
-            foreach (var item in cartItems)
-            {
-                //Create Order item
-                OrderItem orderItem = new OrderItem();
-                orderItem.OrderID = order.Id;
-                orderItem.Quantity = item.Quantity;
-                orderItem.ProductID = item.ProductID;
-                var prod = _appContext.Products.Find(item.ProductID);
-
-                if (prod is not null)
-                    prod.Stock -= item.Quantity;
-
-                _appContext.OrderItems.Add(orderItem);
-
-                //Remove CartItems
-                _appContext.CartItems.Remove(item);
-            }
-            _appContext.SaveChanges();
-
-
-        }
+       
 
         public async Task<bool> AddCartItem(CartItem item)
         {
