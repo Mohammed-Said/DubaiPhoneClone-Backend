@@ -7,7 +7,6 @@ namespace DubaiPhoneClone.Models
     {
         public Product() {
             Images = new List<ProductImage>();
-            Users=new List<User>();
             OrderItems=new List<OrderItem>();
             CartItems=new List<CartItem>();
         }
@@ -50,9 +49,9 @@ namespace DubaiPhoneClone.Models
         public List<CartItem>? CartItems { get; set; }
 
         ////User-Product many to many Add To Wishlist
-        public List<User>? Users { get; set; }
+        public List<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
 
 
-        
+
     }
 }

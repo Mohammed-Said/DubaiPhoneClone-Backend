@@ -4,6 +4,7 @@ using DubaiPhoneClone.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DubaiPhoneClone.Context.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240417202004_updateWishList")]
+    partial class updateWishList
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -394,15 +397,20 @@ namespace DubaiPhoneClone.Context.Migrations
 
             modelBuilder.Entity("DubaiPhoneClone.Models.Wishlist", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("prodId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("userId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("ProductId", "UserId");
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("UserId");
+                    b.HasKey("prodId", "userId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("userId");
 
                     b.ToTable("Wishlists");
                 });
@@ -645,13 +653,11 @@ namespace DubaiPhoneClone.Context.Migrations
                 {
                     b.HasOne("DubaiPhoneClone.Models.Product", null)
                         .WithMany("Wishlists")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductId");
 
                     b.HasOne("DubaiPhoneClone.Models.User", null)
                         .WithMany("Wishlists")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("userId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

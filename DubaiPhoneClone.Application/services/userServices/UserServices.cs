@@ -22,7 +22,7 @@ namespace DubaiPhoneClone.Application.services.userServices
             _mapper = mapper;
         }
 
-        public async Task<bool> AddLovedItem(int itemId ,int userId)
+        public async Task<bool> AddLovedItem(int itemId ,string userId)
         {
             bool sucess = await _repo.AddWishlistItem(itemId,userId);
             if (sucess)
@@ -31,28 +31,12 @@ namespace DubaiPhoneClone.Application.services.userServices
             }
             return sucess;
         }
-        public async Task<GetUser> CreateUser(CreateUser User)
-        {
-            if(!await _repo.CheckIfEmailIsUsedBefore(User.Email)) { 
-                //passwordHashing
-            var createuser=_mapper.Map<GetUser>(await _repo.Create(_mapper.Map<User>(User)));
-            await _repo.Save();
-                return createuser;
-            }
-            return null;
-        }
 
         public async Task<GetUser> DeleteUser(int UserId)
         {
             var deleteuser= _mapper.Map<GetUser>(await _repo.Delete(UserId));
             await _repo.Save();
             return deleteuser;
-        }
-
-        public async Task<List<GetUser>>  GetAllUser()
-        {
-            var query =_mapper.Map<List<GetUser>>(await (await _repo.GetAll()).ToListAsync());
-            return query;
         }
 
 

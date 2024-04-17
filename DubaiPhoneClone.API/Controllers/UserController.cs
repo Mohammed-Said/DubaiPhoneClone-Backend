@@ -17,35 +17,9 @@ namespace DubaiPhoneClone.API.Controllers
             _userServices = userServices;
             _configuration = configuration;
         }
-        [HttpPost]
-        public async Task<IActionResult>Registeration(CreateUser user)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            GetUser createdUser = await _userServices.CreateUser(user);
-                if(createdUser == null)
-            {
-                return BadRequest("probably this email is used already go to log in");
-            }
-            return Created(_configuration.GetValue<string>("hostaName") + $"/api/user/{createdUser.Id}", createdUser);
-        }
+    
         
-        [HttpPatch("additemtomywishlist/{itemId:int}")]
-        public async Task<IActionResult> addToWishList(int itemId)
-        {
-            int userId = 0;//add userId from claims
-            bool sucess = await _userServices.AddLovedItem(itemId,userId);
-            if (sucess)
-            {
-                return Ok();
-            }
-            else
-            {
-                return BadRequest();
-            }
-        }
+       
      
         [HttpGet("myprofile")]
         public  async Task<IActionResult> getMydata()

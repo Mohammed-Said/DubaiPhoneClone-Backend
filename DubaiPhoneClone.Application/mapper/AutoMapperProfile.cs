@@ -9,6 +9,7 @@ using DubaiPhone.DTOs.cartDTOs;
 using DubaiPhone.DTOs.productDTOs;
 using DubaiPhone.DTOs.userDTOs;
 using DubaiPhoneClone.Models;
+using DubaiPhone.DTOs.WishlistDTOs;
 
 
 namespace DubaiPhoneClone.Application.mapper
@@ -16,8 +17,10 @@ namespace DubaiPhoneClone.Application.mapper
     public class AutoMapperProfile:Profile
     {
         public AutoMapperProfile() {
+
             CreateMap<Product, ProductDetailsDTO>().ForMember(d => d.Images, o => o.MapFrom(p => p.Images.Select(i=>i.Path)));
             CreateMap<Product, GetAllProduct>();
+            CreateMap<Product, WishlistDto>();
             CreateMap<Product,CreatingAndUpdatingProduct>().ReverseMap();
 
             

@@ -21,7 +21,7 @@ namespace DubaiPhoneClone.Models
 
         public List<Order>? Orders { get; set; }
         public List<CartItem>? CartItems { get; set; }
-        public List<Product>? Products { get; set; }
+        public List<Wishlist> Wishlists { get; set; }=new List<Wishlist>();
 
     }
 }

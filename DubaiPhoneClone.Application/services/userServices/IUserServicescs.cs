@@ -11,17 +11,14 @@ namespace DubaiPhoneClone.Application.services.userServices
 {
     public interface IUserServices
     {
-        public Task<List<GetUser>> GetAllUser();
 
         public Task<GetUser> GetUserByID(int User);
-
-        public Task<GetUser> CreateUser(CreateUser User);
 
         public Task<GetUser> UpdateUser(UpdateUser User);
 
         public Task<GetUser> DeleteUser(int UserId);
 
-        public  Task<bool> AddLovedItem(int itemId, int userId);
+        public  Task<bool> AddLovedItem(int itemId, string userId);
 
     }
 }

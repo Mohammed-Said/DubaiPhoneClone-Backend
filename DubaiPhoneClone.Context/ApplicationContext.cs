@@ -17,6 +17,7 @@ namespace DubaiPhoneClone.Context
         public DbSet<OrderItem>? OrderItems { get; set; }
         public DbSet<Product>? Products { get; set; }
         public DbSet<ProductImage>? ProductImages { get; set; }
+        public DbSet<Wishlist>? Wishlists { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
@@ -32,6 +33,7 @@ namespace DubaiPhoneClone.Context
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims", "security");
             builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens", "security");
 
+            builder.Entity<Wishlist>().HasKey(w => new { w.ProductId, w.UserId });
         }
     }
 }

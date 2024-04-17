@@ -19,7 +19,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
         public UserRepository(ApplicationContext applicationContext) : base(applicationContext) { }
         //this.applicationContext = applicationContext;
-        public async Task<bool> AddWishlistItem(int prodId, int userId)
+        public async Task<bool> AddWishlistItem(int prodId, string userId)
         {
 
             //List<WishlistItem> userLovedItems = (await DbSetEntity.FindAsync(userId))?.WishlistItems;
@@ -36,6 +36,8 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             //    UserId = userId
 
             //};
+
+
             //userLovedItems.Add(wishlistItem);
             return true;
             //applicationContext.SaveChanges();
