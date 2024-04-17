@@ -10,7 +10,7 @@ namespace DubaiPhoneClone.Application.services.WishlistService
 {
     public interface IWishlistService 
     {
-         Task UpdateWishlist(int prodId, string userId);
+         Task<bool> UpdateWishlist(int prodId, string userId);
          Task<List<WishlistDto>> GetWishlistItems(string userId);
     }
 }

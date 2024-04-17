@@ -16,10 +16,13 @@ namespace DubaiPhoneClone.API.Controllers
             _wishlistService = wishlistService;
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateWishlist(int itemId, string userId)
+        public async Task<IActionResult> UpdateWishlist(int prodId, string userId)
         {
-            await _wishlistService.UpdateWishlist(itemId, userId);
-            return Ok();
+           var res= await _wishlistService.UpdateWishlist(prodId, userId);
+
+            if (res) return Ok();
+
+            return NotFound();
         }
         [HttpGet]
         public async Task<ActionResult<List<WishlistDto>>> GetUserWishLilist(string userId)
