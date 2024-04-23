@@ -37,7 +37,7 @@ namespace DubaiPhoneClone.API.Controllers
                 {
                     var user = new User()
                     {
-                        Email = model.Email,
+                        Email = model.Email,    
                         UserName = model.Username,
                         PasswordHash = model.Password
                     };
@@ -103,6 +103,13 @@ namespace DubaiPhoneClone.API.Controllers
 
             }
             return Unauthorized();
+        }
+
+        [HttpPost("EditAccount")]
+
+        public async Task<IActionResult> EditAccount()
+        {
+            return Ok();
         }
 
     }

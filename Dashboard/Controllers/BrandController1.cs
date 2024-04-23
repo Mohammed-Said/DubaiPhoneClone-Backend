@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Dashboard.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class BrandController : Controller
     {
         private readonly IBrandServices _brandservice;

@@ -27,7 +27,7 @@
 
 </div>
 
-<table class="table  table-hover">
+<table class="table  table-hover text-center">
     <thead class="table-primary">
         <tr>
             <th >Image</th>
@@ -40,13 +40,14 @@
     @foreach (var item in Model) 
     {
             <tr>
-                <td class="d-inline-block" style="width: 100px; height: 100px;">
-                    <img class="w-100 h-100" src="~/Categories/@item.ImagePath">
+                
+                <td class="justify-content-center align-items-center" style="width: 200px; height: 100px;">
+                    <img class="w-50" src="~/Categories/@item.ImagePath">
                 </td>
                 <td>@item.Name</td>
                 <td>@item.ArabicName</td>
                 <td>
-                    <div class="d-flex ">
+                    <div >
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn mb-2 text-warning">
                             <i class="fa-solid fa-pen-to-square"></i>
                             <span class="details-text">Edit</span>

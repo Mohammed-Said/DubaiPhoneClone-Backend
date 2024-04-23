@@ -23,7 +23,8 @@ namespace DubaiPhoneClone.API.Controllers
             if (ModelState.IsValid)
             {
                 cartItem = await _cartItemServices.AddCartItem(cartItem);
-                return Created(_configuration.GetValue<string>("hostaName") + $"/api/cart/{cartItem}", cartItem);
+                if(cartItem is not null)
+                    return Ok(cartItem);
             }
             return BadRequest(ModelState);
         }
@@ -44,15 +45,13 @@ namespace DubaiPhoneClone.API.Controllers
                 return BadRequest();
             return Ok(cart);
         }
-
         [HttpGet("GetCartProducts")]
-        public async Task<IActionResult> GetCartProducts([FromQuery]int[] ids)
+        public async Task<IActionResult> GetCartProducts([FromQuery] int[] ids)
         {
             var cart = await _cartItemServices.GetCartProducts(ids);
             if (cart == null)
                 return BadRequest();
             return Ok(cart);
         }
-
     }
 }

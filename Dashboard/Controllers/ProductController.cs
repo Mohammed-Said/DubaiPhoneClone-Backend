@@ -107,7 +107,7 @@ namespace Dashboard.Controllers
                 ArabicName = productDetails.ArabicName,
                 Name  = productDetails.Name,
                 NormalPrice = productDetails.NormalPrice,
-                SalePercent = productDetails.SalePrice,
+                SalePrice = productDetails.SalePrice,
                 Stock = productDetails.Stock,
                 Description = productDetails.Description,
                 BrandId = productDetails.BrandId,
@@ -167,8 +167,27 @@ namespace Dashboard.Controllers
             }
 
         }
+        
+        public async Task<IActionResult> Search(string name)
+        {
+            try
+            { 
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    return RedirectToAction("Index");
+                }
+                var products = await _productServices.SearchName(name);
+               
+                return View("Index", products);
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+        }
 
-        [HttpPost]
+
+        
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -192,24 +211,6 @@ namespace Dashboard.Controllers
                 await _productServices.DeleteProduct(id);
 
                 return RedirectToAction("Index");
-            }
-            catch (Exception ex)
-            {
-                return NotFound();
-            }
-        }
-
-        public async Task<IActionResult> Search(string name)
-        {
-            try
-            { 
-                if (string.IsNullOrWhiteSpace(name))
-                {
-                    return RedirectToAction("Index");
-                }
-                var products = await _productServices.SearchName(name);
-               
-                return View("Index", products);
             }
             catch (Exception ex)
             {

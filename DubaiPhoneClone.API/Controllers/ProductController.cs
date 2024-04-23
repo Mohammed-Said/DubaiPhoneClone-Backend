@@ -133,10 +133,10 @@ namespace DubaiPhoneClone.API.Controllers
         }
 
         [HttpGet("{name}")]
-        public async Task<IActionResult> SearchByName(string name)
+        public async Task<IActionResult> SearchByName(string name, int numOfProductPerPage, int pageNumber)
         {
-            var products = await _productServices.SearchName(name);
-            if (products == null || products.Count == 0)
+            var products = await _productServices.SearchName(name, numOfProductPerPage,pageNumber);
+            if (products == null || products.entity.Count == 0)
             {
                 return NoContent();
             }

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DubaiPhone.DTOs.OrderDTOs.OrderDto>
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<div class="container mt-5">
+        <h1 class="text-center mb-4">All Orders</h1>
+    <table class="table table-hover text-center">
+        <thead class="table-primary">
+            <tr>
+                <th>ID</th>
+                <th>Total Price</th>
+                <th>Ordered At</th>
+                <th>Delivered On</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.TotalPrice</td>
+                    <td>@order.OrderedAt</td>
+                    <td>@order.DeliveredOn</td>
+                    <td>@order.Address</td>
+                    <td>@order.City</td>
+                    <td>@order.Status</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@order.Id" class="btn mb-2 text-warning">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span class="details-text">Edit</span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

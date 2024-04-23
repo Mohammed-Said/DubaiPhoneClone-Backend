@@ -34,10 +34,10 @@ namespace DubaiPhoneClone.Application.services.product
         {
             Product prd = _mapper.Map<Product>(Product);
             var updatedProduct = await _repo.Update(prd);
-            await _repo.Save(); 
+            await _repo.Save();
             Product = _mapper.Map<CreatingAndUpdatingProduct>(updatedProduct);
             return Product;
-            
+
         }
         public async Task<ProductDetailsDTO> DeleteProduct(int ProductId)
         {
@@ -55,33 +55,60 @@ namespace DubaiPhoneClone.Application.services.product
         // ===========
         public async Task<List<ProductDetailsDTO>> GetProductDetails()
         {
-            var products = await(await _repo.GetAll()).ToListAsync();
-            List<ProductDetailsDTO> result = _mapper.Map< List < ProductDetailsDTO >>(products);
+            var products = await (await _repo.GetAll()).ToListAsync();
+            List<ProductDetailsDTO> result = _mapper.Map<List<ProductDetailsDTO>>(products);
             return result;
         }
-       
+
 
         public async Task<ProductDetailsDTO> GetProductByID(int Product) =>
            _mapper.Map<ProductDetailsDTO>(await _repo.GetById(Product));
 
         public async Task<List<GetAllProduct>> GetByBrand(int bramdId) =>
         _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrand(bramdId)).ToListAsync());
-        public async Task<List<GetAllProduct>> GetByBrandAndCategory( int cId, int bId) =>
+        public async Task<List<GetAllProduct>> GetByBrandAndCategory(int cId, int bId) =>
              _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrandAndCategory(cId, bId)).ToListAsync());
         public async Task<List<GetAllProduct>> GetByCategory(int cId) =>
            _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByCategory(cId)).ToListAsync());
 
-        public async Task<List<GetAllProduct>> SearchName(string name) =>
-           _mapper.Map<List<GetAllProduct>>(await (await _repo.SearchName(name)).ToListAsync());
-        
+        public async Task<Pagination<List<GetAllProduct>>> SearchName(string name, int Productnums, int PageNumber)
+        {
+
+            var query = (await _repo.GetAll())
+                .Where(p => p.Name.ToLower().Contains(name.ToLower()) || p.ArabicName.ToLower().Contains(name.ToLower()));
+
+            var count = query.Count();
+
+            var data = _mapper.Map<List<GetAllProduct>>(await query.Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync());
+
+            var stock = query.Where(p => p.Stock > 0).Count();
+
+            return new Pagination<List<GetAllProduct>>()
+            {
+                Count =count,
+                Page = PageNumber,
+                PageSize = Productnums,
+                entity = data,
+                Stock =stock
+            };
+        }
+        public async Task<List<GetAllProduct>> SearchName(string name)
+        {
+            var data =await (await _repo.GetAll())
+                .Where(p => p.Name.ToLower().Contains(name.ToLower()) || p.ArabicName.ToLower().Contains(name.ToLower()))
+                .ToListAsync();
+                ;
+
+            return _mapper.Map<List<GetAllProduct>>(data);
+        }
         public async Task<int> GetCountByBrand(int bId) =>
             await _repo.GetCountByBrand(bId);
         public async Task<int> GetCountByCategory(int cId) =>
-            await _repo.GetCountByCategory(cId); 
-        public async Task<int> GetCountByCategoryAndBrand(int categoryId,int brandId) =>
-            await _repo.GetCountByCategoryAndBrand(categoryId,brandId);
-        
-       
+            await _repo.GetCountByCategory(cId);
+        public async Task<int> GetCountByCategoryAndBrand(int categoryId, int brandId) =>
+            await _repo.GetCountByCategoryAndBrand(categoryId, brandId);
+
+
 
 
         #region Pagination
@@ -124,19 +151,19 @@ namespace DubaiPhoneClone.Application.services.product
                 PageSize = Productnums,
                 entity = _mapper.Map<List<GetAllProduct>>(await (await _repo.GetByBrandAndCategory(categoryId, brandId)).Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
                 Stock = await GetCountByCategoryAndBrandStock(categoryId, brandId)
-            }); 
+            });
         #endregion
 
         #region Order By 
 
-        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationOrderByPrice( string way, int Productnums, int PageNumber)
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationOrderByPrice(string way, int Productnums, int PageNumber)
         {
-            var query =  (await _repo.GetAll());
+            var query = (await _repo.GetAll());
 
             if (way.ToUpper() == "ASC")
-                query =  query.OrderBy(p=>p.SalePrice);
+                query = query.OrderBy(p => p.SalePrice);
             else
-                query = query.OrderByDescending(p=>p.SalePrice);
+                query = query.OrderByDescending(p => p.SalePrice);
 
             return new Pagination<List<GetAllProduct>>()
             {
@@ -149,14 +176,14 @@ namespace DubaiPhoneClone.Application.services.product
 
             };
         }
-        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationOrderByName( string way, int Productnums, int PageNumber)
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationOrderByName(string way, int Productnums, int PageNumber)
         {
-            var query =  (await _repo.GetAll());
+            var query = (await _repo.GetAll());
 
             if (way.ToUpper() == "ASC")
-                query =  query.OrderBy(p=>p.Name);
+                query = query.OrderBy(p => p.Name);
             else
-                query = query.OrderByDescending(p=>p.Name);
+                query = query.OrderByDescending(p => p.Name);
 
             return new Pagination<List<GetAllProduct>>()
             {
@@ -170,7 +197,8 @@ namespace DubaiPhoneClone.Application.services.product
             };
         }
 
-        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByBrandOrderByPrice(string way, int brandId, int Productnums, int PageNumber) {
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByBrandOrderByPrice(string way, int brandId, int Productnums, int PageNumber)
+        {
             var query = await _repo.GetByBrand(brandId);
 
             if (way.ToUpper() == "ASC")
@@ -179,16 +207,17 @@ namespace DubaiPhoneClone.Application.services.product
                 query = query.OrderByDescending(p => p.SalePrice);
 
             return new Pagination<List<GetAllProduct>>()
-           {
-               Count = await _repo.GetCountByBrand(brandId),
-               Page = PageNumber,
-               PageSize = Productnums,
-               entity = _mapper.Map<List<GetAllProduct>>(await query.Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
+            {
+                Count = await _repo.GetCountByBrand(brandId),
+                Page = PageNumber,
+                PageSize = Productnums,
+                entity = _mapper.Map<List<GetAllProduct>>(await query.Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
                 Stock = await GetCountByBrandStock(brandId)
 
             };
         }
-        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByBrandOrderByName(string way, int brandId, int Productnums, int PageNumber) {
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByBrandOrderByName(string way, int brandId, int Productnums, int PageNumber)
+        {
             var query = await _repo.GetByBrand(brandId);
 
             if (way.ToUpper() == "ASC")
@@ -197,16 +226,17 @@ namespace DubaiPhoneClone.Application.services.product
                 query = query.OrderByDescending(p => p.Name);
 
             return new Pagination<List<GetAllProduct>>()
-           {
-               Count = await _repo.GetCountByBrand(brandId),
-               Page = PageNumber,
-               PageSize = Productnums,
-               entity = _mapper.Map<List<GetAllProduct>>(await query.Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
+            {
+                Count = await _repo.GetCountByBrand(brandId),
+                Page = PageNumber,
+                PageSize = Productnums,
+                entity = _mapper.Map<List<GetAllProduct>>(await query.Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
                 Stock = await GetCountByBrandStock(brandId)
 
             };
         }
-        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryOrderByName(string way, int categoryId, int Productnums, int PageNumber) {
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryOrderByName(string way, int categoryId, int Productnums, int PageNumber)
+        {
             var query = (await _repo.GetByCategory(categoryId));
 
             if (way.ToUpper() == "ASC")
@@ -224,7 +254,8 @@ namespace DubaiPhoneClone.Application.services.product
 
             };
         }
-        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryOrderByPrice(string way, int categoryId, int Productnums, int PageNumber) {
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryOrderByPrice(string way, int categoryId, int Productnums, int PageNumber)
+        {
             var query = (await _repo.GetByCategory(categoryId));
 
             if (way.ToUpper() == "ASC")
@@ -242,8 +273,9 @@ namespace DubaiPhoneClone.Application.services.product
 
             };
         }
-        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrandOrderByPrice(string way, int categoryId,int brandId, int Productnums, int PageNumber) {
-            var query = (await _repo.GetByBrandAndCategory(categoryId,brandId));
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrandOrderByPrice(string way, int categoryId, int brandId, int Productnums, int PageNumber)
+        {
+            var query = (await _repo.GetByBrandAndCategory(categoryId, brandId));
 
             if (way.ToUpper() == "ASC")
                 query = query.OrderBy(p => p.SalePrice);
@@ -252,7 +284,7 @@ namespace DubaiPhoneClone.Application.services.product
 
             return new Pagination<List<GetAllProduct>>()
             {
-                Count = await _repo.GetCountByCategoryAndBrand(categoryId,brandId),
+                Count = await _repo.GetCountByCategoryAndBrand(categoryId, brandId),
                 Page = PageNumber,
                 PageSize = Productnums,
                 entity = _mapper.Map<List<GetAllProduct>>(await query.Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
@@ -260,8 +292,9 @@ namespace DubaiPhoneClone.Application.services.product
 
             };
         }
-        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrandOrderByName(string way, int categoryId,int brandId, int Productnums, int PageNumber) {
-            var query = (await _repo.GetByBrandAndCategory(categoryId,brandId));
+        public async Task<Pagination<List<GetAllProduct>>> GetAllPaginationByCategoryAndBrandOrderByName(string way, int categoryId, int brandId, int Productnums, int PageNumber)
+        {
+            var query = (await _repo.GetByBrandAndCategory(categoryId, brandId));
 
             if (way.ToUpper() == "ASC")
                 query = query.OrderBy(p => p.Name);
@@ -270,7 +303,7 @@ namespace DubaiPhoneClone.Application.services.product
 
             return new Pagination<List<GetAllProduct>>()
             {
-                Count = await _repo.GetCountByCategoryAndBrand(categoryId,brandId),
+                Count = await _repo.GetCountByCategoryAndBrand(categoryId, brandId),
                 Page = PageNumber,
                 PageSize = Productnums,
                 entity = _mapper.Map<List<GetAllProduct>>(await query.Skip(Productnums * (PageNumber - 1)).Take(Productnums).ToListAsync()),
@@ -323,14 +356,14 @@ namespace DubaiPhoneClone.Application.services.product
         #endregion
 
 
-        public async Task<int> GetCountByAllStock()=>
+        public async Task<int> GetCountByAllStock() =>
             (await _repo.GetAll()).Where(p => p.Stock > 0).Count();
-        public async Task<int> GetCountByBrandStock(int brandId)=>
+        public async Task<int> GetCountByBrandStock(int brandId) =>
             (await _repo.GetByBrand(brandId)).Where(p => p.Stock > 0).Count();
-        public async Task<int> GetCountByCategoryStock(int categoryId)=>
+        public async Task<int> GetCountByCategoryStock(int categoryId) =>
             (await _repo.GetByCategory(categoryId)).Where(p => p.Stock > 0).Count();
-        public async Task<int> GetCountByCategoryAndBrandStock(int categoryId,int brandId)=>
-            (await _repo.GetByBrandAndCategory(categoryId,brandId)).Where(p => p.Stock > 0).Count();
+        public async Task<int> GetCountByCategoryAndBrandStock(int categoryId, int brandId) =>
+            (await _repo.GetByBrandAndCategory(categoryId, brandId)).Where(p => p.Stock > 0).Count();
 
         #region Filter By Stock
         public async Task<Pagination<List<GetAllProduct>>> FilterByStockAllPagination(int Productnums, int PageNumber) =>
@@ -372,26 +405,22 @@ namespace DubaiPhoneClone.Application.services.product
 
             };
 
-
         #endregion
 
-        public async Task<decimal> GetMinPrice(int? categoryId,int? brandId)
+        public async Task<decimal> GetMinPrice(int? categoryId, int? brandId)
         {
-            if (categoryId.HasValue&&brandId.HasValue)
-               return (await _repo.GetByBrandAndCategory(categoryId.Value,brandId.Value)).Min(p => p.SalePrice);
+            if (categoryId.HasValue && brandId.HasValue)
+                return (await _repo.GetByBrandAndCategory(categoryId.Value, brandId.Value)).Min(p => p.SalePrice);
             if (categoryId.HasValue)
-               return (await _repo.GetByCategory(categoryId.Value)).Min(p => p.SalePrice);
+                return (await _repo.GetByCategory(categoryId.Value)).Min(p => p.SalePrice);
             if (brandId.HasValue)
-               return (await _repo.GetByBrand(brandId.Value)).Min(p => p.SalePrice);
-            
+                return (await _repo.GetByBrand(brandId.Value)).Min(p => p.SalePrice);
+
 
             return (await _repo.GetAll()).Min(p => p.SalePrice);
 
 
         }
-        public async Task<decimal> GetMaxPrice() =>
-            (await _repo.GetAll()).Max(p => p.SalePrice);
-
         public async Task<decimal> GetMaxPrice(int? categoryId, int? brandId)
         {
             if (categoryId.HasValue && brandId.HasValue)

@@ -24,6 +24,8 @@ namespace DubaiPhoneClone.Application.services.product
 
         Task<List<GetAllProduct>> SearchName(string name);
 
+        Task<Pagination<List<GetAllProduct>>> SearchName(string name, int Productnums, int PageNumber);
+
         Task<List<GetAllProduct>> GetByCategory(int cId);
 
         Task<List<GetAllProduct>> GetByBrand(int bId);

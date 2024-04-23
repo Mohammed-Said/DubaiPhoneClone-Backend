@@ -1,0 +1,59 @@
+﻿@model DubaiPhone.DTOs.OrderDTOs.UpdateOrderDto
+
+@{
+    ViewData["Title"] = "Edit Order";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Edit Order</h2>
+
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" asp-for="Status"></label>
+            <select class="form-select" asp-for="Status" class="form-control">
+                @foreach (var status in Enum.GetNames(typeof(DubaiPhoneClone.Models.OrderStatus)))
+                {
+                    <option value="@status">@status</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2">Total Price</label>
+            <input type="text" class="form-control" value="@Model.TotalPrice" disabled />
+
+        </div>
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2">Customer's First Name</label>
+            <input type="text" class="form-control" value="@Model.FirstName" disabled />
+        </div>
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2">Customer's Last Name</label>
+            <input type="text" class="form-control" value="@Model.LastName" disabled />
+        </div>
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2">Ordered At</label>
+            <input type="text" class="form-control" value="@Model.OrderedAt" disabled/>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2" for="DeliverdOn">Delivered On</label>
+            @if (Model.DeliverdOn == null )
+            {
+                <input type="text" class="form-control" value="undefined" disabled />
+            }
+            else
+            {
+                <input type="text" class="form-control" value="@Model.DeliverdOn" disabled />
+            }
+        </div>
+        <div class="form-group">
+            <label class="fs-5 fw-bold mt-2 mb-2">City</label>
+            <input type="text" class="form-control" value="@Model.City" disabled />
+        </div>
+        <div class="d-grid gap-2 mt-5">
+            <button class="btn btn-outline-success" type="submit">Update</button>
+        </div>
+    </form>
+
+</div>

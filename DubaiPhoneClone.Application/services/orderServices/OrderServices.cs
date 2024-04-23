@@ -11,22 +11,28 @@ using System.Threading.Tasks;
 
 namespace DubaiPhoneClone.Application.services.orderServices
 {
-    public class OrderServices:IOrderServices
+    public class OrderServices : IOrderServices
     {
 
         IOrderRepository _repo;
+        private readonly IProductRepository _productRepo;
         private readonly IMapper mapper;
 
-        public OrderServices(IOrderRepository repo,IMapper mapper) {
+        public OrderServices(
+            IOrderRepository repo,
+            IProductRepository productRepo,
+            IMapper mapper)
+        {
 
-        _repo = repo;
+            _repo = repo;
+            this._productRepo = productRepo;
             this.mapper = mapper;
         }
-     
+
 
         public async Task<Order> CreateOrder(CreateOrderDto _order)
         {
-            Order order = mapper.Map<Order>(_order); 
+            Order order = mapper.Map<Order>(_order);
             var Order = await _repo.CreateOrder(order);
             await _repo.Save();
             return Order;
@@ -39,7 +45,7 @@ namespace DubaiPhoneClone.Application.services.orderServices
             return deltecart;
         }
 
-        public async Task<List<OrderDto>>  GetAllOrder()
+        public async Task<List<OrderDto>> GetAllOrder()
         {
             var orders = await (await _repo.GetAll()).ToListAsync();
             return mapper.Map<List<OrderDto>>(orders);
@@ -53,9 +59,28 @@ namespace DubaiPhoneClone.Application.services.orderServices
 
         public async Task<List<OrderDto>> GetUserOrders(string userId)
         {
-           var orders= await _repo.GetUserOrders(userId).ToListAsync();
+            var orders = await _repo.GetUserOrders(userId).ToListAsync();
 
-           return mapper.Map<List<OrderDto>>(orders);
+            if (orders is null)
+                return null;
+
+            var userOrders = mapper.Map<List<OrderDto>>(orders);
+            foreach (var order in userOrders)
+            {
+                foreach (var orderItem in order?.OrderItems)
+                {
+                    var prod = await _productRepo.GetById(orderItem.ProductID);
+
+                    if (prod is null)
+                        continue;
+
+                    orderItem.Name = prod.Name;
+                    orderItem.ArabicName = prod.ArabicName;
+                    orderItem.Cover=prod.Cover;
+                }
+            }
+
+            return userOrders;
         }
     }
 }

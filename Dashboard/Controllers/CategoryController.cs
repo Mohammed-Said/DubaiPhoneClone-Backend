@@ -5,9 +5,11 @@ using DubaiPhoneClone.Application.services.product;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using DubaiPhoneClone.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly ICategoryServices _categoryServices;

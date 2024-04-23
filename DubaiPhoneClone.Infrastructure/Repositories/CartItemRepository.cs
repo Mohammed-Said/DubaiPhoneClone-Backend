@@ -20,27 +20,6 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             _appContext = context;
         }
 
-        public bool ChangeQuantity(int cartItemId, int quantity)
-        {
-            // Retrieve the associated book
-            var item = _appContext.CartItems?.FirstOrDefault(i => i.Id == cartItemId);
-
-            if (item == null)
-                return false;
-
-            if (quantity == 0)
-                Delete(item.Id);
-            else
-            {
-                item.Quantity = quantity;
-                Update(item);
-            }
-
-            _appContext.SaveChanges();
-
-            return true;
-        }
-
         public async Task<IQueryable<ProductCartDTO>> GetCartProducts(string userId)
         {
             return from item in _appContext.CartItems
@@ -60,8 +39,6 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
                        Cover = prod.Cover
                    };
         }
-       
-
         public async Task<bool> AddCartItem(CartItem item)
         {
             CartItem cart;
@@ -75,8 +52,13 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
             var existingCartItem = userCartItems.FirstOrDefault(c => c.ProductID == item.ProductID);
 
             if (existingCartItem is not null)
+            {
                 // If the item already exists, update the quantity
+                if (item.Quantity==0)
+                    await Delete(existingCartItem.Id);
                 existingCartItem.Quantity = item.Quantity;
+
+            }
 
             else
                 // If the item doesn't exist, add it as a new cart item
@@ -84,10 +66,8 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
 
             return true;
         }
-
         public async Task<IQueryable<CartItem>> GetUserCart(string userId) =>
             _appContext.CartItems.Where(c => c.UserId == userId);
-
         public async Task<IQueryable<ProductCartDTO>> GetCartProducts(int[] ids)
         {
           return _appContext.Products.Where(p => ids.Contains(p.Id))
@@ -98,7 +78,7 @@ namespace DubaiPhoneClone.Infrastructure.Repositories
                 ArabicName = prod.ArabicName,
                 SalePrice = prod.SalePrice,
                 NormalPrice = prod.NormalPrice,
-                Stock = prod.Stock >5 ?5 : prod.Stock,
+                Stock = prod.Stock > 5 ? 5 : prod.Stock,
                 Cover = prod.Cover
             });
         }

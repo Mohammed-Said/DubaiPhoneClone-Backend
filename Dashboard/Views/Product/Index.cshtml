@@ -39,7 +39,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model) 
+        {
         <tr>
             <td class="d-flex justify-content-center align-items-center">
                   <img class="w-25" src="~/Products/@item.Cover">
@@ -57,14 +58,14 @@
                             <i class="fa-solid fa-pen-to-square" ></i>
                             <span class="details-text">Edit</span>
                         </a>
-                        <button class="btn mb-2 text-danger delete-btn" data-id="@item.Id">
+                        <a class="btn mb-2 text-danger" asp-action="Delete" asp-route-id="@item.Id" >
                             <i class="fa-solid fa-trash-can"></i>
                             <span class="details-text">Delete</span>
-                        </button>
+                        </a>
                 </div>
                 
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
