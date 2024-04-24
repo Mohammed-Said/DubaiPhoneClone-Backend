@@ -24,7 +24,7 @@ namespace DubaiPhone.DTOs.productDTOs
         public string Description { get; set; } = string.Empty;
         [Required(ErrorMessage = "how much does this product cost our clients?")]
         public decimal NormalPrice { get; set; }
-        public decimal SalePercent { get; set; }
+        public decimal SalePrice { get; set; }
         [Required]
         public string Cover { get; set; }
         public IFormFile ImageFile { get; set; }

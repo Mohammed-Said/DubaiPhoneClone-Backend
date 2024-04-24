@@ -19,6 +19,8 @@ namespace DubaiPhoneClone.Application.services.orderServices
         public Task<Order> DeleteOrder(int OrderId);
 
         public Task<List<OrderDto>> GetUserOrders(string userId);
+        public Task<bool> UpdateOrder(UpdateOrderDto updateOrderDto);
+
 
     }
 }

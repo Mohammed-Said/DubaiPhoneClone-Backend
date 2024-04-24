@@ -82,5 +82,20 @@ namespace DubaiPhoneClone.Application.services.orderServices
 
             return userOrders;
         }
+
+        public async Task<bool> UpdateOrder(UpdateOrderDto updateOrderDto)
+        {
+            var order = await _repo.GetById(updateOrderDto.Id);
+            if (order == null)
+            {
+                return false;
+            }
+
+            order.Status = updateOrderDto.Status;
+
+            _repo.Update(order);
+            await _repo.Save();
+            return true;
+        }
     }
 }
